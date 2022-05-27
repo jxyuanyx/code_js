@@ -1,0 +1,188 @@
+1.初始化：
+	this._am = new jsb.AssetsManager('', this._storagePath, this.versionCompareHandle);
+	this._am.setVerifyCallback(function (path, asset) {});
+
+2.加载本地清单
+	if (this._am.getState() === jsb.AssetsManager.State.UNINITED) {
+    // Resolve md5 url
+    // console.log("url:" + url);
+    // if (cc.loader.md5Pipe) {
+    //     console.log("url:11cc.loader.md5Pipe");
+    //     url = cc.loader.md5Pipe.transformURL(url);
+    // }
+    this._am.loadLocalManifest(this.manifestUrl.nativeUrl);
+	}
+    if (!this._am.getLocalManifest() || !this._am.getLocalManifest().isLoaded()) {
+        //this.panel.info.string = '未能加载本地清单 ...';
+        return;
+    }
+	
+3.检测热更
+	this._am.setEventCallback(this.checkCb.bind(this));
+	this._am.checkUpdate();
+	
+	//检测回调
+	checkCb(event: any) {
+        cc.log('Code: ' + event.getEventCode());
+        switch (event.getEventCode()) {
+            case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
+                this.panel.info.string = "没有发现版本文件，跳过热更新.";
+                break;
+            case jsb.EventAssetsManager.ERROR_DOWNLOAD_MANIFEST:
+            case jsb.EventAssetsManager.ERROR_PARSE_MANIFEST:
+                //this.panel.info.string = "下载清单文件失败，跳过热更新.";
+                break;
+            case jsb.EventAssetsManager.ALREADY_UP_TO_DATE:
+                //this.panel.info.string = "最新的远程版本.";
+                break;
+            case jsb.EventAssetsManager.NEW_VERSION_FOUND:
+                this.panel.info.string = cv.config.getStringData("Hotupdate_findVersionfileTips");//'找到新版本，请尝试更新.'
+                //this.panel.checkBtn.active = false;
+                this.panel.fileProgress.progress = 0;
+                this.panel.byteProgress.progress = 0;
+                this._hasNewVersion = true;
+                break;
+            default:
+                //this.panel.info.string = "error:" + event.getEventCode();
+                //this.panel.node.active = true;
+                return;
+        }
+
+        this._am.setEventCallback(null);
+        this._checkListener = null;
+        this._updating = false;
+        if (this._hasNewVersion) {
+            this.hotUpdate();     
+        } else {
+            this.gotoLoadRes();
+        }
+    }
+
+	
+4.开始热更
+	    hotUpdate() {
+        if (this._am && !this._updating) {
+            this._am.setEventCallback(this.updateCb.bind(this));
+
+            if (this._am.getState() === jsb.AssetsManager.State.UNINITED) {
+                // Resolve md5 url
+                var url = this.manifestUrl.nativeUrl;
+                // if (cc.loader.md5Pipe) {
+                //     url = cc.loader.md5Pipe.transformURL(url);
+                // }
+                this._am.loadLocalManifest(url);
+            }
+
+            this._failCount = 0;
+            this._am.update();
+        }
+    }
+	
+	    updateCb(event) {
+        var needRestart = false;
+        var failed = false;
+        // let progressUintStr = "";
+        // let totalUintStr = "";
+        // let progressByte = 0;
+        // let totalByte = 0;
+        // var self = this;
+        switch (event.getEventCode()) {
+            case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
+                this.panel.info.string = cv.config.getStringData("Hotupdate_noVersionfileTips");
+                failed = true;
+                break;
+            case jsb.EventAssetsManager.UPDATE_PROGRESSION:
+                this.panel.byteProgress.node.active = true;
+                this.panel.byteProgress.progress = event.getPercent();
+                this.panel.fileProgress.progress = event.getPercentByFile();
+                // progressUintStr = event.getDownloadedBytes() / 1024 >= 1024 ? "M" : "KB";
+                // totalUintStr = event.getTotalBytes() / 1024 >= 1024 ? "M" : "KB";
+
+                // progressByte = event.getDownloadedBytes() / 1024 >= 1024 ? event.getDownloadedBytes() / (1024 * 1024) : event.getDownloadedBytes() / 1024;
+                // totalByte = event.getTotalBytes() / 1024 >= 1024 ? event.getTotalBytes() / (1024 * 1024) : event.getTotalBytes() / 1024;
+                //this.panel.fileLabel.string = event.getDownloadedFiles() + ' / ' + event.getTotalFiles();
+                //this.panel.byteLabel.string = cv.config.getStringData("Hotupdate_updateSizeTips") + "  (" + progressByte.toFixed(1) + progressUintStr + '/' + totalByte.toFixed(1) + totalUintStr + ")";
+
+                // let percent = Math.ceil((event.getPercent() ? event.getPercent() : 0) * 100);
+                // percent = percent >= 100 ? 100 : percent;
+                //this.panel.percentLabel.string = (percent >= 100 ? 100 : percent) + "%";
+                // this.panel.info.string = cv.StringTools.formatC(cv.config.getStringData("Hotupdate_updateingTips"), percent);
+                if (event.getTotalBytes() > 0) {
+                    let str = this._getBytesString(event.getDownloadedBytes()) + '/' + this._getBytesString(event.getTotalBytes());
+
+                    this.panel.byteLabel.node.active = true;
+                    this.panel.byteLabel.string = str;
+
+                    this.panel.info.string = cv.config.getStringData("Hotupdate_updateingTips"); //cv.StringTools.formatC(cv.config.getStringData("Hotupdate_updateingTips"), str);
+
+                    this.panel.des.node.active = true;
+                    this.panel.des.string = cv.config.getStringData("Hotupdate_updateing_des");
+                }
+
+                var msg = event.getMessage();
+                if (msg) {
+                    //this.panel.info.string = '变更的文件: ' + msg;
+                    // cc.log(event.getPercent()/100 + '% : ' + msg);
+                }
+                break;
+            case jsb.EventAssetsManager.ERROR_DOWNLOAD_MANIFEST:
+            case jsb.EventAssetsManager.ERROR_PARSE_MANIFEST:
+                //this.panel.info.string = '下载清单文件失败，跳过热更新.';
+                failed = true;
+                break;
+            case jsb.EventAssetsManager.ALREADY_UP_TO_DATE:
+                //this.panel.info.string = '最新的远程版本.';
+                failed = true;
+                cc.game.restart();
+                break;
+            case jsb.EventAssetsManager.UPDATE_FINISHED:
+                //this.panel.info.string = '更新完成';//'更新完成. ' + event.getMessage()
+                needRestart = true;
+                // console.log("cc.game.restart()");
+                // cc.game.restart();
+                break;
+            case jsb.EventAssetsManager.UPDATE_FAILED:
+                this.panel.info.string = cv.config.getStringData("Hotupdate_updateFileTips") + event.getMessage();
+                //this.panel.retryBtn.active = true;
+                this._updating = false;
+                this._canRetry = true;
+                this.retry();
+                break;
+            case jsb.EventAssetsManager.ERROR_UPDATING:
+                this.panel.info.string = cv.config.getStringData("Hotupdate_updateErrorTips") + ', ' + event.getMessage();
+                console.log('资源更新错误: ' + event.getAssetId() + ', ' + event.getMessage());
+                this.clearHotFileCache();
+                cc.audioEngine.stopAll();
+                cc.game.restart();
+                break;
+            case jsb.EventAssetsManager.ERROR_DECOMPRESS:
+                //this.panel.info.string = event.getMessage();
+                break;
+            default:
+                break;
+        }
+
+        if (failed) {
+            this._am.setEventCallback(null);
+            this._updateListener = null;
+            this._updating = false;
+        }
+
+        if (needRestart) {
+            this._am.setEventCallback(null);
+            this._updateListener = null;
+            // Prepend the manifest's search path
+            var searchPaths = jsb.fileUtils.getSearchPaths();
+            var newPaths = this._am.getLocalManifest().getSearchPaths();
+            console.log(JSON.stringify(newPaths));
+            Array.prototype.unshift.apply(searchPaths, newPaths);
+            // This value will be retrieved and appended to the default search path during game startup,
+            // please refer to samples/js-tests/main.js for detailed usage.
+            // !!! Re-add the search paths in main.js is very important, otherwise, new scripts won't take effect.
+            cc.sys.localStorage.setItem('HotUpdateSearchPaths', JSON.stringify(searchPaths));
+            jsb.fileUtils.setSearchPaths(searchPaths);
+
+            cc.audioEngine.stopAll();
+            cc.game.restart();
+        }
+    }
