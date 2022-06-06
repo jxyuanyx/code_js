@@ -1,0 +1,22 @@
+{
+    "defaultServer": "http://192.168.7.166:3001/update/",
+    "mainPackage": {
+        "version": "1.1.4",
+        "url": "http://192.168.7.166:3001/update/"
+    },
+    "subPackages": [
+        {
+            "name": "game100",
+            "checked": false,
+            "version": "1.0.3",
+            "url": "http://192.168.7.166:3001/update/sub_package/game100/"
+        },
+        {
+            "name": "game101",
+            "checked": false,
+            "version": "1.0.2",
+            "url": "http://192.168.7.166:3001/update/sub_package/game101/"
+        }
+    ],
+    "localServerPath": "D:\\projs\\web-server\\public\\update"
+}

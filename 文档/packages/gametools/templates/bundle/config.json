@@ -1,0 +1,14 @@
+{
+    "paths": {},
+    "uuids": [],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": null,
+    "name": "${packagename}",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false
+}
