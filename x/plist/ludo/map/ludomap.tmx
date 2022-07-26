@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="left-down" width="15" height="15" tilewidth="49" tileheight="49" infinite="0" nextlayerid="9" nextobjectid="109">
+ <tileset firstgid="1" name="map" tilewidth="739" tileheight="737" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="739" height="737" source="map.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="cube" tilewidth="49" tileheight="49" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="49" height="49" source="cube.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="3" name="dot1" tilewidth="44" tileheight="44" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="44" height="44" source="dot1.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="4" name="dot2" tilewidth="44" tileheight="44" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="44" height="44" source="dot2.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="5" name="dot3" tilewidth="44" tileheight="44" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="44" height="44" source="dot3.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="6" name="dot4" tilewidth="44" tileheight="44" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="44" height="44" source="dot4.png"/>
+  </tile>
+ </tileset>
+ <imagelayer id="3" name="bg" locked="1">
+  <image source="map.png" trans="000000" width="739" height="737"/>
+ </imagelayer>
+ <objectgroup id="7" name="path1" opacity="0">
+  <object id="31" name="p1" gid="2" x="295" y="686" width="49" height="49"/>
+  <object id="32" name="p2" gid="2" x="294" y="637" width="49" height="49"/>
+  <object id="33" name="p3" gid="2" x="294" y="588" width="49" height="49"/>
+  <object id="34" name="p4" gid="2" x="294" y="539" width="49" height="49"/>
+  <object id="35" name="p5" gid="2" x="294" y="490" width="49" height="49"/>
+  <object id="36" name="p6" gid="2" x="245" y="441" width="49" height="49"/>
+  <object id="37" name="p7" gid="2" x="196" y="441" width="49" height="49"/>
+  <object id="38" name="p8" gid="2" x="147" y="441" width="49" height="49"/>
+  <object id="39" name="p9" gid="2" x="98" y="441" width="49" height="49"/>
+  <object id="40" name="p10" gid="2" x="49" y="441" width="49" height="49"/>
+  <object id="41" name="p11" gid="2" x="0" y="441" width="49" height="49"/>
+  <object id="42" name="p12" gid="2" x="0" y="392" width="49" height="49"/>
+  <object id="43" name="p13" gid="2" x="0" y="343" width="49" height="49"/>
+  <object id="44" name="p14" gid="2" x="49" y="343" width="49" height="49"/>
+  <object id="45" name="p15" gid="2" x="98" y="343" width="49" height="49"/>
+  <object id="46" name="p16" gid="2" x="147" y="343" width="49" height="49"/>
+  <object id="47" name="p17" gid="2" x="196" y="343" width="49" height="49"/>
+  <object id="48" name="p18" gid="2" x="245" y="343" width="49" height="49"/>
+  <object id="49" name="p19" gid="2" x="294" y="294" width="49" height="49"/>
+  <object id="50" name="p20" gid="2" x="294" y="245" width="49" height="49"/>
+  <object id="51" name="p21" gid="2" x="294" y="196" width="49" height="49"/>
+  <object id="52" name="p22" gid="2" x="294" y="147" width="49" height="49"/>
+  <object id="53" name="p23" gid="2" x="294" y="98" width="49" height="49"/>
+  <object id="54" name="p24" gid="2" x="294" y="49" width="49" height="49"/>
+  <object id="55" name="p25" gid="2" x="343" y="49" width="49" height="49"/>
+  <object id="56" name="p26" gid="2" x="392" y="49" width="49" height="49"/>
+  <object id="57" name="p27" gid="2" x="392" y="98" width="49" height="49"/>
+  <object id="58" name="p28" gid="2" x="392" y="147" width="49" height="49"/>
+  <object id="59" name="p29" gid="2" x="392" y="196" width="49" height="49"/>
+  <object id="60" name="p30" gid="2" x="392" y="245" width="49" height="49"/>
+  <object id="61" name="p31" gid="2" x="392" y="294" width="49" height="49"/>
+  <object id="62" name="p32" gid="2" x="441" y="343" width="49" height="49"/>
+  <object id="63" name="p33" gid="2" x="490" y="343" width="49" height="49"/>
+  <object id="64" name="p34" gid="2" x="539" y="343" width="49" height="49"/>
+  <object id="65" name="p35" gid="2" x="588" y="343" width="49" height="49"/>
+  <object id="66" name="p36" gid="2" x="637" y="343" width="49" height="49"/>
+  <object id="67" name="p37" gid="2" x="686" y="343" width="49" height="49"/>
+  <object id="68" name="p38" gid="2" x="686" y="392" width="49" height="49"/>
+  <object id="69" name="p39" gid="2" x="686" y="441" width="49" height="49"/>
+  <object id="70" name="p40" gid="2" x="637" y="441" width="49" height="49"/>
+  <object id="71" name="p41" gid="2" x="588" y="441" width="49" height="49"/>
+  <object id="72" name="p42" gid="2" x="539" y="441" width="49" height="49"/>
+  <object id="73" name="p43" gid="2" x="490" y="441" width="49" height="49"/>
+  <object id="74" name="p44" gid="2" x="441" y="441" width="49" height="49"/>
+  <object id="75" name="p45" gid="2" x="392" y="490" width="49" height="49"/>
+  <object id="76" name="p46" gid="2" x="392" y="539" width="49" height="49"/>
+  <object id="77" name="p47" gid="2" x="392" y="588" width="49" height="49"/>
+  <object id="78" name="p48" gid="2" x="392" y="637" width="49" height="49"/>
+  <object id="79" name="p49" gid="2" x="392" y="686" width="49" height="49"/>
+  <object id="80" name="p50" gid="2" x="392" y="735" width="49" height="49"/>
+  <object id="81" name="p51" gid="2" x="343" y="735" width="49" height="49"/>
+  <object id="82" name="p52" gid="2" x="343" y="686" width="49" height="49"/>
+  <object id="83" name="p53" gid="2" x="343" y="637" width="49" height="49"/>
+  <object id="84" name="p54" gid="2" x="343" y="588" width="49" height="49"/>
+  <object id="85" name="p55" gid="2" x="343" y="539" width="49" height="49"/>
+  <object id="86" name="p56" gid="2" x="343" y="490" width="49" height="49"/>
+  <object id="87" name="p57" gid="2" x="343" y="441" width="49" height="49"/>
+ </objectgroup>
+ <objectgroup id="8" name="chess">
+  <object id="92" name="chess0_0" gid="3" x="98" y="588" width="44" height="44"/>
+  <object id="93" name="chess0_1" gid="3" x="147" y="588" width="44" height="44"/>
+  <object id="94" name="chess0_2" gid="3" x="98" y="637" width="44" height="44"/>
+  <object id="95" name="chess0_3" gid="3" x="147" y="637" width="44" height="44"/>
+  <object id="97" name="chess1_0" gid="4" x="98" y="147" width="44" height="44"/>
+  <object id="98" name="chess1_1" gid="4" x="147" y="147" width="44" height="44"/>
+  <object id="99" name="chess1_2" gid="4" x="98" y="196" width="44" height="44"/>
+  <object id="100" name="chess1_3" gid="4" x="147" y="196" width="44" height="44"/>
+  <object id="101" name="chess2_0" gid="5" x="539" y="147" width="44" height="44"/>
+  <object id="102" name="chess2_1" gid="5" x="588" y="147" width="44" height="44"/>
+  <object id="103" name="chess2_2" gid="5" x="539" y="196" width="44" height="44"/>
+  <object id="104" name="chess2_3" gid="5" x="588" y="196" width="44" height="44"/>
+  <object id="105" name="chess3_0" gid="6" x="539" y="588" width="44" height="44"/>
+  <object id="106" name="chess3_1" gid="6" x="588" y="588" width="44" height="44"/>
+  <object id="107" name="chess3_2" gid="6" x="539" y="637" width="44" height="44"/>
+  <object id="108" name="chess3_3" gid="6" x="588" y="637" width="44" height="44"/>
+ </objectgroup>
+</map>

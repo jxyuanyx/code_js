@@ -1,0 +1,27 @@
+
+xuanzhong.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/40
+  rotate: true
+  xy: 2, 2
+  size: 242, 316
+  orig: 242, 316
+  offset: 0, 0
+  index: -1
+ic/40.5
+  rotate: false
+  xy: 320, 188
+  size: 266, 56
+  orig: 266, 56
+  offset: 0, 0
+  index: -1
+ic/图层 1306
+  rotate: false
+  xy: 320, 126
+  size: 58, 60
+  orig: 58, 60
+  offset: 0, 0
+  index: -1

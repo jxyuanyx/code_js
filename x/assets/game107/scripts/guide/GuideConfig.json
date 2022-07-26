@@ -1,0 +1,49 @@
+[
+    {
+        "id":1,
+        "desc":"点击第2列",
+        "findStr":"Canvas/guideZone",
+        "data":"Move cards by <color=#FFD141>clicking or dragging</color>.<br />The 7 \"Tableau Stacks\" take cards of alternating colors in descreasing order (K to A).'",
+        "delayTime":500,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":2
+    },
+    {
+        "id":2,
+        "desc":"点击第1列",
+        "findStr":"Canvas/guideZone",
+        "data":"Foundation stacks take cards of the same suit in increasing order (A to K)",
+        "delayTime":500,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":3
+    },
+    {
+        "id":3,
+        "desc":"点击第2列",
+        "findStr":"Canvas/guideZone",
+        "data":"Only kings may be placed on empty slots.",
+        "delayTime":500,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":4
+    },
+    {
+        "id":4,
+        "desc":"点击翻牌",
+        "findStr":"Canvas/auto_btn_getCard",
+        "delayTime":500,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":5
+    },
+    {
+        "id":5,
+        "desc":"点击随机牌区",
+        "findStr":"Canvas/dealCard3",
+        "delayTime":500,
+        "pass_mode":0,
+        "auto_next":false
+    }
+]

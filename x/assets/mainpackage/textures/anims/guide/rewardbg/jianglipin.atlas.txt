@@ -1,0 +1,90 @@
+
+jianglipin.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beiguang
+  rotate: false
+  xy: 494, 326
+  size: 290, 180
+  orig: 290, 180
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 2, 270
+  size: 490, 236
+  orig: 490, 236
+  offset: 0, 0
+  index: -1
+quan2
+  rotate: true
+  xy: 943, 351
+  size: 155, 38
+  orig: 155, 38
+  offset: 0, 0
+  index: -1
+quan3
+  rotate: false
+  xy: 457, 189
+  size: 257, 62
+  orig: 257, 62
+  offset: 0, 0
+  index: -1
+quan4
+  rotate: false
+  xy: 494, 253
+  size: 306, 71
+  orig: 306, 71
+  offset: 0, 0
+  index: -1
+quan5
+  rotate: false
+  xy: 2, 32
+  size: 344, 85
+  orig: 344, 85
+  offset: 0, 0
+  index: -1
+quan6
+  rotate: false
+  xy: 2, 119
+  size: 453, 149
+  orig: 453, 149
+  offset: 0, 0
+  index: -1
+xian1
+  rotate: true
+  xy: 716, 228
+  size: 23, 84
+  orig: 23, 84
+  offset: 0, 0
+  index: -1
+xian2
+  rotate: false
+  xy: 348, 34
+  size: 28, 83
+  orig: 28, 83
+  offset: 0, 0
+  index: -1
+xian3
+  rotate: true
+  xy: 2, 2
+  size: 28, 84
+  orig: 28, 84
+  offset: 0, 0
+  index: -1
+xian4
+  rotate: true
+  xy: 457, 159
+  size: 28, 83
+  orig: 28, 83
+  offset: 0, 0
+  index: -1
+yun
+  rotate: false
+  xy: 786, 350
+  size: 155, 156
+  orig: 157, 157
+  offset: 1, 0
+  index: -1

@@ -1,0 +1,52 @@
+{   
+    "connecting":"连接服务器中...",
+    "checkUpdate":"检查更新中...",
+    "findNewVersion":"发现新版本,更新中...",
+    "updating":"更新中...  %s",
+    "alreadyUpdate":"当前已经是最新版本了",
+    "downloading":"下载中...  %s",
+    "restartGame":"重启游戏中...",
+    "gameNotOpen":"游戏暂未开放",
+
+    "hall_bottom1":"Games",
+    "hall_bottom2":"Matchs",
+    "hall_bottom3":"Season",
+    "hall_bottom4":"Deposit",
+    "hall_bottom5":"Records",
+    
+    "matchList_title":"%s-%d Players",
+    "matchList_free":"FREE",
+    "matchSuccess":"匹配成功,开始倒计时",
+    "matchPlayerCount":"%d Players",
+    "machList_types":[
+        "门票赛",
+        "现金赛",
+        "锦标赛",
+        "全民锦标赛"
+    ],
+
+    "record_progress":"进行中",
+    "record_win":"You Win",
+    "record_lose":"你赢了",
+    "record_getRank":"您获得了第%s名",
+    "record_date":"时间:%s进入比赛",
+    "enterTitle":"入场:",
+    "totalPlayer":"总人数 %s",
+    "matching":"进行中",
+    "matchFinished":"已结算",
+    "playing":"游戏中",
+    "tip_matchPlaying":"比赛正在进行中",
+    "tip_yourRank":"你的排名为",
+    "date":"Date:%s",
+    "matchId":"MatchID:%s",
+
+    "secondsAgo":"%s分钟前",
+    "minutesAgo":"%s分钟前",
+    "hoursAgo":"%s小时前",
+    "daysAgo":"%s天前",
+    "doubleTip":"You can beat him in the next game!",
+    "multiPrizeTitle":"Ticket Game %s-%d Players",
+    "rules":"Rules",
+    "ruleContent":"Your ranking will be decided by your score after everyplayer completes the game.For players with the samefinal score,those who finish up earlier will rank higher",
+    "learnMore":"Lear More >>"
+}

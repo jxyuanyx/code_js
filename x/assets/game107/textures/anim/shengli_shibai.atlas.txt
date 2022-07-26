@@ -1,0 +1,146 @@
+
+shengli_shibai.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+i/arcaneMissiles_projectile_rings_aqua
+  rotate: false
+  xy: 879, 767
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+i/arcaneMissiles_projectile_rings_yellow
+  rotate: false
+  xy: 411, 429
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+i/guan_huang
+  rotate: false
+  xy: 654, 813
+  size: 223, 202
+  orig: 223, 202
+  offset: 0, 0
+  index: -1
+i/guan_huang/guan_huang_00001
+  rotate: true
+  xy: 864, 640
+  size: 125, 151
+  orig: 223, 202
+  offset: 0, 1
+  index: -1
+i/guan_huang/guan_huang_00002
+  rotate: true
+  xy: 701, 479
+  size: 152, 153
+  orig: 223, 202
+  offset: 0, 0
+  index: -1
+i/guan_huang/guan_huang_00003
+  rotate: true
+  xy: 701, 633
+  size: 178, 161
+  orig: 223, 202
+  offset: 0, 0
+  index: -1
+i/guan_huang/guan_huang_00004
+  rotate: false
+  xy: 380, 559
+  size: 188, 194
+  orig: 223, 202
+  offset: 2, 0
+  index: -1
+i/guan_huang/guan_huang_00005
+  rotate: false
+  xy: 2, 345
+  size: 191, 199
+  orig: 223, 202
+  offset: 11, 1
+  index: -1
+i/guan_huang/guan_huang_00006
+  rotate: false
+  xy: 195, 346
+  size: 160, 198
+  orig: 223, 202
+  offset: 51, 4
+  index: -1
+i/guan_huang/guan_huang_00007
+  rotate: true
+  xy: 2, 2
+  size: 138, 194
+  orig: 223, 202
+  offset: 82, 8
+  index: -1
+i/guan_huang/guan_huang_00008
+  rotate: false
+  xy: 570, 572
+  size: 129, 181
+  orig: 223, 202
+  offset: 93, 20
+  index: -1
+i/guan_huang/guan_huang_00009
+  rotate: true
+  xy: 879, 897
+  size: 118, 143
+  orig: 223, 202
+  offset: 105, 56
+  index: -1
+i/guan_huang/guan_huang_00010
+  rotate: false
+  xy: 357, 357
+  size: 55, 55
+  orig: 223, 202
+  offset: 167, 94
+  index: -1
+i/guan_lan
+  rotate: true
+  xy: 2, 142
+  size: 201, 179
+  orig: 201, 179
+  offset: 0, 0
+  index: -1
+i/guang_huang
+  rotate: false
+  xy: 2, 546
+  size: 376, 207
+  orig: 380, 207
+  offset: 0, 0
+  index: -1
+i/tiao_huang
+  rotate: false
+  xy: 2, 886
+  size: 650, 129
+  orig: 650, 129
+  offset: 0, 0
+  index: -1
+i/tiao_lan
+  rotate: false
+  xy: 2, 755
+  size: 650, 129
+  orig: 650, 129
+  offset: 0, 0
+  index: -1
+i/xing1
+  rotate: false
+  xy: 595, 490
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+i/zi_huang
+  rotate: true
+  xy: 541, 445
+  size: 112, 52
+  orig: 112, 52
+  offset: 0, 0
+  index: -1
+i/zihuang
+  rotate: true
+  xy: 357, 414
+  size: 130, 52
+  orig: 130, 52
+  offset: 0, 0
+  index: -1

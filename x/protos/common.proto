@@ -1,0 +1,266 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "../../pb";
+
+enum ErrNo {
+    SUCCESS         = 0;   // 成功
+    Server_Except   = 1;  // 服务器异常;server except
+    TokenError      = 2; // token错误;token error
+    TokenExpire     = 3; // token已过期;token expired
+    Account_NotExists = 4; // 账户不存在或密码错误;account not exists or password error
+    Duplicate_Login = 5; // 重复登录;duplicate login
+    
+    Server_Maintain = 8; // 服务器维护;server maintaining
+
+    NickName_Exists     = 10; // 昵称已存在;nick name already exists
+    NickName_TooShort   = 11; // 昵称太短;nick name too short
+    NickName_TooLong    = 12; // 昵称太长;nick name too long
+    Password_TooShort   = 13; // 密码太短;password too short
+    Password_TooLong    = 14; // 密码太长;password too long
+    AccountBind         = 15; // 账号已绑定;account bound Already
+
+    Charge_Fail         = 20; // 拉取订单失败;charge fail
+    Lower_Age           = 21; // 充值年龄不足;not old enough
+    Cash_NotEnough      = 22; // 提现金额不足;cash not enough 
+    Withdrawing         = 23; // 已在提现中，不能提现;withdraw in progress
+    WithDrawNeedRecharge = 24; // 低于提现门槛;need recharge
+    WithDrawTimes = 25; // 每日提现次数上限;draw times
+
+
+    RequestParam_Error = 50; // 请求参数错误;required param error
+    Server_ConfigError = 51; // 服务器配置信息错误;server configure error
+    Reward_IDNotExists = 52; // 奖励ID不存在;reward id not found
+    Reward_AlreadyGet = 53; // 该奖励已经领取;that reward already get
+    Reward_ConditionUnCompelete = 54; // 奖励条件未达成;reward condition uncompelete
+
+    SeasonWheel_NotExists = 55; // 奖券不存在;season lottery ticket not exist
+    SeasonWheel_Expire = 56; // 奖券已过期;season lottery ticket alearay expired
+
+    ReplayRecord_NotExist = 60; // 回放记录不存在;replay record not exist
+
+
+    // 游戏相关错误码从100开始
+    CompetitionID_NotExists     = 100; // 比赛ID不存在;match id not found
+
+    Competition_Over            = 101; // 比赛已结束;compete already over
+    Competition_PriceNotEnough  = 102; // 入场费不足;Insufficient entry fee
+    Competition_Matching        = 103; // 已经在匹配队列中;already in match queue
+    Competition_Gaming          = 104; // 已经在比赛中;already in game
+    Competition_OtherGame       = 105; // 已经在其他游戏中;in other game
+    Competition_NotFound        = 106; // 比赛未找到， 比赛ID错误或者游戏已结束;match not found or compete already over
+    Competition_NotInCmp        = 107; // 不在比赛中;not in game
+    Competition_GameOver        = 108; // 个人副本游戏已结束;gameover
+    Competition_Pause           = 109; // 游戏已暂停;game pause
+    Competition_ParamError      = 110; // 请求参数错误;game required param error
+    MatchID_NotExist            = 111; // 匹配ID不存在;match id not found
+    Match_Timeout               = 112; // 匹配超时;match timeout
+    Competition_AuthFail        = 113; // 比赛结果不合法;match result auth fail
+    Competition_Busy            = 114; // 比赛繁忙;competition busy
+    Competition_Timeout          = 115; // 比赛超时;Submission of score timed out
+    Match_Hide = 116;// 比赛已经关闭;match is close
+
+    HTTP_SUCCESS = 200; // Web使用
+
+    // 活动
+    ActivityInvalid = 201; // 不在活动时间;activity invalid
+    ActivityDraw = 202; // 活动奖励已领取;activity reward draw
+    ActivityNotFinished = 203; // 活动未完成;activity not finished
+    DiamondNotEnough = 204; // 钻石不足;gems not enough
+}
+
+// Ping消息
+message Ping {
+
+}
+
+// Pong消息
+message Pong {
+
+}
+
+// 用户数据
+message UserData {
+    uint32 Uid = 1; // uid
+    string Nick = 2; // 昵称
+    string Avatar = 3; // 头像
+    int64 Cash = 4; // 现金
+    int64 BindCash = 5; // 绑定现金
+    int64 Tickets = 6; // 门票
+    int32 Sex = 7; // 性别，0保密， 1男， 2女
+    string AreaCode = 8; // 区域编号
+    string Signature = 9; //签名
+    int64 Birth = 10; // 生日
+    int32 Dan = 11; // 段位
+}
+
+message PlayerGameInfo {
+    string GameName = 1;
+    string NodeId = 2;
+    uint32 CmpID = 3;
+    string Uuid = 4;
+    uint32 Status = 5; // 状态，1是匹配中，2是匹配成功等待进入游戏，3是游戏中
+    uint32 MatchID = 6; // 比赛id
+    int64 ActiveTime = 7; // 自己比赛开始时间
+}
+
+// 比赛类型
+enum CompetitionType {
+    Competition_None = 0; // 无效
+    Competition_Match = 1; // 匹配赛
+    Competition_Tournament = 2; // 锦标赛
+    Competition_MAX = 3; // 最大类型， 检查边界使用
+}
+
+// 客户端比赛类型
+enum ClientCompetitionType {
+    CliCmp_Ticket = 0;
+    CliCmp_Cash = 1;
+    CliCmp_Tournament = 2;
+    CliCmp_AllTournament = 3;
+    CliCmp_MAX = 4;
+}
+
+
+/*
+ghostim:
+0.免费
+1.门票
+2.现金
+3.绑定现金
+4.奖券 废弃
+5.赛季分
+6.奖券LV1
+7.奖券LV2
+8.奖券LV3
+9.奖券LV4
+10.钻石
+*/
+enum CurrencyType {
+   Currency_Free = 0;
+   Currency_Ticket = 1;
+   Currency_Cash = 2;
+   Currency_BindCash = 3;
+   Currency_Lottery = 4; // 奖券
+   Currency_SeasonScore = 5;
+   Currency_Lottery1 = 6;
+   Currency_Lottery2 = 7;
+   Currency_Lottery3 = 8;
+   Currency_Lottery4 = 9;
+   Currency_Diamond = 10; // 钻石
+
+   Currency_MAX = 11;
+}
+
+enum MatchStatus {
+    Status_Matching = 0; // 匹配中
+    Status_Finished = 1; // 匹配完成
+}
+
+enum GameStatus {
+    Status_Gaming = 0; // 游戏中
+    Status_Pause = 1;  // 暂停
+    Status_Over = 2;  // 已结束游戏
+}
+
+// 游戏结束原因
+enum GameOverReason {
+    Reason_Auto     = 0; // 自动结束
+    Reason_Timeout  = 1; // 超时结束
+    Reason_Force    = 2; // 强制结束
+    Reason_CmpOver  = 3; // 比赛超时结束
+    Reason_AllFinish = 4; // 所有人完成游戏
+    Reason_Dead = 5; // 游戏失败
+}
+
+// 货币变化事件
+enum CurrencyUpdateEvent {
+    Event_Deposit = 0; // 充值
+    Event_Withdraw=1; // 提现
+    Event_Exchange = 2; // 兑换
+
+    Event_MatchEntry = 3;    // 比赛门票费
+    Event_MatchReward = 4;  // 比赛奖励
+    Event_AchievementReward= 5; // 成就奖励
+    Event_SeasonReward= 6; // 赛季奖励
+    Event_DanReward= 7; // 段位奖励
+    Event_QuestReward= 8; // 任务奖励
+    Event_SeasonWheel= 9; // 赛季转盘
+    Event_WithdrawFail= 10; // 提现失败退款
+
+    // 活动
+    Event_ActivityLogin = 11; // 登录活动
+    Event_ActivityRecharge = 12; // 充值活动
+    Event_ActivityCard = 13; // 翻牌活动
+
+    Event_MatchBack = 14; // 门票退回
+
+    Event_Recharge_First = 15;
+
+    Event_GM= 100; //后台添加
+}
+
+enum RedPointModule {
+    RedPoint_Achievement = 0; // 成就
+    RedPoint_Season_Dan = 1; // 赛季段位
+    RedPoint_Season_Quest = 2; // 赛季任务
+    RedPoint_Season_Wheel = 3; // 赛季转盘
+    RedPoint_Message = 4; // 消息
+    RedPoint_Record = 5; // 对战记录
+}
+
+message CurrencyPair {
+    CurrencyType type = 1;
+    int64 value = 2;
+}
+
+
+
+message ErrorMessageNotify{
+    ErrNo err = 1;
+}
+
+
+// 玩家货币变化通知
+message PlayerCurrencyChangeNotify {
+    repeated CurrencyPair list = 1;
+    CurrencyUpdateEvent event = 2; // 事件
+}
+
+message PrizePoolUpdateNotify {
+    int64 PrizePool = 1;
+}
+
+
+message SeasonRewardGetReq {
+    uint32 QuestID = 1;
+}
+
+message SeasonRewardGetResp {
+    ErrNo err = 1;
+    CurrencyPair reward = 2;
+}
+
+message DuplicateLoginResp {
+    ErrNo Err = 1;
+    string Message = 2;
+}
+
+// 掉落奖券通知
+message DrawLotteryNotify {
+    CurrencyType LotteryType = 1; // 奖券类型
+    int32 LotteryLevel = 2; // 奖券等级
+}
+
+// 顶部弹窗推送
+message HeadPush {
+    string Title = 1;
+    string Content = 2;
+    int64 Amount = 3;
+    int64 Time = 4;
+}
+
+message DanRefresh {
+   int32 Dan = 1;
+}

@@ -1,0 +1,153 @@
+
+jiesuan2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+00
+  rotate: false
+  xy: 201, 109
+  size: 73, 145
+  orig: 73, 145
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 372, 178
+  size: 87, 76
+  orig: 87, 76
+  offset: 0, 0
+  index: -1
+11
+  rotate: false
+  xy: 273, 12
+  size: 20, 29
+  orig: 20, 29
+  offset: 0, 0
+  index: -1
+12
+  rotate: false
+  xy: 353, 142
+  size: 20, 29
+  orig: 20, 29
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 68
+  size: 197, 186
+  orig: 197, 186
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 276, 173
+  size: 94, 81
+  orig: 94, 81
+  offset: 0, 0
+  index: -1
+saoguang1/3_00000
+  rotate: false
+  xy: 251, 10
+  size: 20, 30
+  orig: 300, 300
+  offset: 54, 132
+  index: -1
+saoguang1/3_00001
+  rotate: false
+  xy: 308, 57
+  size: 27, 46
+  orig: 300, 300
+  offset: 52, 132
+  index: -1
+saoguang1/3_00002
+  rotate: false
+  xy: 272, 43
+  size: 34, 60
+  orig: 300, 300
+  offset: 52, 132
+  index: -1
+saoguang1/3_00003
+  rotate: false
+  xy: 461, 181
+  size: 44, 73
+  orig: 300, 300
+  offset: 52, 132
+  index: -1
+saoguang1/3_00004
+  rotate: true
+  xy: 2, 11
+  size: 55, 78
+  orig: 300, 300
+  offset: 52, 139
+  index: -1
+saoguang1/3_00005
+  rotate: true
+  xy: 276, 105
+  size: 66, 75
+  orig: 300, 300
+  offset: 52, 155
+  index: -1
+saoguang1/3_00006
+  rotate: true
+  xy: 201, 42
+  size: 65, 69
+  orig: 300, 300
+  offset: 54, 169
+  index: -1
+saoguang1/3_00007
+  rotate: false
+  xy: 82, 10
+  size: 59, 56
+  orig: 300, 300
+  offset: 60, 182
+  index: -1
+saoguang1/3_00008
+  rotate: false
+  xy: 143, 23
+  size: 47, 43
+  orig: 300, 300
+  offset: 72, 195
+  index: -1
+saoguang1/3_00009
+  rotate: true
+  xy: 192, 2
+  size: 38, 32
+  orig: 300, 300
+  offset: 81, 206
+  index: -1
+xiaoshan1
+  rotate: true
+  xy: 143, 10
+  size: 11, 14
+  orig: 11, 14
+  offset: 0, 0
+  index: -1
+xiaoshan2
+  rotate: false
+  xy: 337, 85
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+xiaoshan3
+  rotate: true
+  xy: 353, 115
+  size: 25, 24
+  orig: 25, 24
+  offset: 0, 0
+  index: -1
+xiaoshan4
+  rotate: false
+  xy: 226, 10
+  size: 23, 30
+  orig: 23, 30
+  offset: 0, 0
+  index: -1
+xiaoshan5
+  rotate: false
+  xy: 353, 96
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1

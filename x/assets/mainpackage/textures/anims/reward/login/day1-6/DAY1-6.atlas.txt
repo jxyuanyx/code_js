@@ -1,0 +1,97 @@
+
+DAY1-6.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dia
+  rotate: false
+  xy: 198, 31
+  size: 182, 222
+  orig: 182, 222
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 382, 59
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 820, 247
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 382, 51
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: false
+  xy: 382, 84
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 794, 229
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+saoguang
+  rotate: true
+  xy: 382, 110
+  size: 143, 232
+  orig: 143, 232
+  offset: 0, 0
+  index: -1
+waiguang
+  rotate: false
+  xy: 2, 17
+  size: 194, 236
+  orig: 194, 236
+  offset: 0, 0
+  index: -1
+yuan1
+  rotate: false
+  xy: 198, 20
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+yuan2
+  rotate: false
+  xy: 2, 2
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+yuan3
+  rotate: false
+  xy: 794, 214
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+yuan4
+  rotate: false
+  xy: 408, 92
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+zhuanquanguang
+  rotate: true
+  xy: 616, 80
+  size: 173, 176
+  orig: 173, 176
+  offset: 0, 0
+  index: -1

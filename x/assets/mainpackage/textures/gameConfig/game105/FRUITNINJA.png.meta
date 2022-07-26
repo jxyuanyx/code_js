@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "0048673b-5597-4d50-8377-6e1fe1604b34",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "FRUITNINJA": {
+      "ver": "1.0.4",
+      "uuid": "54a0c980-c904-416a-87a0-bea9a10cdc5e",
+      "rawTextureUuid": "0048673b-5597-4d50-8377-6e1fe1604b34",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 508,
+      "height": 508,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

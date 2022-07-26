@@ -1,0 +1,1 @@
+./uploadFiles.sh 120.78.143.78 root Esport2021!  ../hotpackages/2.6.0/test/* /data/hot/cocos

@@ -1,0 +1,7 @@
+将此py文件放入包含plist文件夹下 打开当前目录 命令行  输入以下指令：
+
+命令行： python unpack_plist.py  plist文件名称 
+
+例子： python unpack_plist.py  common      ## plist文件全名为 common.plist
+
+https://blog.csdn.net/wiyun_beijing/article/details/45219333 文档地址

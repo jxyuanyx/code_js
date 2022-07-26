@@ -1,1 +1,0 @@
-call zz_oco_com.bat %~n0

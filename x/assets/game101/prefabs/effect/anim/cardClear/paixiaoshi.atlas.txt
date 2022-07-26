@@ -1,0 +1,20 @@
+
+paixiaoshi.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/chang1
+  rotate: false
+  xy: 2, 63
+  size: 615, 60
+  orig: 615, 60
+  offset: 0, 0
+  index: -1
+ic/chang2
+  rotate: false
+  xy: 619, 2
+  size: 343, 121
+  orig: 343, 121
+  offset: 0, 0
+  index: -1

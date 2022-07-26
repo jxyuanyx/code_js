@@ -1,0 +1,1 @@
+scp -r ../hotpackages/2.4.2 root@149.129.128.184:/root/nginx/upload

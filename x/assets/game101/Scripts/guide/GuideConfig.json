@@ -1,0 +1,88 @@
+[
+    {
+        "id":1,
+        "desc":"指引位置：列4",
+        "findStr":"Canvas/guigroup3",
+        "data":"<color=#9CFFCB>Tap a column to add a card.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":2
+    },
+    {
+        "id":2,
+        "desc":"指引位置：列2",
+        "findStr":"Canvas/guigroup1",
+        "data":"<color=#9CFFCB>Clear stacks by reaching<br /> 21 points in a column.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":3
+    },
+    {
+        "id":3,
+        "desc":"指引位置：暂存位",
+        "findStr":"Canvas/guideZone2",
+        "data":"<color=#9CFFCB>Card can be holded for <br />later use with limit times.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":4
+    },
+    {
+        "id":4,
+        "desc":"指引位置：列3",
+        "findStr":"Canvas/guigroup2",
+        "data":"<color=#9CFFCB>Combine 21,5 cards bonuses<br /> for more points.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":5
+    },
+    {
+        "id":5,
+        "desc":"指引位置：列4",
+        "findStr":"Canvas/guigroup3",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":6
+    },
+    {
+        "id":6,
+        "desc":"指引位置：暂存位",
+        "findStr":"Canvas/guideZone2",
+        "data":"<color=#9CFFCB>It's time to use the hold card.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":7
+    },
+    {
+        "id":7,
+        "desc":"指引位置：列4",
+        "findStr":"Canvas/guigroup3",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":8
+    },
+    {
+        "id":8,
+        "desc":"指引位置：列1",
+        "findStr":"Canvas/guigroup0",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":true,
+        "next_id":9
+    },
+    {
+        "id":9,
+        "desc":"指引位置：列1",
+        "findStr":"Canvas/guigroup0",
+        "data":"<color=#9CFFCB>Black Jacks are wild.</color>",
+        "delayTime":200,
+        "pass_mode":0,
+        "auto_next":false
+    }
+]

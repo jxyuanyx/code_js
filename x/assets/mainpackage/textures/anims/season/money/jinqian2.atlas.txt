@@ -1,0 +1,20 @@
+
+jinqian2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 221, 129
+  size: 143, 90
+  orig: 143, 90
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 2, 2
+  size: 217, 217
+  orig: 217, 217
+  offset: 0, 0
+  index: -1

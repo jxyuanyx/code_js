@@ -1,0 +1,83 @@
+
+BINGO.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 453, 41
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 475, 37
+  size: 135, 131
+  orig: 135, 131
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 292, 5
+  size: 16, 27
+  orig: 16, 27
+  offset: 0, 0
+  index: -1
+3
+  rotate: true
+  xy: 412, 24
+  size: 31, 39
+  orig: 31, 39
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 740, 42
+  size: 77, 86
+  orig: 77, 86
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 740, 130
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 612, 42
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 292, 57
+  size: 181, 183
+  orig: 181, 183
+  offset: 0, 0
+  index: -1
+8
+  rotate: true
+  xy: 2, 2
+  size: 238, 288
+  orig: 238, 288
+  offset: 0, 0
+  index: -1
+di
+  rotate: false
+  xy: 475, 170
+  size: 239, 70
+  orig: 239, 70
+  offset: 0, 0
+  index: -1
+zi1
+  rotate: false
+  xy: 292, 23
+  size: 118, 32
+  orig: 118, 32
+  offset: 0, 0
+  index: -1

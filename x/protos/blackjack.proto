@@ -1,0 +1,153 @@
+syntax = "proto3";
+package pb;
+
+import "common.proto";
+
+option go_package = "../../pb";
+
+// 21点游戏协议
+
+// 操作请求，根据发送的操作id走相应的逻辑
+message Blitz21OpReq {
+    uint32 RoomID = 1;
+    oneof op {
+        Blitz21CompetitionDataReq op_data = 2;
+        Blitz21Op_C2PReq op_C2P = 3; // 将当前牌移动到上方队列
+        Blitz21Op_C2HReq op_C2H = 4; // 将当前牌移动到暂存区
+        Blitz21Op_H2CReq op_H2C = 5; // 将暂存区的牌移动到当前牌
+        Blitz21Op_UndoReq op_Undo = 6; // 撤销
+        Blitz21Op_FinishReq op_Finish = 7; // 完成
+        Blitz21Op_PauseReq op_Pause = 8;// 暂停
+        Blitz21Op_RecoverReq op_Recover = 9;// 恢复游戏
+    }
+}
+
+message Blitz21OnePile {
+    repeated int32 Cards = 1;
+}
+
+message Blitz21Carddesk {
+    int32 CardsLen = 1;
+    int32 CurrentCard = 2;
+    int32 HoldCard = 3;
+    repeated Blitz21OnePile PileCards = 4;
+    int32 Bombs = 5;
+    int32 HoldCounts = 6;
+    int32 CurrentScore = 7;
+    repeated int32 Cards = 8;
+}
+
+// 请求牌桌状态
+message Blitz21CompetitionDataReq {
+
+}
+
+// 返回牌桌状态
+message Blitz21CompetitionDataResp {
+    ErrNo Err = 1;
+    Blitz21Carddesk CardDesk = 2; // 牌桌
+    GameStatus Status = 3; // 游戏状态，0游戏进行中，1暂停
+    int32 LeftTime = 4; // 游戏剩余时间
+    bool CanUndo = 5;   // 是否可撤销
+}
+
+// 当前牌放入上方牌堆，index可以为0,1,2,3
+message Blitz21Op_C2PReq {
+    int32 Index = 1;
+}
+
+enum ClearType {
+    Bomb            = 0;    // 爆牌
+    UnClear         = 1;    // 未产生清除
+    FinishPoint     = 2;    // 达成21点
+    FiveDragon      = 3;    // 五小龙
+    BlackJack       = 4;    // 黑杰克
+}
+
+enum FinishBonusType {
+    NoBomb = 0;
+    AllClear = 1;
+}
+
+message Blitz21Op_C2PResp {
+    ErrNo Err = 1;
+    int32 CurrentScore = 2; // 当前分
+    int32 NextCard = 3; // 下一张牌
+    repeated int32 ClearType = 4; // 清除类型
+    int32 ClearScore = 5; // 消除得分
+    int32 HitCounts = 6; // 连击次数
+    int32 HitScore = 7; // 连击得分
+    repeated int32 ClearTypeScore = 8; // 清除得分
+}
+
+// 当前牌放入暂存区
+message Blitz21Op_C2HReq {
+
+}
+
+message Blitz21Op_C2HResp {
+    ErrNo Err = 1;
+    int32 NextCard = 2; // 下一张牌
+    int32 HoldCounts = 3; // 剩余暂存次数
+}
+
+// 暂存区放入当前牌
+message Blitz21Op_H2CReq {
+
+}
+
+message Blitz21Op_H2CResp {
+    ErrNo Err = 1;
+}
+
+// 撤回操作
+message Blitz21Op_UndoReq {
+
+}
+
+message Blitz21Op_UndoResp {
+    ErrNo Err = 1;
+    Blitz21Carddesk CardDesk = 2; // 牌桌
+}
+
+// 结束比赛
+message Blitz21Op_FinishReq {
+
+}
+
+// 结算奖励
+message Blitz21Reward {
+    int32 Score = 1; // 积分
+    int32 TimeScore = 2; // 时间积分
+}
+
+
+
+message Blitz21Op_FinishResp {
+    ErrNo Err = 1;
+    GameOverReason reason = 2; // 游戏结束原因
+    Blitz21Reward reward = 3;
+    int32 LiftBestScore = 4; // 生涯最佳积分
+    int32 TodayBestScore = 5; // 今日最佳积分
+    repeated FinishBonusType BonusType = 6; // 结束奖励类型
+    repeated int32 FinishBonusScore = 7; // 结束奖励分值
+}
+
+// 暂停比赛
+message Blitz21Op_PauseReq {
+
+}
+
+message Blitz21Op_PauseResp {
+    ErrNo Err = 1;
+}
+
+// 恢复比赛
+message Blitz21Op_RecoverReq {
+
+}
+
+message Blitz21Op_RecoverResp {
+    ErrNo Err = 1;
+    int32 LeftTime = 2; // 剩余时间
+}

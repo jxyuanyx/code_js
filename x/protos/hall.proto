@@ -1,0 +1,248 @@
+syntax = "proto3";
+package core;
+
+option java_package = "com.rummy.dada.service";
+option java_outer_classname = "RummyNet";
+
+message SafeShell{
+  int32 uid = 1;
+  string token = 2;
+  int32 random = 3;
+  int64 time = 4;
+  int32 time_zone = 5;
+  int32 version = 6;
+  string channel = 7;
+  bytes body = 8;
+  int32 desk_id = 9;
+  int32 room_id = 10;
+}
+
+// 心跳 cmd=7
+message UserHeartBeatReq {
+}
+
+message UserHeartBeatRsp{
+}
+
+// 网关登录 cmd=8
+message UserLoginGateWayReq {
+}
+
+message UserLoginGateWayRsp{
+    int64 gold = 1;         // 金币
+    int64 gold_deposit = 2;        // 绑定金币
+    int64 ticket = 3;       // 门票
+    EvtMatchNotify match_info = 4;  // 匹配信息
+}
+
+// 多开
+message MultiShell{
+  int32 cmd = 1;
+  bytes body = 2;
+  int32 desk_id = 3;
+  int32 room_id = 4;
+
+}
+
+// 用户异地登录 110
+message EvtUserLoginElsewhere {
+}
+
+// 用户财产变化通知 CMD 111
+message EvtUserPropChange {
+    int32 prop_type = 1;        // 类型  1 门票 2 金币
+    int64 amount = 2;           // 变化的数值
+    int64 value = 3;            // 当前剩余值
+    string reason = 4;          // 原因
+}
+
+
+enum RedPointModule {
+    RED_POINT_ACHIEVEMENT = 0;      // 成就
+    RED_POINT_SEASON_RANK = 1;      // 赛季段位
+    RED_POINT_SEASON_TASK = 2;      // 赛季任务
+    RED_POINT_SEASON_WHEEL = 3;     // 赛季转盘
+    RED_POINT_SYS_MESSAGE = 4;      // 系统消息
+    RED_POINT_ANNOUNCEMENT = 5;     // 公告
+    RED_POINT_RECORD = 6;           // 对战记录
+    RED_POINT_NEW_PLAYER_TASK = 7;  // 新手任务
+}
+
+// 通知客户端拉取红点 CMD 112
+message RedPointUpdate {
+    RedPointModule module = 1;      // 模块
+    int32 count = 2;                // 数量
+}
+
+
+// 掉落奖券通知 CMD 114
+message EvtDropLottery {
+    int32 lv = 1;           // 奖券等级
+    int32 value = 2;        // 掉落数量
+}
+
+
+// 财产类型
+enum PropType
+{
+    PROP_TYPE_FREE = 0;             // 免费
+    PROP_TYPE_TICKET = 1;          // 门票
+    PROP_TYPE_CASH = 2;            // 现金
+    PROP_TYPE_BIND_CASH = 3;       // 绑定现金
+    PROP_TYPE_SEASON_SCORE = 5;    // 赛季分
+    PROP_TYPE_LOTTERY_LV1 = 6;     // 奖券1
+    PROP_TYPE_LOTTERY_LV2 = 7;     // 奖券2
+    PROP_TYPE_LOTTERY_LV3 = 8;     // 奖券3
+    PROP_TYPE_LOTTERY_LV4 = 9;     // 奖券4
+    PROP_TYPE_DIAMOND = 10;     // 钻石
+}
+
+// 比赛播报 CMD 115
+message CompetitionBroadcast {
+    string nick = 1;            // 用户昵称
+    string avatar = 2;          // 用户头像
+    string game_name = 3;       // 比赛类型名称
+    string match_name = 4;      // 比赛名称
+    int64 time = 5;             // 时间
+
+    message GameReward {
+        PropType prop_type = 1;
+        int64 amount = 2;
+    }
+    repeated GameReward rewards = 6;    // 奖励
+    string area_code = 7;               // 国家代码
+    int32 room_type = 8;                // 比赛类型
+}
+
+
+// 跑马灯 CMD 116
+message EvtMarqueeBroadcast{
+    string content = 1;                        // 文本内容
+    int32 priority = 2;                        // 优先级 数字越大优先级越高 默认0
+}
+
+// 充值活动 CMD 117
+message ActivityRechargeReceive {
+    message ActivityRechargeReward {
+        PropType prop_type = 1;     // 奖励类型
+        int64 amount = 2;           // 奖励数量
+    }
+    repeated ActivityRechargeReward rewards = 1; // 奖励
+    int64 activity_id = 3;      // 活动id
+    int64 time = 4;             // 到账时间
+}
+
+// 充值奖励到账通知 CMD 118
+message RechargeRewardNotify {
+    PropType prop_type = 1;     // 奖励类型
+    int64 amount = 2;           // 奖励数量
+    int64 time = 3;             // 到账时间
+}
+
+// 段位提升 CMD 120
+message UserRankUP{
+    int32 rank = 1;             // 当前的段位
+    int32 ratio = 2;            // 超过的人数比例
+    int32 before_rank = 3;      // 之前的段位
+}
+
+// 封号推送 500
+message EvtUserAccountBand {
+}
+
+
+
+// =============================竞技项目Proto================================== //
+// 竞技的CMD从 10000 开始 不去修改以前的CMD
+// bingo加入匹配
+// CMD_BINGO_MATCH = 10001
+message JoinMatchReq {
+    int32 room_id = 1;
+    int32 desk_id = 2;
+    int32 retry_num = 3;        // 服务器内部使用客户端忽略
+    int32 new_player_match = 4; // 服务器内部使用客户端忽略
+}
+message JoinMatchRsp {
+}
+
+// bingo取消匹配
+// CMD_BINGO_MATCH_CANCEL = 10002
+message CancelMatchReq {
+}
+message CancelMatchRsp {
+}
+// bingo提交分数
+// CMD_BINGO_SUBMIT_SCORE = 10003
+message FinishGameReq {
+    int32 score = 1;            // 分数
+    string steps = 2;       // 步骤
+    string check_code = 3;  // 校验码
+    string score_steps = 4; // 分数变动过程码
+    int32 time = 5;         // 游戏时间
+}
+
+message FinishGameRsp {
+}
+// 匹配状态通知
+// CMD_EVT_MATCH_NOTIFY = 11000
+
+// 匹配状态
+enum MatchStatus {
+    STATUS_MATCHING = 0; // 匹配中
+    STATUS_FINISHED = 1; // 匹配完成
+}
+
+// 匹配玩家数据
+message MatchPlayerData {
+    int32 uid = 1;          // 玩家id
+    string nick = 2;        // 玩家昵称
+    string avatar = 3;      // 玩家头像
+    string area_code = 4;          // 国家代码(展示国旗使用)
+}
+// 比赛信息
+message GameMatchInfo {
+    repeated MatchPlayerData list = 1;
+    int32 left_time = 2; // 游戏剩余时间
+    int32 today_best_score = 3;
+    int32 life_best_score = 4;
+    string token = 5;
+    int64 total_score = 6; // 总分
+    int64 total_round = 7; // 总局数
+}
+
+message Cards{
+    repeated uint32 card = 1;
+}
+
+// 游戏通用初始化信息
+message CommonGameInitInfo{
+    uint32 random_seed = 1; // 随机种子
+    uint32 difficulty = 2; // 难度
+    Cards RandAreaCards = 3;                // 纸牌的随机牌
+    repeated Cards PileAreaCards = 4;       // 下面的7堆牌
+}
+
+// 比赛通知
+message EvtMatchNotify {
+    MatchStatus match_status = 1;       // 匹配状态
+    string uuid = 2;                    // 比赛id
+    int32 room_type = 3;                // 玩法类型
+    GameMatchInfo match_info = 4;       // 比赛信息
+    CommonGameInitInfo game_init = 5;   // 游戏初始化信息
+    int64 desk_id = 6;
+    int64 room_id = 7;
+    int32 front_match_type = 8;         // 客户端比赛类型, 4是赛事
+    int64 end_time = 9;                 // 结束时间，赛事使用
+    int32 match_entry_type = 10;        // 报名费类型
+    int64 match_entry_value = 11;       // 报名费
+}
+
+// 结算通知
+// CMD_EVT_GAME_SETTLE = 11001
+message EvtGameSettle {
+
+}
+
+
+// =============================竞技项目END================================== //
+

@@ -1,0 +1,300 @@
+
+LUDO.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 831, 52
+  size: 83, 85
+  orig: 83, 85
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 545, 11
+  size: 64, 68
+  orig: 64, 68
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 370, 2
+  size: 64, 73
+  orig: 64, 73
+  offset: 0, 0
+  index: -1
+LUDO/LUDO_00000
+  rotate: false
+  xy: 440, 196
+  size: 108, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00001
+  rotate: false
+  xy: 660, 197
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00002
+  rotate: false
+  xy: 770, 197
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00003
+  rotate: false
+  xy: 880, 197
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00004
+  rotate: false
+  xy: 290, 153
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00005
+  rotate: false
+  xy: 285, 94
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00006
+  rotate: false
+  xy: 150, 38
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00007
+  rotate: false
+  xy: 260, 35
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00008
+  rotate: false
+  xy: 400, 137
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00009
+  rotate: false
+  xy: 510, 137
+  size: 108, 57
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00010
+  rotate: false
+  xy: 2, 17
+  size: 108, 59
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00011
+  rotate: false
+  xy: 395, 77
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00012
+  rotate: false
+  xy: 504, 77
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00013
+  rotate: false
+  xy: 436, 17
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00014
+  rotate: false
+  xy: 660, 137
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00015
+  rotate: false
+  xy: 769, 137
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00016
+  rotate: false
+  xy: 878, 137
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00017
+  rotate: false
+  xy: 613, 77
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00018
+  rotate: false
+  xy: 722, 77
+  size: 107, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+LUDO/LUDO_00019
+  rotate: false
+  xy: 550, 196
+  size: 108, 58
+  orig: 120, 90
+  offset: 10, 17
+  index: -1
+d
+  rotate: false
+  xy: 290, 212
+  size: 148, 42
+  orig: 148, 42
+  offset: 0, 0
+  index: -1
+dd
+  rotate: false
+  xy: 2, 78
+  size: 146, 176
+  orig: 146, 176
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 1011, 237
+  size: 11, 17
+  orig: 11, 17
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 436, 4
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 615, 59
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: false
+  xy: 918, 125
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 20, 5
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+dian6
+  rotate: false
+  xy: 112, 46
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+dian7
+  rotate: false
+  xy: 370, 77
+  size: 12, 15
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+dian8
+  rotate: false
+  xy: 1011, 223
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+ggg
+  rotate: false
+  xy: 150, 97
+  size: 133, 79
+  orig: 133, 80
+  offset: 0, 0
+  index: -1
+hunhuan
+  rotate: false
+  xy: 150, 178
+  size: 138, 76
+  orig: 140, 76
+  offset: 2, 0
+  index: -1
+jian1
+  rotate: false
+  xy: 384, 80
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+jian2
+  rotate: true
+  xy: 400, 200
+  size: 10, 16
+  orig: 10, 16
+  offset: 0, 0
+  index: -1
+jian3
+  rotate: false
+  xy: 990, 229
+  size: 19, 25
+  orig: 19, 25
+  offset: 0, 0
+  index: -1
+zi1
+  rotate: true
+  xy: 2, 2
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+zi2
+  rotate: false
+  xy: 620, 178
+  size: 19, 16
+  orig: 19, 16
+  offset: 0, 0
+  index: -1
+zi3
+  rotate: false
+  xy: 112, 59
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+zi4
+  rotate: true
+  xy: 641, 178
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1

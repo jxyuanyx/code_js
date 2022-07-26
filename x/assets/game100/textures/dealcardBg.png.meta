@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "1543e270-1fe8-40b6-9aaa-dfb34141bb1f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 197,
+  "height": 153,
+  "platformSettings": {},
+  "subMetas": {
+    "dealcardBg": {
+      "ver": "1.0.4",
+      "uuid": "8c6b35a3-b45c-49aa-befd-a4106f318c9c",
+      "rawTextureUuid": "1543e270-1fe8-40b6-9aaa-dfb34141bb1f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 6,
+      "trimY": 5,
+      "width": 185,
+      "height": 142,
+      "rawWidth": 197,
+      "rawHeight": 153,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+"skeleton": { "hash": "iUf6PRz/g5aQTmyax8p/Ubs7Ry4", "spine": "3.7.93", "width": 170, "height": 200 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "zong", "parent": "root", "x": -128.9, "y": -104.42 },
+	{ "name": "bone2", "parent": "zong", "x": 128.7, "y": 103.8 }
+],
+"slots": [
+	{ "name": "ic/红心10_00000", "bone": "bone2", "attachment": "ic/红心10_00000" }
+],
+"skins": {
+	"default": {
+		"ic/红心10_00000": {
+			"ic/红心10_00000": { "width": 170, "height": 200 }
+		}
+	}
+},
+"animations": {
+	"paigaoliang": {
+		"slots": {
+			"ic/红心10_00000": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.1667, "color": "ffffff00" },
+					{ "time": 0.8333, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,34 @@
+
+tishiguang.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+di
+  rotate: false
+  xy: 372, 10
+  size: 364, 80
+  orig: 364, 80
+  offset: 0, 0
+  index: -1
+kuang
+  rotate: false
+  xy: 2, 2
+  size: 368, 88
+  orig: 368, 88
+  offset: 0, 0
+  index: -1
+saoguang1
+  rotate: false
+  xy: 853, 10
+  size: 93, 80
+  orig: 93, 80
+  offset: 0, 0
+  index: -1
+saoguang2
+  rotate: false
+  xy: 738, 10
+  size: 113, 80
+  orig: 113, 80
+  offset: 0, 0
+  index: -1

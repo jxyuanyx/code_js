@@ -1,0 +1,104 @@
+
+tishiguang.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/2
+  rotate: true
+  xy: 803, 40
+  size: 190, 191
+  orig: 190, 191
+  offset: 0, 0
+  index: -1
+ic/3/3_00007
+  rotate: false
+  xy: 1604, 154
+  size: 257, 132
+  orig: 750, 1334
+  offset: 0, 901
+  index: -1
+ic/3/3_00008
+  rotate: true
+  xy: 1869, 241
+  size: 269, 171
+  orig: 750, 1334
+  offset: 0, 901
+  index: -1
+ic/3/3_00009
+  rotate: false
+  xy: 2, 2
+  size: 270, 213
+  orig: 750, 1334
+  offset: 0, 899
+  index: -1
+ic/3/3_00010
+  rotate: false
+  xy: 1333, 257
+  size: 269, 253
+  orig: 750, 1334
+  offset: 0, 898
+  index: -1
+ic/3/3_00011
+  rotate: false
+  xy: 2, 217
+  size: 269, 293
+  orig: 750, 1334
+  offset: 0, 898
+  index: -1
+ic/3/3_00012
+  rotate: false
+  xy: 273, 217
+  size: 264, 293
+  orig: 750, 1334
+  offset: 0, 898
+  index: -1
+ic/3/3_00013
+  rotate: false
+  xy: 539, 224
+  size: 262, 286
+  orig: 750, 1334
+  offset: 0, 898
+  index: -1
+ic/3/3_00014
+  rotate: false
+  xy: 803, 232
+  size: 263, 278
+  orig: 750, 1334
+  offset: 0, 906
+  index: -1
+ic/3/3_00015
+  rotate: false
+  xy: 1068, 250
+  size: 263, 260
+  orig: 750, 1334
+  offset: 0, 926
+  index: -1
+ic/3/3_00016
+  rotate: false
+  xy: 1604, 288
+  size: 263, 222
+  orig: 750, 1334
+  offset: 0, 964
+  index: -1
+ic/3/3_00017
+  rotate: false
+  xy: 274, 8
+  size: 260, 207
+  orig: 750, 1334
+  offset: 0, 979
+  index: -1
+ic/3/3_00018
+  rotate: false
+  xy: 1068, 107
+  size: 232, 141
+  orig: 750, 1334
+  offset: 20, 1043
+  index: -1
+ic/3/3_00019
+  rotate: false
+  xy: 1863, 138
+  size: 156, 101
+  orig: 750, 1334
+  offset: 47, 1065
+  index: -1

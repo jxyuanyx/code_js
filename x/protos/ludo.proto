@@ -1,0 +1,181 @@
+syntax = "proto3";
+package ludo;
+// =============================   LUDO  ================================== //
+
+// CMD 20001 加入Ludo匹配 使用 JoinMatchReq 协议
+
+
+// CMD 20002 取消LUDO匹配
+message LudoCancelMatchReq{
+
+}
+
+message Piece{              // 棋子的信息
+    int32 piece_id = 1;     // 棋子 id
+    int32 score = 2;        // 这颗棋子的分数
+    int32 steps = 3;        // 棋子移动的步数
+    int32 x = 4;            // 棋子在棋盘的位置 在出发点都是 0 0 到达终点会设置成 -1 -1
+    int32 y = 5;            // y轴位置
+}
+
+message LudoPlayerInfo{
+    int32 uid = 1;          // 玩家Id
+    string nick = 2;        // 玩家昵称
+    string avatar = 3;      // 玩家头像
+    string area_code = 4;   // 国家代码(展示国旗使用)
+    int32 seat_id = 5;      // 座位信息
+    int32 total_score = 6;      // 玩家的总分数
+    int32 reroll_count= 7;      // 重摇剩余次数
+    LudoPlayerStatus status = 8;      // 用户状态
+    repeated Piece pieces = 9;  // 玩家的棋子
+    int32 point = 10;           // 玩家的点数 只在移动筛子的时候有效
+}
+
+// 比赛奖励奖励
+message MatchRewardInfo{
+    int32 rank_low = 1;
+    int32 rank_high = 2;
+    message GameReward {
+        PropType prop_type = 1;
+        int64 amount = 2;
+    }
+    repeated GameReward rewards = 3;    // 奖励
+
+}
+
+
+message LudoGameInfo{
+    repeated LudoPlayerInfo list = 1;   // 参与匹配的玩家列表
+    int64 game_over_time = 2;           // 游戏开始才会下发 游戏结束的时间 客户端根据这个去倒计时
+    repeated MatchRewardInfo match_reward = 3;
+    int32 reroll_time = 4;
+}
+// CMD 20003 匹配状态通知
+message EvtLudoMatchNotify{
+    MatchStatus match_status = 1;       // 匹配状态
+    string uuid = 2;                    // 比赛id
+    int32 room_type = 3;                // 玩法类型
+    LudoGameInfo match_info = 4;        // 比赛信息
+    int64 desk_id = 5;
+    int64 room_id = 6;
+}
+
+enum LudoOperate {
+    OPERATE_DICE = 0;       // 丢骰子
+    OPERATE_CHESS = 1;      // 移动棋子
+}
+
+enum ScoreType{
+    SCORE_TYPE_NORMAL = 0;          // 正常移动得分
+    SCORE_TYPE_ATTACK = 1;          // 攻击得分
+    SCORE_TYPE_FINISHED = 2;        // 完成一颗棋子得分
+    SCORE_TYPE_ATTACK_REWARD = 3;   // 攻击奖励分
+}
+
+// CMD 20004 通知用户进行操作
+message EvtUserOperateNotify{
+    int64 seat_id = 1;              // 哪个位置操作
+    LudoOperate operate = 2;        // 做什么操作
+    int32 op_time = 3;              // 操作时间
+    LudoPlayerInfo player_info = 4; // 操作的玩家信息
+}
+
+// CMD 20005 用户丢骰子
+message UserDiceReq {
+    bool reroll = 1;    // 是不是重摇
+    int32 point = 2;    // 指定点数  调试时使用
+}
+
+message UserDiceRsp {
+    int32 point = 1;
+    int32 reroll_count = 2;
+    bool can_reroll = 3;
+}
+
+
+// CMD 20006 用户丢骰子 通知
+message EvtUserDice{
+    int32 seat_id = 1;          // 操作的位置 id 0 1 2 3
+    int32 point = 2;            // 点数
+}
+
+// CMD 20007 用户移动棋子请求
+message UserChessReq{
+    int32 piece_id = 1;         // 移动的棋子id
+}
+
+// CMD 20008 用户移动棋子通知
+message EvtUserChess{
+    int32 seat_id = 1;                  // 操作的位置
+    LudoGameInfo match_info = 2;        // 比赛信息 每次移动后把所有的信息都发下去
+    int32 piece_id = 3;                 // 棋子id
+    int32 point = 4;                    // 点数
+    int32 attacked_piece_id = 5;        // 被攻击棋子id
+    message AddScore{
+        ScoreType score_type = 1;
+        int32 score = 2;
+
+    }
+    repeated AddScore add_score = 6;    // 操作得分
+
+}
+
+// CMD 20009 用户取消托管
+message UserCancelAutoPlay{
+
+}
+
+message LudoUserOverInfo{
+    int64 uid = 1;
+    string nick = 2;        // 玩家昵称
+    string avatar = 3;      // 玩家头像
+    string area_code = 4;   // 国家代码(展示国旗使用)
+    int32 seat_id = 5;      // 座位信息
+    int32 total_score = 6;  // 玩家的总分数
+    int32 attack = 7;       // 攻击次数
+    int32 be_attacked = 8;  // 被攻击次数
+    bool win = 9;           // 奖励
+    message GameReward {
+        PropType prop_type = 1;
+        int64 amount = 2;
+    }
+    repeated GameReward rewards = 10;    // 奖励
+    int32 rank = 11;        // 排名
+    LudoPlayerStatus status = 12;      // 用户状态
+}
+
+// CMD 20010 游戏结束信息
+message EvtLudoGameOver{
+    repeated LudoUserOverInfo game_over_info = 1;
+}
+
+// CMD 20011 断线重连
+message LudoReconnectReq{
+
+}
+
+message LudoReconnectRsp{
+    MatchStatus match_status = 1;       // 匹配状态
+    string uuid = 2;                    // 比赛id
+    int32 room_type = 3;                // 玩法类型
+    LudoGameInfo match_info = 4;        // 比赛信息
+    int64 desk_id = 5;
+    int64 room_id = 6;
+    int32 seat_id = 7;
+    LudoOperate operate = 8;            // 做什么操作
+    int32 op_time = 9;                  // 操作时间
+    LudoPlayerInfo player_info = 10;    // 操作的玩家信息
+    int32 total_op_time = 11;           // 总操作时间
+}
+
+// CMD 20012 用户逃跑
+message LudoUserLeaveReq{
+
+}
+
+
+enum LudoPlayerStatus{
+    PLAYER_STATUS_NORMAL = 0;   // 正常
+    PLAYER_STATUS_AUTO = 1;     // 托管
+    PLAYER_STATUS_LEAVE = 2;    // 逃跑
+}

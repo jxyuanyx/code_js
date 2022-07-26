@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "4cb03f40-7a09-4c77-9fb0-5ab74a1e15e4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 106,
+  "height": 100,
+  "platformSettings": {},
+  "subMetas": {
+    "seasonicon": {
+      "ver": "1.0.4",
+      "uuid": "683294bd-9a02-45de-8c41-9a9d28d0a787",
+      "rawTextureUuid": "4cb03f40-7a09-4c77-9fb0-5ab74a1e15e4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 106,
+      "height": 100,
+      "rawWidth": 106,
+      "rawHeight": 100,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

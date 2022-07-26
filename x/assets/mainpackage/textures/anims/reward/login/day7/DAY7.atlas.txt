@@ -1,0 +1,167 @@
+
+DAY7.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3
+  rotate: false
+  xy: 2, 2
+  size: 525, 39
+  orig: 525, 39
+  offset: 0, 0
+  index: -1
+bei12
+  rotate: false
+  xy: 2, 43
+  size: 550, 222
+  orig: 550, 222
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: true
+  xy: 529, 17
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 802, 338
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 729, 111
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: false
+  xy: 554, 19
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 985, 497
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian10
+  rotate: false
+  xy: 985, 497
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian6
+  rotate: false
+  xy: 985, 497
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian9
+  rotate: false
+  xy: 985, 497
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+dian7
+  rotate: false
+  xy: 959, 455
+  size: 24, 48
+  orig: 24, 48
+  offset: 0, 0
+  index: -1
+dian8
+  rotate: false
+  xy: 554, 258
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+kuangguang
+  rotate: false
+  xy: 2, 267
+  size: 564, 236
+  orig: 564, 236
+  offset: 0, 0
+  index: -1
+liangaaa
+  rotate: false
+  xy: 839, 380
+  size: 44, 44
+  orig: 44, 46
+  offset: 0, 0
+  index: -1
+saoguang
+  rotate: true
+  xy: 568, 222
+  size: 140, 232
+  orig: 140, 232
+  offset: 0, 0
+  index: -1
+yuan1
+  rotate: false
+  xy: 839, 365
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+yuan2
+  rotate: false
+  xy: 959, 440
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+yuan3
+  rotate: false
+  xy: 959, 440
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+yuan4
+  rotate: false
+  xy: 885, 408
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+zhuan2
+  rotate: false
+  xy: 554, 44
+  size: 173, 176
+  orig: 173, 176
+  offset: 0, 0
+  index: -1
+zhuans1
+  rotate: false
+  xy: 729, 137
+  size: 82, 83
+  orig: 82, 83
+  offset: 0, 0
+  index: -1
+zhuans2
+  rotate: false
+  xy: 839, 426
+  size: 118, 77
+  orig: 119, 77
+  offset: 0, 0
+  index: -1
+zhuans3
+  rotate: false
+  xy: 568, 364
+  size: 269, 139
+  orig: 270, 139
+  offset: 1, 0
+  index: -1

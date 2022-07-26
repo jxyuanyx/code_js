@@ -1,0 +1,97 @@
+
+caihong.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cai1
+  rotate: false
+  xy: 2, 214
+  size: 407, 136
+  orig: 407, 136
+  offset: 0, 0
+  index: -1
+cai2
+  rotate: false
+  xy: 467, 397
+  size: 411, 99
+  orig: 411, 99
+  offset: 0, 0
+  index: -1
+cai3
+  rotate: false
+  xy: 2, 352
+  size: 463, 144
+  orig: 463, 144
+  offset: 0, 0
+  index: -1
+cai4
+  rotate: false
+  xy: 2, 127
+  size: 423, 85
+  orig: 423, 85
+  offset: 0, 0
+  index: -1
+caidai2
+  rotate: false
+  xy: 467, 359
+  size: 42, 36
+  orig: 42, 36
+  offset: 0, 0
+  index: -1
+caidai3
+  rotate: false
+  xy: 411, 257
+  size: 37, 33
+  orig: 37, 33
+  offset: 0, 0
+  index: -1
+caidai4
+  rotate: false
+  xy: 327, 56
+  size: 37, 27
+  orig: 37, 27
+  offset: 0, 0
+  index: -1
+caidai5
+  rotate: false
+  xy: 511, 371
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
+caidai6
+  rotate: false
+  xy: 327, 85
+  size: 46, 40
+  orig: 46, 40
+  offset: 0, 0
+  index: -1
+caidai7
+  rotate: false
+  xy: 375, 96
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+caidai8
+  rotate: true
+  xy: 411, 292
+  size: 58, 51
+  orig: 58, 51
+  offset: 0, 0
+  index: -1
+caidaiguang
+  rotate: false
+  xy: 2, 2
+  size: 323, 123
+  orig: 323, 123
+  offset: 0, 0
+  index: -1
+hezi
+  rotate: false
+  xy: 880, 371
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,34 @@
+
+fanpaiguang.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1
+  rotate: false
+  xy: 2, 17
+  size: 168, 231
+  orig: 168, 231
+  offset: 0, 0
+  index: -1
+images/11
+  rotate: false
+  xy: 172, 150
+  size: 142, 98
+  orig: 142, 98
+  offset: 0, 0
+  index: -1
+images/22
+  rotate: false
+  xy: 2, 2
+  size: 65, 13
+  orig: 65, 13
+  offset: 0, 0
+  index: -1
+images/33
+  rotate: false
+  xy: 172, 110
+  size: 124, 38
+  orig: 124, 38
+  offset: 0, 0
+  index: -1

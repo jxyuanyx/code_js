@@ -1,0 +1,94 @@
+{
+    "gameOverTitle":"Time out",
+    "gameOverScore":"Score",
+    "gameTimeScore":"Time bonus",
+    "totalScore":"Total score",
+    "dayBestScore":"Best today",
+    "historyBest":"Best all-time",
+    "gameOverOk":"Submit Score",
+
+
+    "exitTitle":"Game Paused",
+    "exitSubtitle":"Have you quit the game with the current points?",
+    "continuebtn":"Resume",
+    "exitBtn":"End Now",
+    "mobile":"Haptic feedback",
+    "setsound":"Music",
+    "setmusic":"Sound effect",
+
+    "finishTxt":"Not all decks can be solved",
+    "entry":"Retry",
+    "finishGame":"Finish Game?",
+    "pause":"Pause",
+    "undo":"Undo",
+    "howtoplay":"How to play",
+    "scoringtips":"Scoring Tips",
+    "average":"AVERAGE",
+
+    "gamecomplete":"Game Complete",
+    "timeup":"Time's Up",
+    "gameover":"Game Over",
+
+
+    "help1_Title":"Basic Rules",
+    "help1_Content":"<color=#FFFFFF>Tap a column to add a card.</c><color=#FFFFFF><br/><br/>Clear stacks by reaching</color></c><color=#FFF21E><br/>21 </color></c><color=#FFFFFF>points or 5 cards in a column</color></c><color=#FFFFFF><br/><br/>Face cards are worth</color></c><color=#FFF21E> 10</color></c><color=#FFFFFF><br/><br/>Aces are</color></c><color=#FFF21E>1</color></c><color=#FFFFFF>or</color></c><color=#FFF21E> 1 points</color>",
+
+    "help2_Title":"Busts",
+    "help2_Content":"<color=#FFFFFF>Stack is busted over</c><color=#FFF21E> 21 </color></c><color=#FFFFFF>without scores.</color></c><color=#FFFFFF><br/><br/>Too many busts result in early game end.</color>",
+
+    "help3_Title":"Combos and Streaks",
+    "help3_Content":"<color=#FFFFFF>Combos and Streaks<br/><br/>Combine </c><color=#FFF21E>21,5 </color></c><color=#FFFFFF>cards and wild<br/><br/>card bonuses for more points.<br/><br/>Back-to-back clears bring streaks.<br/><br/>More streaks,more bonus points.</color>",
+
+    "help4_Title":"Wilds",
+    "help4_Content":"<color=#FFFFFF>Black Jacks are wild and able<br/><br/>to clear any column they are in.</c><color=#FFF21E><br/><br/>Use them wisely.</color>",
+
+    "help5_Title":"Hold",
+    "help5_Content":"<color=#FFFFFF>Card can be holded<br/><br/>for later use with limit times.</color>",
+
+    "next":"Next",
+
+    "help6_Title":"No bust and All clear",
+    "help6_Content":"<color=#FFFFFF>Get high bonus scores if game ends<br/><br/>without bust and all cards are cleared.</c><color=#FFF21E><br/><br/>How high can you go?</color>",
+
+    "help7_Title":"Undo",
+    "help7_Content":"<color=#FFFFFF>Use</c><color=#FFF21E>'Undo'</color></c><color=#FFFFFF>to return a card<br/><br/>to the dealing area.</color>",
+
+    "point1_Title":"Scoresheet",
+    "point1_Content1":"Tips",
+    "point1_Content2":"<color=#FFFFFF>1.Use</c><color=#FFF21E>'Hold'</color></c><color=#FFFFFF>to better place your cards.</color>",
+    "point1_Content3":"<color=#FFFFFF>2.Try to get streaks to get higher scores.</color>",
+
+    "point1_Key1":"21",
+    "point1_Key2":"Five Card Charlie",
+    "point1_Key3":"WILD",
+    "point1_Key4":"Great Streak",
+    "point1_Key5":"Super Streak",
+    "point1_Key6":"Mega Streak",
+    "point1_Key7":"Not Busted",
+    "point1_Key8":"All Clear",
+    "point1_Key9":"Time Bonus",
+
+    "point1_Value1":"400",
+    "point1_Value2":"600",
+    "point1_Value3":"200",
+    "point1_Value4":"250",
+    "point1_Value5":"500",
+    "point1_Value6":"250*N",
+    "point1_Value7":"350",
+    "point1_Value8":"1000",
+    "point1_Value9":"When the game ends,the\nmore time left,and the\nmore card you clear,the\nmore time bonus you get.",
+
+    "point1_Explain6":"(N=number of catches-1)",
+
+    "tips":"Tips",
+    "playbackExit":"Quit the replay",
+    "playbackEnd":"The replay is over",
+    "cancel":"Cancel",
+    "confirm":"Confirm",
+    "watchagain":"Watch again",
+    "leave":"Leave",
+    "gameOverRecordExit":"Leave",
+    "gameOverAgain":"Watch again",
+    "gameOverRecordTitle":"The replay is over"
+
+}

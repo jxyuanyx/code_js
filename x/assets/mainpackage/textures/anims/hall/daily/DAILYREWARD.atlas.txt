@@ -1,0 +1,174 @@
+
+DAILYREWARD.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2we
+  rotate: false
+  xy: 2, 4
+  size: 208, 116
+  orig: 208, 116
+  offset: 0, 0
+  index: -1
+I
+  rotate: false
+  xy: 262, 76
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+L
+  rotate: false
+  xy: 469, 206
+  size: 41, 48
+  orig: 41, 48
+  offset: 0, 0
+  index: -1
+R
+  rotate: false
+  xy: 409, 103
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+R1
+  rotate: false
+  xy: 409, 103
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+a
+  rotate: false
+  xy: 478, 110
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+a11
+  rotate: false
+  xy: 431, 145
+  size: 48, 49
+  orig: 48, 49
+  offset: 0, 0
+  index: -1
+d
+  rotate: false
+  xy: 212, 71
+  size: 48, 49
+  orig: 48, 49
+  offset: 0, 0
+  index: -1
+d1
+  rotate: false
+  xy: 478, 75
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+di
+  rotate: false
+  xy: 2, 122
+  size: 224, 132
+  orig: 224, 132
+  offset: 0, 0
+  index: -1
+e
+  rotate: true
+  xy: 443, 71
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+guang1
+  rotate: false
+  xy: 366, 138
+  size: 63, 56
+  orig: 63, 58
+  offset: 0, 1
+  index: -1
+guang2
+  rotate: false
+  xy: 261, 39
+  size: 36, 30
+  orig: 36, 30
+  offset: 0, 0
+  index: -1
+guang3
+  rotate: false
+  xy: 299, 93
+  size: 46, 31
+  orig: 46, 31
+  offset: 0, 0
+  index: -1
+guang4
+  rotate: false
+  xy: 481, 167
+  size: 29, 37
+  orig: 29, 37
+  offset: 0, 0
+  index: -1
+guang5
+  rotate: true
+  xy: 299, 61
+  size: 30, 47
+  orig: 30, 47
+  offset: 0, 0
+  index: -1
+guang6
+  rotate: true
+  xy: 366, 106
+  size: 30, 41
+  orig: 30, 41
+  offset: 0, 0
+  index: -1
+taili
+  rotate: false
+  xy: 228, 126
+  size: 136, 128
+  orig: 136, 128
+  offset: 0, 0
+  index: -1
+w
+  rotate: true
+  xy: 443, 104
+  size: 39, 33
+  orig: 39, 33
+  offset: 0, 0
+  index: -1
+y
+  rotate: false
+  xy: 212, 20
+  size: 47, 49
+  orig: 47, 49
+  offset: 0, 0
+  index: -1
+yuan1
+  rotate: false
+  xy: 212, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+yuan2
+  rotate: false
+  xy: 299, 32
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+yuan3
+  rotate: false
+  xy: 328, 36
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+yuan4
+  rotate: false
+  xy: 366, 196
+  size: 101, 58
+  orig: 101, 58
+  offset: 0, 0
+  index: -1

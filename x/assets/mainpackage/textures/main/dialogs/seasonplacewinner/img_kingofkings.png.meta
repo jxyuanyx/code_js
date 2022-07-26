@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "5f3cbee1-10f6-43d5-b221-10de62cdccbf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 669,
+  "height": 101,
+  "platformSettings": {},
+  "subMetas": {
+    "img_kingofkings": {
+      "ver": "1.0.4",
+      "uuid": "f5de7a5d-a536-4533-9c5c-86075429846f",
+      "rawTextureUuid": "5f3cbee1-10f6-43d5-b221-10de62cdccbf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 669,
+      "height": 101,
+      "rawWidth": 669,
+      "rawHeight": 101,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

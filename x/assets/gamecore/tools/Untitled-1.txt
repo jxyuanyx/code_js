@@ -1,0 +1,1414 @@
+const crypto=require("crypto");
+
+const CHIPS=[1000000,50000000,2000000000,500000000,1000000000,5000000000,15000000000]
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        
+    },
+    ctor(){
+        this._dataLoading=null
+        this._topTip=null
+
+        this._photoCache={};
+    },
+    setFull(view){
+        view.setContentSize(cc.winSize)
+    },   
+
+    showGetChipAtPoint(pos,content,chips,count){
+        count=count || 10;
+        cc.loader.loadRes("game/common/gold",cc.Prefab,(err,prefab)=>{
+            for(let i=0;i<count;i++){
+                let gold=cc.instantiate(prefab)
+                gold.setPosition(pos)
+                gold.parent=content
+                gold.scale=0.7
+                gold.zIndex=999
+                let actions=[
+                    cc.jumpTo(0.5,pos.x+60-Math.random()*120,pos.y+30+Math.random()*30,Math.random()*30+30,1)
+                ]
+                actions.push(cc.fadeOut(0.2))
+                actions.push(cc.callFunc((node)=>{
+                    node.removeFromParent()
+                    node.destroy()
+                }))
+                gold.runAction(cc.sequence(actions))
+                HappyGame.AudiosManager.play(GameConfig.SOUNDS.OPEN_REWARD)
+            }
+            cc.loader.loadRes("Common/pf_win",cc.Prefab,(err,prefab)=>{
+                if(!content)return
+                let win=cc.instantiate(prefab)
+                win.setPosition(pos)
+                win.parent=content
+                win.getComponent("WinText").showChips(chips,false)
+            })
+
+        })
+    },
+
+    moveChip(fromP,toP,content,chips,count){
+        count=count || 10;
+        cc.loader.loadRes("game/common/gold",cc.Prefab,(err,prefab)=>{
+            for(let i=0;i<count;i++){
+                let gold=cc.instantiate(prefab)
+                gold.x=fromP.x+30-Math.random()*60
+                gold.y=fromP.y+30-Math.random()*60
+                gold.parent=content
+                gold.scale=0.7
+                gold.zIndex=999
+                let actions=[
+                    cc.delayTime(i*0.02),
+                    cc.jumpTo(0.5,toP.x,toP.y,50,1),
+                    cc.callFunc(()=>{
+                        if(i==0){
+                            HappyGame.AudiosManager.play(GameConfig.SOUNDS.OPEN_REWARD)
+                        }
+                    }),
+                    cc.jumpTo(0.5,toP.x+60-Math.random()*120,toP.y+30+Math.random()*30,Math.random()*30+30,1)
+                ]
+                actions.push(cc.fadeOut(0.2))
+                actions.push(cc.callFunc((node)=>{
+                    node.removeFromParent()
+                    node.destroy()
+                }))
+                gold.runAction(cc.sequence(actions))
+            }
+            cc.loader.loadRes("Common/pf_win",cc.Prefab,(err,prefab)=>{
+                if(!content)return
+                let win=cc.instantiate(prefab)
+                win.zIndex=999
+                win.setPosition(toP)
+                win.parent=content
+                win.runAction(cc.sequence(
+                    cc.delayTime(1),
+                    cc.callFunc(()=>{
+                        win.getComponent("WinText").showChips(chips,false)
+                    })
+                ))
+            })
+
+        })
+    },
+
+    getAvatarByUid:function(url,callback,sprite,uid){
+
+        if(!url){
+            if(uid){
+                let index=parseInt(uid)%9+1;
+                sprite.spriteFrame=HappyGame.AtlasManager.getAltasByName("head").getSpriteFrame("head"+index);
+            }
+            return;
+        }
+
+        //自定义头像
+        if(url.length<=2&&sprite){
+            sprite.spriteFrame=HappyGame.AtlasManager.getAltasByName("head").getSpriteFrame("head"+url);
+            return
+        }
+
+        //HappyGame.Tools.addDataLoading(sprite.node);
+        let config=HappyGame.DataManager.Config
+        let t=config?config.avatar:"https://xfun.s3.ap-southeast-1.amazonaws.com/"
+        url=t+url;
+        this.scheduleOnce(()=>{
+            if(sprite&&sprite.node){
+                //HappyGame.Tools.removeDataLoading(sprite.node);
+            }
+        },5)
+       
+        cc.loader.load({url:url,isCrossOrigin:true}, (err, texture)=>{
+            if(!err){
+                var spframe=new cc.SpriteFrame(texture)
+                callback&&callback(spframe)
+                if(sprite&&sprite.node){
+                    sprite.spriteFrame=spframe
+                }
+            }else{
+                let index=parseInt(uid)%9+1;
+                if(sprite&&sprite.node){
+                    sprite.spriteFrame=HappyGame.AtlasManager.getAltasByName("head").getSpriteFrame("head"+index);
+                }
+            }
+            if(sprite&&sprite.node){
+                //HappyGame.Tools.removeDataLoading(sprite.node);
+            }
+        });
+        
+        
+    },
+    
+    /**
+     * 
+     * @param {*} url       图片路径
+     * @param {*} callback  回调
+     * @param {*} sprite    图片组件
+     * @param {*} cache     是否缓存
+     * @param {*} autoScale 自动缩放
+     * 
+     */
+    getPhoto:function(url,callback,sprite,cache,autoScale,scaleWidth,scaleHeight){
+        if(this._photoCache[url]){
+            if(sprite&&sprite.node){
+                sprite.spriteFrame=this._photoCache[url]
+            }
+            return;
+        }
+        if(sprite&&sprite.node){
+            HappyGame.Tools.addDataLoading(sprite.node);
+        }
+
+        this.scheduleOnce(()=>{
+            if(sprite&&sprite.node){
+                HappyGame.Tools.removeDataLoading(sprite.node);
+            }       
+        },5)
+
+        try{
+            if(url.indexOf("http")==-1){
+                let config=HappyGame.DataManager.Config
+                let t=config?config.cdnUrl:"https://xfun.s3.ap-southeast-1.amazonaws.com/"
+                url=t+url;
+            }
+            
+            cc.loader.load({url:url,isCrossOrigin:true}, (err, texture)=>{
+                // Use texture to create sprite frame
+                if(err==null){
+                    if(!sprite || !sprite.node)return
+                    var spframe=new cc.SpriteFrame(texture)
+                    if(autoScale){
+                        let rect=spframe.getRect()
+                        let scale=1
+                        if(rect.width>scaleWidth){
+                            scale=scaleWidth/rect.width
+                            let height=rect.height*scale
+                            if(height>scaleHeight){
+                                scale*=scaleHeight/height
+                            }
+                        }else if(rect.height>scaleHeight){
+                            scale=scaleHeight/rect.height
+                            let width=rect.width*scale
+                            if(width>scaleWidth){
+                                scale*=scaleWidth/width
+                            }
+                        }
+                        sprite.node.scale=scale
+                    }
+                    callback&&callback(spframe)
+                    if(sprite&&sprite.node){
+                        sprite.spriteFrame=spframe
+                    }
+                    if(cache){
+                        this._photoCache[url]=spframe
+                    }
+                }
+                if(sprite&&sprite.node){
+                    HappyGame.Tools.removeDataLoading(sprite.node);
+                }
+            });
+        }catch(e){
+
+        }
+    },
+
+    getQueryString:function(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); return null; 
+    },
+
+    shotImg:function(){
+        cc.log("开始截图")
+        var gameCanvas=document.getElementById("GameCanvas")
+        var dataUrl =gameCanvas.toDataURL("image/png",0.5) 
+        dataUrl=dataUrl.replace(/^data:image[^;]*/, "data:image/octet-stream");
+        var newImg = document.createElement("img");  
+        newImg.src =  dataUrl;  
+        newImg.style.position = "absolute";
+        newImg.style.left = "0px";
+        newImg.style.top = "0px";
+        newImg.style.right="0px";
+        newImg.style.bottom="0px"
+        newImg.style.width=cc.container.style.width
+        newImg.style.height=cc.container.style.height
+        cc.log(newImg)
+        document.body.appendChild(newImg);
+        cc.log("截图完成")
+    },
+
+    getFormatUrl:function(url){
+        return "http://nn.18bn.cn/domainurl?url="+encodeURIComponent(url)
+    },
+
+    getNowFormatDate:function(time) {
+        var date = new Date();
+        //date.setTime(time*1000);
+        var seperator1 = "-";
+        var seperator2 = ":";
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        
+        var hour = date.getHours()
+        var min = date.getMinutes()
+        var sec = date.getSeconds()
+        
+        if(hour<10)
+        {
+            hour = "0"+hour
+        }
+        if(min<10)
+        {
+            min = "0"+min
+        }
+        if(sec<10)
+        {
+            sec = "0"+sec
+        }
+        
+        
+        var currentdate =month + seperator1 + strDate
+                + " " + hour + seperator2 + min
+                + seperator2 + sec;
+        return currentdate;
+    },
+
+    fromatChip(value,t,n){
+        if(t==undefined)t=0   
+        let ext=""
+        if(value>=1000000000000){
+            value=(value/1000000000000).toFixed(3)
+            ext=(n?'t':"T")
+        }else if(value>=1000000000){
+            value=(value/1000000000).toFixed(3)
+            ext=(n?'b':"B")
+        }else if(value>=1000000){
+            value=(value/1000000).toFixed(3)
+            ext=(n?'m':"M")
+        }else if(value>=1000){
+            value=(value/1000).toFixed(3)
+            ext=(n?'k':"K")
+        }else{
+            return value
+        }
+        let str1=value.substring(0,value.lastIndexOf('.')+3)
+        let info=str1.split('.')
+        let right=parseInt(info[1])
+        if(right%10==0){
+            if(right==0){
+                value=info[0]
+            }else {
+                while(right%10==0){
+                    right/=10
+                }
+                value=info[0]+"."+right
+            }
+        }else{
+            return str1+ext
+        }
+        
+        return value+ext
+    },
+
+    fromatPoint(points){
+        if(points>=10000000){
+            return this.fromatChip(points)
+        }else{
+            return this.fromatNumber1(points)
+        }
+    },
+
+    //格式化时间
+    fromatTimeNew(time){
+        var str=""
+        if(time/3600>=1){
+            var hour=Math.floor(time/3600)+''
+            if(hour.length<2){
+                str="0"+hour
+            }else{
+                str=hour
+            }
+            str+=":"
+            time=time%3600
+        }
+        if(time/60>=1){
+            var minu=Math.floor(time/60)+''
+            if(minu.length<2){
+                str+="0"+minu
+            }else{
+                str+=minu
+            }
+            str+=":"
+            time=time%60
+        }else{
+            str+="00:"
+        }
+    
+        var sec=time+''
+        if(sec.length<2){
+            str+="0"+sec
+        }else{
+            str+=sec
+        }
+        
+        return str
+    },
+
+    fromatNumber(value){
+        var info=value/100+''
+        var infos=info.split('.')
+        if(infos.length>1){
+            return infos[0]+'.'+infos[1].substr(0,1)
+        }else{
+            return info+'.0'
+        }
+    },
+
+    fromatNumber1(value){
+        value=Math.floor(value)
+        value=value.toString()
+        var result=''
+        while(value.length>3){
+            result=','+value.substr(value.length-3,3)+result
+            value=value.substr(0,value.length-3)
+        }
+        result=value+result
+        return result
+    },
+
+    fromatTime(timestamp){
+        var nowtime=Date.parse(new Date())/1000
+        var time=nowtime-timestamp
+        var result
+        //几前天
+        if(time>=60*60*24){
+            result=Math.floor(time/(60*60*24))+"hari yang lalu"
+        }else if(time>=60*60){
+            result=Math.floor(time/(60*60))+"jam yang lalu"
+        }else if(time>=60){
+            result=Math.floor(time/60)+"menit yang lalu"
+        }else{
+            result=time+"detik yang lalu"            
+        }
+        return result
+    },
+
+    //时间戳转换方法    date:时间戳数字
+    formatDate(date) {
+        var date = new Date(date);
+        var YY = date.getFullYear() + '/';
+        var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
+        var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
+        var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+        var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+        var ss = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+        return YY + MM + DD +" "+hh + mm + ss;
+    },
+
+    //时间戳转换方法    date:时间戳数字
+    formatDate1(date) {
+        var date = new Date(date);
+        var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+        var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+        return hh + mm;
+    },
+
+    //时间戳转换方法    date:时间戳数字
+    formatDate2(date) {
+        var date = new Date(date);
+        var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+        var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())+":";
+        var ss = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+        return hh + mm+ss;
+    },
+
+    splitChips(chips){
+        var rule=[5,2,1]
+        var split=100000000000        
+        var result=[]
+        
+
+        while(chips>0){
+            var t=Math.floor(chips/split)
+            if(t>0){
+                for(var i=0;i<rule.length;i++){
+                    var tt=Math.floor(t/rule[i])
+                    for(var j=0;j<tt;j++){
+                        var chip=rule[i]*split
+                        result.push(chip)
+                        chips-=chip
+                    }
+                    t-=(rule[i]*tt)
+                }
+            }
+            if(split==1){
+                break
+            }
+            split=split/10
+        }
+
+        
+        return result
+    },
+
+     //-- 根据两点获取角度
+     getAngle(fmPos, toPos) {
+        var vec = cc.v2(fmPos).sub(toPos);
+        var angle = -Math.atan2(vec.y, vec.x) * 180 / Math.PI - 90;
+        return angle;
+    },
+    
+    decrypBase64(data){
+        // 对base64转编码
+        var decode = atob(data);
+        // 编码转字符串
+        var str = decodeURIComponent(decode);
+        return str;
+    },
+
+    encryption(data,key) {
+        var iv = "";
+        var clearEncoding = 'utf8';
+        var cipherEncoding = 'base64';
+        var cipherChunks = [];
+        var cipher = crypto.createCipheriv('aes-128-ecb', key, iv);
+        cipher.setAutoPadding(true);
+        cipherChunks.push(cipher.update(data, clearEncoding, cipherEncoding));
+        cipherChunks.push(cipher.final(cipherEncoding));
+        return cipherChunks.join('');
+    },
+
+    decryption(data,key){
+        var iv = "";
+        var clearEncoding = 'utf8';
+        var cipherEncoding = 'base64';
+        var cipherChunks = [];
+        var decipher = crypto.createDecipheriv('aes-128-ecb', key, iv);
+        decipher.setAutoPadding(true);
+        cipherChunks.push(decipher.update(data, cipherEncoding, clearEncoding));
+        cipherChunks.push(decipher.final(clearEncoding));
+        return cipherChunks.join('')
+    },
+    
+
+    // AES加密
+    AESDecrypto(str, key){           
+        let encrypt=require("encryptjs")
+        return encrypt.decrypt(str,key,128)
+    },
+
+    // AES加密
+    AESEncrypto(str, key){           
+        let encrypt=require("encryptjs")
+        return encrypt.encrypt(str,key,128)
+    },
+
+    // 左填充方法
+    PaddingLeft(key, length){                                
+        var pkey= key.toString();                                     
+        var l = pkey.length;                                      
+        if (l < length) { 
+                pkey = new Array(length - l + 1).join('0') + pkey;
+        }else if (l > length){                                    
+                pkey = pkey.slice(length);                        
+        }                                                         
+        return pkey;                                              
+    },
+    copy(str){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_IOS){
+                var result = jsb.reflection.callStaticMethod("GameTools", "copy:",str);                
+            }else{
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "copy", "(Ljava/lang/String;)V",str)                                
+            }
+        }
+    },
+
+    getSystemVersion(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "getVersion", "()Ljava/lang/String;")                                
+            }else{
+                
+            }
+        }else{
+            return "1.0";
+        }
+    },
+
+    getChannel(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "getChannel", "()Ljava/lang/String;")                                
+            }else{
+
+            }
+        }else{
+            return "1000";
+        }
+    },
+
+    getFireBaseToken(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "getFireBaseToken", "()Ljava/lang/String;")                                
+            }else{
+
+            }
+        }else{
+            return "";
+        }
+    },
+
+    getRegisterInfo(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "getRegisterInfo", "()Ljava/lang/String;")                                
+            }else{
+
+            }
+        }else{
+            return "";
+        }
+    },
+
+    uploadEditBoxY(y){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/AppActivity", "upLoadEditBoxY", "(Ljava/lang/String;)V",y)                                
+            }else{
+
+            }
+        }else{
+            return "";
+        }
+    },
+
+
+    substr(str,length,ext){
+        if(str.length>length){
+            str=str.substr(0,length)+ext
+        }
+
+        return str
+    },
+
+    _showTopTipAnim(info,delayTime){
+        this._topTip.active=true
+        this._topTip.width=cc.winSize.width
+        this._topTip.getChildByName('info').getComponent(cc.Label).string=info
+        this._topTip.setPosition(cc.v2(cc.winSize.width/2,cc.winSize.height+60))
+        this._topTip.stopAllActions()
+        this._topTip.runAction(
+            cc.sequence(
+                cc.moveTo(0.5,cc.v2(cc.winSize.width/2,cc.winSize.height-30)),
+                cc.delayTime(delayTime?delayTime:2),
+                cc.moveTo(0.2,cc.winSize.width/2,cc.winSize.height+60),
+                cc.callFunc(function(node){
+                    node.active=false
+                })
+            )
+        )
+    },
+
+    showTopTip(info,delayTime){
+        if(this._topTip==null){
+            cc.loader.loadRes('Common/tip_top', (err, prefab)=>{
+                if(err){
+                    cc.log(err)
+                    return
+                }
+                this._topTip=cc.instantiate(prefab)
+                this._topTip.parent=cc.director.getScene()  
+                this._topTip.zIndex=999;
+                this._topTip.width=cc.winSize.width
+                this._topTip.height=cc.winSize.height
+                this._topTip.setPosition(cc.v2(cc.winSize.width/2,cc.winSize.height+60))
+                this._showTopTipAnim(info,delayTime)              
+            })
+        }else{
+            this._showTopTipAnim(info,delayTime)                          
+        }
+    },
+
+    showAchTip(data){
+        cc.loader.loadRes('Common/pf_achInfo', (err, prefab)=>{
+            if(err){
+                cc.log(err)
+                return
+            }
+            let view=cc.instantiate(prefab)
+            view.parent=cc.director.getScene()  
+            view.zIndex=999;
+            view.getComponent("pf_achInfo").show(data)
+        })
+    },
+
+    getBase64Data(filePath){
+        let imageData=jsb.fileUtils.getDataFromFile(filePath);
+        return encodeURIComponent(this._arrayBufferToBase64(imageData));
+    },
+
+    selectPhotoSuccess(filePath,data){
+        if(data=="head"){
+            cc.game.emit("onSelectPhotoData",filePath)
+            return
+        }
+        let imageData=jsb.fileUtils.getDataFromFile(filePath);
+        let imageBase64 =encodeURIComponent(this._arrayBufferToBase64(imageData));
+        cc.error("selectphotoSuccess",filePath,data,imageBase64)
+        if(data=="feedback"){
+            HappyGame.RequestManager.Post("/feedback/upload",{file:imageBase64},(msg)=>{
+                cc.game.emit("onFeedBackSuccess",msg.url)
+            })
+        }else if(data=="head"){
+            HappyGame.RequestManager.Post("/upinfo",{file:imageBase64,iconUrl:100},(msg)=>{
+                HappyGame.Tools.showTopTip("upload success");
+                cc.game.emit("onUpdateUserInfo",{iconUrl:msg.iconUrl})
+            })
+        }
+    },
+
+    selectPhoto(data){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "selectPhoto", "(Ljava/lang/String;)V",data);
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+                
+            }
+        }else{
+
+        }
+    },
+    
+
+    loginFaceBook(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "loginFacebook", "()V");
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+                
+            }
+        }else{
+            HappyGame.DataManager.setAccountData(1,'11','test2','',-1,0)
+        }
+    },
+
+    loginGuest(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "loginGuest", "()V");            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+    
+            }else{
+                HappyGame.DataManager.setAccountData(0,'1','test1','',-1,0)
+            }
+        }else{
+            //HappyGame.DataManager.setAccountData(0,'1d5a6f2ef5c9e38845ce596b249e4988','test1','',-1,0)
+            HappyGame.DataManager.setAccountData(0,'6168565937c5bc0f746fa323a516c21e','MaKa','',-1,0)
+        }
+    },
+
+    showAds(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "showAds", "()V");            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+    
+            }
+        }else{
+            if(HappyGame.preloadedRewardedVideo){
+                HappyGame.preloadedRewardedVideo.showAsync()
+                .then(function() {
+                    // Perform post-ad success operation
+                    console.log('Rewarded video watched successfully');        
+                })
+                .catch(function(e) {
+                    console.error(e.message);
+                });
+            }else{
+                HappyGame.Tools.showTopTip("请在Messenger里面打开");
+            }
+        }
+    },
+
+    codaPay(orderid,itemcode,itenname,price,type,user_id,pay_type,pay_channel,mno_code,msisdn){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod(
+                "org/cocos2dx/javascript/GameTools", 
+                "codaPay", 
+                "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                orderid,itemcode,itenname,price,type,user_id,pay_type,pay_channel,mno_code
+            );            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+            
+        }else{
+
+        }
+    },
+
+    notification(title,msg,subMsg,type,time,repatTime){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod(
+                "org/cocos2dx/javascript/GameTools", 
+                "notification", 
+                "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                title,msg,subMsg,type+"",time+"",repatTime+""
+            );            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+            
+        }else{
+
+        }
+    },
+
+    repatNotification(title,msg,subMsg,type,time,repatTime){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod(
+                "org/cocos2dx/javascript/GameTools", 
+                "repatnotification", 
+                "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                title,msg,subMsg,type+"",time+"",repatTime+""
+            );            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+            
+        }else{
+
+        }
+    },
+
+
+    clearNotification(){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod(
+                "org/cocos2dx/javascript/GameTools", 
+                "clearNotification", 
+                "()V"
+            );            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+            
+        }else{
+
+        }
+    },
+
+
+    qsddPay(amount,pname,itemcode,orderid,isClose){
+        if(!isClose){
+            isClose='0'
+        }
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod(
+                "org/cocos2dx/javascript/GameTools", 
+                "qsddPay", 
+                "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                amount,pname,itemcode,orderid,isClose
+            );            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+            
+        }else{
+
+        }
+    },
+
+    googlePay(gid,oid){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "googlePay", "(Ljava/lang/String;Ljava/lang/String;)V",gid,oid);            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+
+            }else{
+
+            }
+        }
+    },
+
+    logEvent(eventName,info){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "logEvent", "(Ljava/lang/String;Ljava/lang/String;)V",eventName,info);            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+    
+            }else{
+    
+            }
+        }
+    },
+
+
+    genMachineCode(count){
+        let machineCode=cc.sys.localStorage.getItem("machineCode");
+        if(machineCode){
+            return machineCode
+        }
+        let sum=0;
+        let head="";
+        for(let i=0;i<count;i++){
+            let str=Math.floor(Math.random()*9)+1;
+            head+=str
+            sum+=str;
+        }
+        let index=Math.floor(Math.random()*count);
+        console.log(index,sum)
+        let code=head+head[index]+sum%head[index];
+        cc.sys.localStorage.setItem("machineCode",code);
+        return code;
+    },
+    //输入是否为数字 strlen为str所需长度
+    IsNumber(str, strlen){
+        
+        let n = Number(str);
+        if(isNaN(n) || str.length == 0){
+            return false;
+        }
+        if(str.length != strlen){
+            return false;
+        }
+        return true;
+    },
+    
+    OnValidatePhone(szPhone){
+        let myreg=/^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+        if (!myreg.test(szPhone)) 
+        {
+            return false;
+        } 
+        else 
+        {
+            return true;
+        }
+    },
+
+    formatLanguage(node,langs){
+        for(var key in langs){
+            var child
+            //如果是多层级的
+            if(key.indexOf('.')==-1){
+                child=node.getChildByName(key)
+            }else{
+                var childs=key.split('.')
+                child=node.getChildByName(childs[0])
+                for(var i=1;i<childs.length-1;i++){
+                    if(!child)break
+                    child=child.getChildByName(childs[i])
+                }
+                if(child){
+                    child=child.getChildByName(childs[childs.length-1])
+                }
+            }
+            if(!child)continue
+            var lable=(child.getComponent(cc.Label) || child.getComponent(cc.RichText))
+
+            if(!lable)continue
+            lable.string=langs[key]
+        }
+    },
+
+    findNode(key,content){
+        let child
+        if(key.indexOf('.')==-1){
+            child=content.getChildByName(key)
+        }else{
+            var childs=key.split('.')
+            child=content.getChildByName(childs[0])
+            for(var i=1;i<childs.length-1;i++){
+                if(!child)break
+                child=child.getChildByName(childs[i])
+            }
+            if(child){
+                child=child.getChildByName(childs[childs.length-1])
+            }
+        }
+        return child
+    },
+
+    getTabIndex(toggles){
+        let tgs=toggles.toggleItems;
+        let type=0;
+        for(let i=0;i<tgs.length;i++){
+            let tg=tgs[i];
+            if(tg.isChecked){
+                type=i;
+                break;
+            }
+        }
+        return type;
+    },
+
+    getTabIndex1(toggles){
+        let tgs=toggles.toggleItems;
+        let type=-1;
+        for(let i=0;i<tgs.length;i++){
+            let tg=tgs[i];
+            if(tg.isChecked){
+                type=i;
+                break;
+            }
+        }
+        return type;
+    },
+
+    getTabIndexs(toggles){
+        let tgs=toggles.children;
+        let result=[]
+        for(let i=0;i<tgs.length;i++){
+            let tg=tgs[i].getComponent(cc.Toggle);
+            if(tg.isChecked){
+                result.push(i)
+            }
+        }
+        return result;
+    },
+
+    setTabCheckBoxIndex(toggles,index){
+        let tgs=toggles.node.children;
+        let result=[]
+        for(let i=0;i<tgs.length;i++){
+            let tg=tgs[i].getComponent(cc.Toggle);
+            tg.isChecked=(i==index)
+        }
+        return result;
+    },
+
+
+    setTabIndex(index,toggles){
+        let tgs=toggles.toggleItems;
+        for(let i=0;i<tgs.length;i++){
+            let tg=tgs[i];
+            if(i==index){
+                tg.isChecked=true
+                break
+            }
+        }
+    },
+
+
+    _arrayBufferToBase64(bytes) {
+        var base64 = '';
+        var encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+        var byteLength = bytes.byteLength;
+        var byteRemainder = byteLength % 3;
+        var mainLength = byteLength - byteRemainder;
+        var a, b, c, d;
+        var chunk;
+        // Main loop deals with bytes in chunks of 3
+        for (var i = 0; i < mainLength; i = i + 3) {
+            // Combine the three bytes into a single integer
+            chunk = (bytes[i] << 16) | (bytes[i + 1] << 8) | bytes[i + 2];
+            // Use bitmasks to extract 6-bit segments from the triplet
+            a = (chunk & 16515072) >> 18; // 16515072 = (2^6 - 1) << 18
+            b = (chunk & 258048) >> 12; // 258048 = (2^6 - 1) << 12
+            c = (chunk & 4032) >> 6; // 4032 = (2^6 - 1) << 6
+            d = chunk & 63; // 63 = 2^6 - 1
+            // Convert the raw binary segments to the appropriate ASCII encoding
+            base64 += encodings[a] + encodings[b] + encodings[c] + encodings[d];
+        }
+        // Deal with the remaining bytes and padding
+        if (byteRemainder == 1) {
+            chunk = bytes[mainLength];
+            a = (chunk & 252) >> 2 // 252 = (2^6 - 1) << 2;
+            // Set the 4 least significant bits to zero
+            b = (chunk & 3) << 4 // 3 = 2^2 - 1;
+            base64 += encodings[a] + encodings[b] + '==';
+        }
+        else if (byteRemainder == 2) {
+            chunk = (bytes[mainLength] << 8) | bytes[mainLength + 1];
+            a = (chunk & 16128) >> 8 // 16128 = (2^6 - 1) << 8;
+            b = (chunk & 1008) >> 4 // 1008 = (2^6 - 1) << 4;
+            // Set the 2 least significant bits to zero
+            c = (chunk & 15) << 2 // 15 = 2^4 - 1;
+            base64 += encodings[a] + encodings[b] + encodings[c] + '=';
+        }
+        return "data:image/jpeg;base64," + base64;
+        //return base64;
+    },
+
+    //上传
+    upLoad(filePath,type){
+        let imageData=jsb.fileUtils.getDataFromFile(filePath);
+        let imageBase64 =encodeURIComponent(this._arrayBufferToBase64(imageData));
+        console.log("imageBase64",imageBase64)
+        HappyGame.RequestManager.Post("/avatar",{file:imageBase64,type:type},()=>{
+            HappyGame.Tools.showTopTip("upload success");
+        })
+    },
+
+    fromatExp(exp,lvConfig){
+        if(arguments.length==1){
+            lvConfig= HappyGame.DataManager.LV;
+        }
+        let lv=0;
+        let currentExp=0;
+        let totalExp=0;
+        if(exp>=lvConfig[lvConfig.length-1]){
+            lv=99;
+            currentExp=lvConfig[lvConfig.length-1];
+            totalExp=lvConfig[lvConfig.length-1];
+        }else{
+            for(let i=lvConfig.length-1;i>=0;i--){
+                let lvexp=lvConfig[i];
+                if(exp>=lvexp){
+                    lv=i+1;
+                    currentExp=exp-lvexp;
+                    totalExp=lvConfig[i+1]-lvexp;
+                    break;
+                }
+            }
+        }
+        return {lv:lv,currentExp:currentExp,totalExp:totalExp,rate:currentExp/totalExp}
+    },
+
+    addDataLoading(content,x,y){
+        if(!content)return
+        content.loading=1
+        if(content.getChildByName("dataLoading"))return
+        cc.loader.loadRes("Common/dataLoading",cc.Prefab,(err,prefab)=>{
+            if(!err){
+                let loading=cc.instantiate(prefab);
+                if(!content || content.loading==0){
+                    loading.destroy()
+                    return
+                }
+                loading.parent=content;
+                loading.scale=0.5;
+                loading.name="dataLoading"
+                if(x!=undefined&&y!=undefined){
+                    loading.x=x;
+                    loading.y=y;
+                }else{
+                    let anchorPoint=content.getAnchorPoint()
+                    //0,0
+                    if(anchorPoint.x==0&&anchorPoint.y==1){
+                        loading.x=content.width/2
+                        loading.y=-content.height/2
+                    }else if(anchorPoint.x==0.5&&anchorPoint.y==1){
+                        loading.x=0
+                        loading.y=-content.height/2
+                    }else{
+                        loading.x=0;
+                        loading.y=0;
+                    }
+                   
+                }
+            }else{
+                cc.error("dataLoading",err)
+            }
+           
+        });
+    },
+
+    removeDataLoading(content){
+        if(!content)return;
+        content.loading=0
+        let loading=content.getChildByName("dataLoading")
+        if(loading){
+            loading.removeFromParent()
+            loading.destroy()
+        }
+    },
+
+    getResFromLocal(url,callback,sprite){
+        cc.loader.loadRes(url,cc.SpriteFrame,function(err,spriteframe){
+            if(err){
+                cc.err(err)
+                return
+            }
+            callback&&callback(spriteframe)
+            if(sprite){
+                sprite.spriteFrame=spriteframe
+            }            
+        })
+    },
+
+    shareToCuttomTimeLine(imageText,message,cb,action){
+        FBInstant.shareAsync({
+            intent: 'REQUEST',
+            image: imageText,
+            text: message,
+            data: { userId:HappyGame.DataManager.SelfData.userId,action:(!action)?"ShareBack":action},
+          }).then(function() {
+            cb&cb()
+          });
+    },
+
+    shareToFbTimeLine(cb,action){
+        FBInstant.context
+        .chooseAsync()
+        .then(function() {
+            HappyGame.RequestManager.Post("/reward/share",{},(data)=>{
+                HappyGame.DlgManager.showDlg(DLG_CONFIG.ADDCHIPS,data.chips)
+            })
+            cb&cb()
+        });
+
+        /*
+        cc.loader.loadRes("ShareSource",cc.TextAsset,(err,imageData)=>{
+            FBInstant.shareAsync({
+                intent: 'REQUEST',
+                image: imageData.text,
+                text:cc.js.formatStr("Your friend [%s] @you, play with him quickly",HappyGame.DataManager.SelfData.nickName),
+                data: { userId:HappyGame.DataManager.SelfData.userId,action:"ShareBack"},
+              }).then(function() {
+                HappyGame.RequestManager.Post("/reward/share",{},(data)=>{
+                    HappyGame.DlgManager.showDlg(DLG_CONFIG.ADDCHIPS,data.chips)
+                })
+                cb&cb()
+              });
+        })*/
+       
+    },
+    
+    getAchreve(aId,level,node){
+        let bg=node.getChildByName("achreveBg").getComponent(cc.Sprite)
+        let icon=node.getChildByName("achreveIcon").getComponent(cc.Sprite)
+        if(!aId){
+            bg.node.active=false;
+            icon.node.active=false;
+            return
+        }else{
+            bg.node.active=true;
+            icon.node.active=true;
+        }
+        bg.spriteFrame=HappyGame.AtlasManager.getAltasByName("achreve").getSpriteFrame("bg_"+(level || 1) )
+        icon.spriteFrame=HappyGame.AtlasManager.getAltasByName("achreve").getSpriteFrame("cj_"+aId)
+        
+    },
+
+    prvLoadAds(id){
+        if(!window.FBInstant)return;
+        HappyGame.preloadedRewardedVideo = null;
+        FBInstant.getRewardedVideoAsync(
+            id// Your Ad Placement Id
+        ).then(function(rewarded) {
+            // Load the Ad asynchronously
+            HappyGame.preloadedRewardedVideo = rewarded;
+            return rewarded.loadAsync();
+        }).then(function() {
+            console.log('Rewarded video preloaded');
+        }).catch(function(err){
+            console.error('Rewarded video failed to preload: ' + err.message);
+        });
+    },
+
+    prvLoginRewardAds(id){
+        if(!window.FBInstant)return;
+        HappyGame.preloadedLoginRewardedVideo = null;
+        FBInstant.getRewardedVideoAsync(
+            id// Your Ad Placement Id
+        ).then((rewarded)=>{
+            // Load the Ad asynchronously
+            HappyGame.preloadedLoginRewardedVideo = rewarded;
+            return rewarded.loadAsync();
+        }).then(function() {
+            console.log('Rewarded video preloaded');
+        }).catch(function(err){
+            console.error('Rewarded video failed to preload: ' + err.message);
+        });
+    },
+
+    prvBankruptAds(id){
+        if(!window.FBInstant)return;
+        HappyGame.preloadedBankruptRewardedVideo = null;
+        FBInstant.getRewardedVideoAsync(
+            id// Your Ad Placement Id
+        ).then((rewarded)=>{
+            // Load the Ad asynchronously
+            HappyGame.preloadedBankruptRewardedVideo = rewarded;
+            return rewarded.loadAsync();
+        }).then(function() {
+            console.log('Rewarded video preloaded');
+        }).catch(function(err){
+            console.error('Rewarded video failed to preload: ' + err.message);
+        });
+    },
+
+    getSex(sex,sprite){
+        sex=(sex==1)?"sc_tb_nan":"sc_tb_nv"
+        sprite.spriteFrame=HappyGame.AtlasManager.getAltasByName("common").getSpriteFrame(sex);
+    },
+
+    getChips(chips,sprite){
+        let index=0
+        if(chips>CHIPS[CHIPS.length-1]){
+            index=7
+        }else{
+            for(let i=CHIPS.length-1;i>=0;i--){
+                if(chips>=CHIPS[i]){
+                    index=(i+1)
+                    break
+                }
+            }
+        }
+        sprite.spriteFrame=HappyGame.AtlasManager.getAltasByName("common").getSpriteFrame("chips_"+index);
+    },
+
+    /*
+
+          FBInstant.payments.getPurchasesAsync().then(function (purchases) {
+              console.log(purchases)
+          })
+
+    */
+
+    purchasesShopItems(){
+        if(window.FBInstant){
+            //消费掉商品
+            FBInstant.payments.getPurchasesAsync().then(function (purchases) {
+                purchases.forEach(item=>{
+                    FBInstant.payments.consumePurchaseAsync(item.purchaseToken).then(function () {
+                    }).catch(function(error) {
+                        console.log(error)
+                    });
+                })
+            })
+        }
+    },
+
+    sendSMS(msg,code){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "sendSMS", "(Ljava/lang/String;Ljava/lang/String;)V",msg,code);            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+    
+            }
+        }
+    },
+
+    gotoFansPage(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "gotoFbFansPage", "(Ljava/lang/String;Ljava/lang/String;)V",GameConfig.FANSPAGEID,GameConfig.FANSPAGEURL);            
+            }else if(cc.sys.os==cc.sys.OS_IOS){
+    
+            }
+        }
+    },
+        
+    getClipboardData(){
+        if(cc.sys.isNative){
+            if(cc.sys.os==cc.sys.OS_ANDROID){
+                return jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "getClipboardData", "()Ljava/lang/String;").substr(0,100)                                
+            }else{
+                
+            }
+        }else{
+            return "";
+        }
+    },
+
+    moveRpToPos(fromP,toP,content,chips,count){
+        content=cc.director.getScene()
+        fromP.x+=cc.winSize.width/2
+        fromP.y+=cc.winSize.height/2
+        toP.x+=cc.winSize.width/2
+        toP.y+=cc.winSize.height/2
+        for(let i=0;i<count;i++){
+            let rp=new cc.Node()
+            let sp=rp.addComponent(cc.Sprite)
+            sp.spriteFrame=HappyGame.AtlasManager.getAltasByName("common").getSpriteFrame("rpIcon");
+            rp.x=fromP.x+20-Math.random()*40
+            rp.y=fromP.y+20-Math.random()*40
+            rp.parent=content
+            rp.scale=0.5
+            rp.zIndex=999
+            let actions=[
+                cc.delayTime(i*0.02),
+                cc.jumpTo(0.5,toP.x,toP.y,30,1),
+                cc.callFunc(()=>{
+                    if(i==0){
+                        HappyGame.AudiosManager.play(GameConfig.SOUNDS.OPEN_REWARD)
+                    }
+                }),
+                cc.jumpTo(0.5,toP.x+40-Math.random()*80,toP.y+20+Math.random()*20,Math.random()*20+20,1)
+            ]
+            actions.push(cc.fadeOut(0.2))
+            actions.push(cc.callFunc((node)=>{
+                node.removeFromParent()
+                node.destroy()
+            }))
+            rp.runAction(cc.sequence(actions))
+        }
+        cc.loader.loadRes("Common/pf_win",cc.Prefab,(err,prefab)=>{
+            if(!content)return
+            let win=cc.instantiate(prefab)
+            win.zIndex=999
+            toP.y+=60
+            win.setPosition(toP)
+            win.scale=0.8
+            win.parent=content
+            win.runAction(cc.sequence(
+                cc.delayTime(1),
+                cc.callFunc(()=>{
+                    win.getComponent("WinText").showChips(chips,false,false,false)
+                })
+            ))
+        })
+    },
+
+    shareToSystem(msg,title){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "shareToSystem", "(Ljava/lang/String;Ljava/lang/String;)V",msg,title);            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    },
+
+    shareToWhatsApp(url){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "shareToWhatApp", "(Ljava/lang/String;)V",url);            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    },
+
+    shareToFb(url,title,desc,imageUrl){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "shareToFB", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",url,title,desc,imageUrl);            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    },
+
+    shareToMessenger(url){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "shareToMessenger", "(Ljava/lang/String;)V",url);            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    },
+
+    showWebViewClose(){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/lib/Cocos2dxWebViewHelper", "showCloseBtn", "()V");            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    },
+
+    launchAppDetail(appPkg,marketPkg){
+        if(cc.sys.os==cc.sys.OS_ANDROID){
+            jsb.reflection.callStaticMethod("org/cocos2dx/javascript/GameTools", "launchAppDetail", "(Ljava/lang/String;Ljava/lang/String;)V",appPkg,marketPkg);            
+        }else if(cc.sys.os==cc.sys.OS_IOS){
+
+        }else{
+
+        }
+    }
+});

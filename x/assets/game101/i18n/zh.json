@@ -1,0 +1,72 @@
+{
+    "gameOverTitle":"游戏结束",
+    "gameOverScore":"游戏积分",
+    "gameTimeScore":"时间积分",
+    "totalScore":"总积分",
+    "dayBestScore":"今日最佳",
+    "historyBest":"历史最佳",
+    "gameOverOk":"确 定",
+
+
+    "exitTitle":"退出游戏",
+    "exitSubtitle":"是否以当前积分退出游戏？",
+    "continuebtn":"继续游戏",
+    "exitBtn":"退出游戏",
+    "mobile":"手机震动",
+    "setsound":"音效音量",
+    "setmusic":"音乐音量",
+
+
+    "help1_Title":"游戏规则",
+    "help1_SubTitle":"“完成牌堆”",
+    "help1_Content":"游戏目标是将4个 “完成牌堆”填满",
+    "help1_Content1":"将同花色的纸牌按照A~K的 顺序放入完成牌堆。",
+    "help1_Content2":"将卡牌移入完成牌堆 会获得最大分数",
+
+    "help2_Title":"游戏规则",
+    "help2_SubTitle":"“堆叠牌堆”",
+    "help2_Content":"七个堆叠牌堆按照递减顺序 （K到A）排列交替颜色的纸牌",
+    "help2_Content1":"只有K才能移动到空的堆叠牌堆",
+    "help2_Content2":"将正面朝下的卡牌翻开会获得积分",
+
+    "help3_Title":"游戏规则",
+    "help3_SubTitle":"“随机牌堆”",
+    "help3_Content":"随机牌堆每次展示3张纸牌, 只有最上层的纸牌能移动到堆叠牌堆。",
+    "help3_Content1":"每局有3次免费机会完全翻转随机牌堆",
+    "help3_Content2":"超过3次后，将会消耗积分进行翻转",
+    "help3_Content3":"将随机纸牌移动到堆叠牌堆会获得积分",
+
+    "help4_Content":"游戏中如果发现无法将所有卡牌堆叠， 趁早放弃游戏来获取更高的时间积分是 一个明智的选择。",
+    "help4_Content2":"撤回按钮可以取消一个错误的步骤！",
+
+    "help5_Title":"不是所有的牌局都有解！",
+    "help5_Content":"当你无牌可移动时，趁早结束游戏 能获得更高的时间积分",
+    "help5_Content1":"胜负就从这些小细节之中决出..",
+    "help5_Content2":"大吉大利！",
+    "help5_Content3":"退出游戏?",
+    "help5_Content4":"是否以当前积分退出游戏？",
+    "help5_Content5":"退出游戏",
+    "help5_Content6":"继续游戏",
+
+    "next":"下一步",
+
+    "point1_Content":"移动随机纸牌到堆叠区域可获得<color=#FB8615>20</color>分",
+    "point2_Content":"将正面朝下的卡牌翻开会获得<color=#FB8615>20</color>分",
+
+    "point3_Content":"游戏结束时，剩余时间越多， 已完成牌堆的纸牌越多， 你能获得的时间积分越多",
+    "point3_Content1":"游戏结束",
+    "point3_Content2":"游戏积分",
+    "point3_Content3":"时间积分",
+    "point3_Content4":"总积分",
+    "point3_Content5":"今日最佳",
+
+    "point4_Content":"每局游戏限时5分钟， 提前完成牌局可获得时间积分",
+    "point4_Content1":"每局游戏限时5分钟， 提前完成牌局可获得时间积分",
+    "point4_Content2":"已完成牌堆的纸牌越多， 你能获得的时间积分越多",
+    "point4_Content3":"时间是胜负的关键",
+    "point4_Content4":"紧张但是不要慌张...",
+
+    "point5_Content":"不同纸牌移动到完成牌堆时， 获得的积分是不同的",
+    "point5_Content1":"牌",
+    "point5_Content2":"积分"
+}

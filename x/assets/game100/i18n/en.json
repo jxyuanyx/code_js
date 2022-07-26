@@ -1,0 +1,104 @@
+{
+    "gameOverTitle":"Game Over",
+    "gameOverScore":"Score",
+    "gameTimeScore":"Time bonus",
+    "totalScore":"Total score",
+    "dayBestScore":"BEST TODAY",
+    "historyBest":"ALL TIME",
+    "average":"AVERAGE",
+    "gameOverOk":"Submit Score",
+
+
+    "exitTitle":"Game Paused",
+    "exitSubtitle":"Have you quit the game with the current points?",
+    "continuebtn":"Resume",
+    "exitBtn":"End Now",
+    "mobile":"Haptic feedback",
+    "setsound":"Music",
+    "setmusic":"Sound effect",
+
+    "finishTxt":"Not all decks can be solved",
+    "entry":"Retry",
+    "finishGame":"Finish Game?",
+    "pause":"Pause",
+    "undo":"Undo",
+    "howtoplay":"How to play",
+    "scoringtips":"Scoring Tips",
+
+    "help1_Title":"Game Rules",
+    "help1_SubTitle":"Foundation Stacks",
+    "help1_Content":"The goal is to fill the 4 Foundation Stacks",
+    
+    "help1_Content1":"Foundation stacks take cards of the same suit in increasing order <color=#FFF21E>(A to K).Moving cards to the foundation gives the more points</color>",
+
+    "help2_Title":"Game Rules",
+    "help2_SubTitle":"Tableau Stacks",
+    "help2_Content":"The 7 Tableau Stacks take cards of alternating colors in descreasing order (K to A)",
+    "help2_Content1":"Only kings may be placed on empty slots",
+    "help2_Content2":"Uncover face-down Tableau cards to score points",
+
+    "help3_Title":"Game Rules",
+    "help3_SubTitle":"Drawing Cards",
+    "help3_Content":"Draw Cards to the Waste pile 3 at a time.The top card in the Waste pile can be played to the Tableau or Foundation.",
+    "help3_Content1":"Yon can redraw the waste pile 3 times for free.",
+    "help3_Content2":"After 3 draws,it costs your points.",
+    "help3_Content3":"Playing cards from the Waste pile scores points.",
+
+    "help4_Title":"Game Rules",
+    "help4_Content":"In the game where you can't pile up all the cards in the Foundations,try to end a deadlocked game earlier to get higher time bonus points.",
+    "help4_Content2":"Undo button retracts a bad move!",
+
+    "help5_Title":"Not all decks can be solved!",
+    "help5_Content":"As soon as yon run out of moves,end your game to get the biggest time bonus.",
+    "help5_Content1":"This is the difference between Victory and Defeat.",
+    "help5_Content2":"Good Luck!",
+    "help5_Content3":"Exit?",
+    "help5_Content4":"Have you quit the game with the current points?",
+    "help5_Content5":"Exit",
+    "help5_Content6":"Continue",
+
+    "next":"Next",
+
+    "point1_Content":"Score <color=#FB8615>20</color> points for each flipped card you move from the Stock to the Tableau.",
+    "point1_Title":"Scoring Tips",
+    "point2_Title":"Scoring Tips",
+    "point2_Content":"Score <color=#FB8615>20</color> points for each card you uncover in the Tableau.",
+
+    "point3_Content":"When the game ends,the more time left,the more cards you move to the Foundations,the more time bonus you get.",
+    "point3_Content1":"Time out",
+    "point3_Content2":"Score",
+    "point3_Content3":"Time bonus",
+    "point3_Content4":"Total score",
+    "point3_Content5":"Best today",
+    "point3_Title":"Scoring Tips",
+
+    "point4_Content":"Every game has a 5 minute time limit&bonus points are scored for finishing early.",
+    "point4_Content1":"Time out",
+    "point4_Content2":"Score",
+    "point4_Content3":"Time bonus",
+    "point4_Content4":"Every game has a 5 minute time limit&bonus points are scored for finishing early.",
+    "point4_Content5":"You get a bigger time bonus when you place more cards in the foundation piles.",
+    "point4_Content6":"Timing is KEY",
+    "point4_Content7":"…Think fast!But don't hurry...",
+
+    "point5_Content":"Cards move to the Foundations carry different points.",
+    "point5_Content1":"Card",
+    "point5_Content2":"Score",
+
+    "noCards":"NO CARDS",
+    "noCardsTip":"No cards left",
+
+    "noPoint":"Insufficient score",
+
+    "freeTimeTip":"%s free",
+    "freeTimeDraw":"draws",
+    "freeTimePoint":"points",
+
+    "playRecordEnd":"Quit the replay?",
+    "backToHall":"Confirm",
+    "cancel":"Cancel",
+
+    "gameOverRecordExit":"Leave",
+    "gameOverAgain":"Watch again",
+    "gameOverRecordTitle":"The replay is over"
+}

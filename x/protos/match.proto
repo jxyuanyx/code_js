@@ -1,0 +1,103 @@
+syntax = "proto3";
+package pb;
+
+import "common.proto";
+
+option go_package = "../../pb";
+
+
+// 加入匹配
+message JoinMatchReq {
+    uint32 MatchId = 1;
+}
+
+message MatchPlayerData {
+    uint32 Uid = 1;
+    string Nick = 2;
+    string Avatar = 3;
+    string AreaCode = 4; // 区域编号
+}
+
+// 返回结果
+message JoinMatchResp {
+    ErrNo err = 1;
+}
+
+// 匹配的时候玩家加入或者退出通知
+message MatchStatusNotify {
+    MatchStatus status = 1;
+    string UUID = 2;  // status已完成时，比赛ID
+    string NodeId = 3; // 子游戏实例ID
+    GameMatchInfo MatchInfo = 4;
+    oneof GameInitInfo {
+        SolitaireCardDeskInfo solitaire = 5;
+        Blitz21GameInitInfo Blitz21 = 6;
+        CommonGameInitInfo GameInit = 7;
+    }
+}
+
+message GameMatchInfo {
+    repeated MatchPlayerData list = 1;
+    int32 LeftTime = 2; // 游戏剩余时间
+    int32 TodayBestScore = 3;
+    int32 LifeBestScore = 4;
+    string Token = 5;
+    int64 TotalScore = 6; // 总分
+    int64 TotalRound = 7; // 总局数
+}
+
+// 除纸牌21点外的游戏通用初始化信息
+message CommonGameInitInfo{
+    uint32 RandomSeed = 1; // 随机种子
+    uint32 Difficulty = 2; // 难度
+}
+message Blitz21GameInitInfo {
+    repeated uint32 Cards = 1;
+}
+// ======================== solitaire =============================
+message SolitaireCardDeskInfo {
+    repeated uint32 RandAreaCards = 1;
+    repeated bytes PileAreaCards = 2;
+}
+
+message SliceUint32 {
+    repeated uint32 Slice = 1;
+}
+// ================================================================
+
+message CancelMatchReq {
+    uint32 MatchId = 1;
+}
+
+message CancelMatchResp {
+    ErrNo err = 1;
+}
+
+
+message FinishGameReq {
+    int32 Score = 1;        // 分数
+    string Steps = 2;       // 步骤
+    string CheckCode = 3;   // 校验码
+    string ScoreSteps = 4;  // 分数变动过程码
+    int32 Time = 5;         // 游戏时间
+    int32 Version=6;        //当前的游戏版本号
+    string ResVersion=7;    //当前的游戏资源版本号
+}
+
+message FinishGameResp {
+    ErrNo err = 1;
+}
+
+
+enum ClearType {
+    Bomb            = 0;    // 爆牌
+    UnClear         = 1;    // 未产生清除
+    FinishPoint     = 2;    // 达成21点
+    FiveDragon      = 3;    // 五小龙
+    BlackJack       = 4;    // 黑杰克
+}
+
+enum FinishBonusType {
+    NoBomb = 0;
+    AllClear = 1;
+}

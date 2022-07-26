@@ -1,0 +1,257 @@
+
+yanhua.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/12/11 (1)
+  rotate: false
+  xy: 2, 11
+  size: 164, 115
+  orig: 200, 250
+  offset: 6, 45
+  index: -1
+ic/12/11 (10)
+  rotate: false
+  xy: 2, 549
+  size: 191, 234
+  orig: 200, 250
+  offset: 9, 16
+  index: -1
+ic/12/11 (11)
+  rotate: false
+  xy: 2, 339
+  size: 190, 208
+  orig: 200, 250
+  offset: 10, 19
+  index: -1
+ic/12/11 (12)
+  rotate: true
+  xy: 597, 834
+  size: 188, 210
+  orig: 200, 250
+  offset: 12, 25
+  index: -1
+ic/12/11 (13)
+  rotate: false
+  xy: 2, 128
+  size: 187, 209
+  orig: 200, 250
+  offset: 13, 28
+  index: -1
+ic/12/11 (14)
+  rotate: true
+  xy: 782, 474
+  size: 185, 188
+  orig: 200, 250
+  offset: 15, 30
+  index: -1
+ic/12/11 (2)
+  rotate: true
+  xy: 598, 303
+  size: 174, 180
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+ic/12/11 (3)
+  rotate: false
+  xy: 797, 140
+  size: 178, 166
+  orig: 200, 250
+  offset: 0, 3
+  index: -1
+ic/12/11 (4)
+  rotate: false
+  xy: 592, 479
+  size: 188, 185
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+ic/12/11 (5)
+  rotate: false
+  xy: 397, 474
+  size: 193, 190
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+ic/12/11 (6)
+  rotate: false
+  xy: 809, 826
+  size: 198, 196
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+ic/12/11 (7)
+  rotate: false
+  xy: 395, 824
+  size: 200, 198
+  orig: 200, 250
+  offset: 0, 3
+  index: -1
+ic/12/11 (8)
+  rotate: false
+  xy: 197, 805
+  size: 196, 217
+  orig: 200, 250
+  offset: 4, 9
+  index: -1
+ic/12/11 (9)
+  rotate: false
+  xy: 2, 785
+  size: 193, 237
+  orig: 200, 250
+  offset: 7, 13
+  index: -1
+ic/13/hunh (1)
+  rotate: false
+  xy: 507, 51
+  size: 86, 86
+  orig: 200, 250
+  offset: 55, 78
+  index: -1
+ic/13/hunh (10)
+  rotate: false
+  xy: 597, 666
+  size: 200, 166
+  orig: 200, 250
+  offset: 0, 34
+  index: -1
+ic/13/hunh (11)
+  rotate: false
+  xy: 191, 151
+  size: 200, 168
+  orig: 200, 250
+  offset: 0, 34
+  index: -1
+ic/13/hunh (12)
+  rotate: false
+  xy: 396, 305
+  size: 200, 167
+  orig: 200, 250
+  offset: 0, 35
+  index: -1
+ic/13/hunh (13)
+  rotate: false
+  xy: 393, 139
+  size: 200, 164
+  orig: 200, 250
+  offset: 0, 38
+  index: -1
+ic/13/hunh (14)
+  rotate: false
+  xy: 780, 308
+  size: 200, 164
+  orig: 200, 250
+  offset: 0, 38
+  index: -1
+ic/13/hunh (15)
+  rotate: false
+  xy: 595, 137
+  size: 200, 164
+  orig: 200, 250
+  offset: 0, 38
+  index: -1
+ic/13/hunh (16)
+  rotate: false
+  xy: 197, 646
+  size: 194, 157
+  orig: 200, 250
+  offset: 0, 44
+  index: -1
+ic/13/hunh (17)
+  rotate: true
+  xy: 191, 2
+  size: 147, 155
+  orig: 200, 250
+  offset: 0, 45
+  index: -1
+ic/13/hunh (18)
+  rotate: true
+  xy: 595, 21
+  size: 114, 115
+  orig: 200, 250
+  offset: 32, 83
+  index: -1
+ic/13/hunh (19)
+  rotate: false
+  xy: 822, 31
+  size: 113, 107
+  orig: 200, 250
+  offset: 32, 83
+  index: -1
+ic/13/hunh (3)
+  rotate: true
+  xy: 712, 21
+  size: 114, 108
+  orig: 200, 250
+  offset: 38, 65
+  index: -1
+ic/13/hunh (4)
+  rotate: false
+  xy: 348, 7
+  size: 157, 130
+  orig: 200, 250
+  offset: 33, 49
+  index: -1
+ic/13/hunh (6)
+  rotate: false
+  xy: 395, 666
+  size: 200, 156
+  orig: 200, 250
+  offset: 0, 34
+  index: -1
+ic/13/hunh (7)
+  rotate: false
+  xy: 195, 487
+  size: 200, 157
+  orig: 200, 250
+  offset: 0, 35
+  index: -1
+ic/13/hunh (8)
+  rotate: false
+  xy: 799, 661
+  size: 200, 163
+  orig: 200, 250
+  offset: 0, 34
+  index: -1
+ic/13/hunh (9)
+  rotate: false
+  xy: 194, 321
+  size: 200, 164
+  orig: 200, 250
+  offset: 0, 34
+  index: -1
+
+yanhua2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/12/11 (15)
+  rotate: true
+  xy: 197, 96
+  size: 153, 157
+  orig: 200, 250
+  offset: 21, 34
+  index: -1
+ic/13/hunh (2)
+  rotate: false
+  xy: 356, 156
+  size: 89, 93
+  orig: 200, 250
+  offset: 53, 74
+  index: -1
+ic/13/hunh (20)
+  rotate: false
+  xy: 2, 2
+  size: 110, 95
+  orig: 200, 250
+  offset: 32, 83
+  index: -1
+ic/13/hunh (5)
+  rotate: false
+  xy: 2, 99
+  size: 193, 150
+  orig: 200, 250
+  offset: 7, 37
+  index: -1

@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "mqttTest",
+  "id": "190d4e10-2f87-4067-ab68-ff34056da903",
+  "version": "2.4.3",
+  "isNew": false
+}

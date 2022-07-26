@@ -1,0 +1,20 @@
+{
+  "ver": "1.1.2",
+  "uuid": "9d422751-53d8-4e1c-bbad-0b0f90f4bb3e",
+  "isBundle": false,
+  "bundleName": "",
+  "priority": "7",
+  "compressionType": {
+    "win32": "default"
+  },
+  "optimizeHotUpdate": {
+    "win32": false
+  },
+  "inlineSpriteFrames": {
+    "win32": false
+  },
+  "isRemoteBundle": {
+    "win32": false
+  },
+  "subMetas": {}
+}

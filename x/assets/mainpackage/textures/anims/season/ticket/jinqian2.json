@@ -1,0 +1,90 @@
+{
+"skeleton": { "hash": "c/9jwFz8Ngq3018ROZIGughTNQE", "spine": "3.7.93", "width": 154, "height": 150 },
+"bones": [
+	{ "name": "root", "y": 524.92 },
+	{ "name": "zong", "parent": "root", "x": -91.74, "y": -510.09 },
+	{ "name": "2", "parent": "zong", "length": 86.42, "x": 87.45, "y": -15.74 },
+	{ "name": "1", "parent": "zong", "length": 40.92, "rotation": -79.01, "x": 81.64, "y": -10.49 }
+],
+"slots": [
+	{ "name": "4", "bone": "2", "attachment": "4" },
+	{ "name": "3", "bone": "1", "attachment": "3" }
+],
+"skins": {
+	"default": {
+		"3": {
+			"3": { "x": 10.74, "y": 1.02, "rotation": 79.01, "width": 141, "height": 132 }
+		},
+		"4": {
+			"4": { "x": -2.26, "y": -3.1, "width": 154, "height": 150 }
+		}
+	}
+},
+"animations": {
+	"jinqian3": {
+		"bones": {
+			"2": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 1.4333, "angle": -120 },
+					{ "time": 2.8333, "angle": 120 },
+					{ "time": 4.3333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 4.3333, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 4.3333, "x": 1, "y": 1 }
+				],
+				"shear": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 4.3333, "x": 0, "y": 0 }
+				]
+			},
+			"1": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 4.3333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 4.3333, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 1.0667,
+						"x": 1.05,
+						"y": 1.05,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 2.1667,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 3.3333,
+						"x": 1.05,
+						"y": 1.05,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 4.3333, "x": 1, "y": 1 }
+				],
+				"shear": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 4.3333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	}
+}
+}

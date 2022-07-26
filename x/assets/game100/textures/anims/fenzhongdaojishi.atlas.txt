@@ -1,0 +1,48 @@
+
+fenzhongdaojishi.png
+size: 1024,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/1
+  rotate: false
+  xy: 640, 2
+  size: 37, 53
+  orig: 37, 53
+  offset: 0, 0
+  index: -1
+ic/2
+  rotate: false
+  xy: 440, 2
+  size: 50, 53
+  orig: 50, 53
+  offset: 0, 0
+  index: -1
+ic/3
+  rotate: false
+  xy: 592, 2
+  size: 46, 53
+  orig: 46, 53
+  offset: 0, 0
+  index: -1
+ic/4
+  rotate: false
+  xy: 542, 2
+  size: 48, 53
+  orig: 48, 53
+  offset: 0, 0
+  index: -1
+ic/5
+  rotate: false
+  xy: 492, 2
+  size: 48, 53
+  orig: 48, 53
+  offset: 0, 0
+  index: -1
+ic/yingwen
+  rotate: false
+  xy: 2, 2
+  size: 436, 53
+  orig: 436, 53
+  offset: 0, 0
+  index: -1

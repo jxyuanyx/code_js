@@ -1,0 +1,13 @@
+
+chexiaoanniu.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/04d76181
+  rotate: false
+  xy: 2, 2
+  size: 124, 124
+  orig: 128, 128
+  offset: 2, 2
+  index: -1

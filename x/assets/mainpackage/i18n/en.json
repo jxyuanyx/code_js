@@ -1,0 +1,396 @@
+{   
+    "facebookLogin":"Facebook",
+    "googleLogin":"Google Login",
+    "guestLogin":"Guest Login",
+
+    "connecting":"Connect to the server...",
+    "checkUpdate":"Check for update...",
+    "findNewVersion":"New version found, updating...",
+    "updating":"updating resources...  %s",
+    "updating_gameenv":"updating game environment...  %s",
+    "alreadyUpdate":"It is currently the latest version",
+    "downloading":"downloading...  %s",
+    "downloadSuccess":"Game download completed,Start gaming...",
+    "restartGame":"restart the game...",
+    "gameNotOpen":"The game is not open yet",
+    "registerSuccess":"registered successfully!",
+    "logining":"logining....",
+    "loginSuccess":"Login successful, entering the game...",
+    "contectSuccess":"Connection to server successful",
+
+    "hall_bottom1":"Games",
+    "hall_bottom1_1":"Games",
+    "hall_bottom2":"Matches",
+    "hall_bottom2_2":"Matches",
+    "hall_bottom3":"Season",
+    "hall_bottom3_3":"Season",
+    "hall_bottom4":"Invite",
+    "hall_bottom4_4":"Invite",
+    "hall_bottom5":"Records",
+    "hall_bottom5_5":"Records",
+    "hall_bottom6":"Deposit",
+    "hall_bottom6_6":"Deposit",
+
+
+    "hall_bottom1_check":"Games",
+    "hall_bottom1_1_check":"Games",
+    "hall_bottom2_check":"Matches",
+    "hall_bottom2_2_check":"Matches",
+    "hall_bottom5_check":"Records",
+    "hall_bottom5_5_check":"Records",
+
+    "matchList_title":"%s",
+    "matchList_free":"ENTER  FREE",
+    "matchSuccess":"Match successfully, start the countdown",
+    "matchPlayerCount":"%d Players",
+    "machList_types":[
+        "Ticket Games",
+        "Cash Games",
+        "Tournament",
+        "Grand Prix",
+        "Limited Time Contest"
+    ],
+
+    "isFinPrize":"Prize",
+    "isnotFinPrize":"Total Prize",
+    "record_progress":"In progress",
+    "record_win":"You Win",
+    "record_lose":"You Lose",
+    "record_draw":"Draw",
+    "record_getRank":"You Get %s%s",
+    "unRank":"Not on the ranking",
+    "record_date":"Date:%s in ",
+    "enterTitle":"ENTRY:",
+    "totalPlayer":"total palyer %s",
+    "matching":"In progress",
+    "matchFinished":"Finished Games",
+    "playing":"Playing",
+    "escape":"Escape",
+    "tip_matchPlaying":"Your opponent is playing",
+    "tip_yourRank":"Your rank is",
+    "tip_finding":"Finding opponent",
+    "date":"Date:%s",
+    "matchId":"ID:%s",
+
+    "secondsAgo":"%s seconds ago",
+    "minutesAgo":"%s minutes ago",
+    "hoursAgo":"%s hours ago",
+    "daysAgo":"%s days ago",
+    "doubleTip":"You can beat him in the next game!",
+    "multiPrizeTitle":"Ticket Game %s-%d Players",
+    "rules":"Rules",
+    "ruleContent":"Your ranking will be decided by your score after everyplayer completes the game.For players with the same final score,those who finish up earlier will rank higher",
+    "learnMore":"Learn More >>",
+
+    "seasonRankName":[
+        "Iron",
+        "Bronze",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Jade",
+        "Diamond",
+        "Master",
+        "GM",
+        "Legend"
+    ],
+
+    "prizeName":[
+        "",
+        "Ticket",
+        "Cash",
+        "Bonus Cash",
+        "", 
+        "Season Point",
+        "Lottery Ticket·Lv4",
+        "Lottery Ticket·Lv3",
+        "Lottery Ticket·Lv2",
+        "Lottery Ticket·Lv1",
+        "Diamond"
+    ],
+
+    "tips":{
+        "cash":"Cash that you win from match and can withdraw anytime.",
+        "bonuscash":"Cash that you add to your wallet or get from rewards.",
+        "season1":"1. Part of the entry fee goes into the season pool.",
+        "season2":"2. Participate in the cash games and have a chance to get lottery ticket, which can be used to draw cash in 'LUCKY WHEEL'.",
+        "season3":"3. At the end of each season, the remaining amount of the season pool will be distributed to the top players of the season.",
+        "drawreward1":"1. You can use gems to draw a lucky card and get a prize. With different number of gems, you can draw different levels of lucky cards, giving you different levels of prizes. The higher the price of the lucky card, the better the prize.",
+        "drawreward2":"2. You can earn gems by completing quests, saving money, and signing in.",
+        "drawreward3":"3. Every player has the same opportunity to participate every time.",
+        "loginreward1":"1. During the activity period, you can log on to the platform to receive the reward for free every day.",
+        "loginreward2":"2. Sign in for 7 days as a cycle. It is not necessary to sign in continuously. If you miss the sign, you will only miss the reward of the that day.",
+        "loginreward3":"3. The same user can only participate once a day.",
+        "payreward1":"1. You can get the prize if the accumulative recharge reaches the activity amount.",
+        "payreward2":"2. Activity time is limited, please participate in the activity before the countdown ends.",
+        "payreward3":"3. During the activity, all users can only participate once."
+    },
+
+    "remindweak0":"<color=#952300>Play </c><color=#FA3C3C>%s</c><color=#952300> more games \nto reach the </c><color=#9446FF>%s</color>",
+    "remindweak1":"<color=#952300>Play </c><color=#FA3C3C>%s</c><color=#952300> more games \nand get an extra </c><color=#9446FF>%s</color>",
+    "remindweak2":"<color=#952300>Play </c><color=#FA3C3C>%s</c><color=#952300> more games to \n</c><color=#9446FF>%s</color>",
+
+    "reward":"Reward:",
+    "currentRank":"Current Rank:%s",
+    "lessDoubleTime":"<color=#6F83FF><color=#FEDF26>%s</color> games with <color=#FEDF26>%sx</color> points left today</color>",
+    "seasonEndTime":"Ends in: %s",
+    "rewardTitle":"reward:",
+    "tabTask":"Task",
+    "tabTaskCheck":"Task",
+    "tabAch":"Medal",
+    "tabAchCheck":"Medal",
+    "unGetRank":"No reward",
+
+    "not_enough_cash":"Insufficient cash",
+    "not_enough_cash_content":"The cash required to enter the game is <color=red>₹%s</color>",
+    "not_enough_ticket":"Insufficient tickets",
+    "not_enough_ticket_content":"The tickets required to enter the game is <color=red>%s</color>",
+
+ 
+
+
+    "nick":"Nickname",
+    "head":"Profile Image",
+    "signature":"Signature",
+    "country":"Country/Region",
+
+    "selectpayment":"Select your payment method：",
+
+    "titleuserinfo":"Profile",
+    "favoritegames":"Favorite Games",
+    "seasons":"Seasons",
+    "gamehistory":"Game History",
+
+    "amount":"Deposit Amount:",
+    "bonus":"Bonus Cash",
+    "newbalance":"New Balance:",
+
+    "chooseavatar":"Choose Avatar",
+
+    "deposit":"Deposit",
+    "depositexplain":"Enter your birthdday to play for cash",
+    "explain":"·  Users must be at least 18 years old play for cash.\n·  By tapping 'submit', Iagree to Pocket7Games\nTerms and Condtions",
+    "birthday":"Birthday",
+    "submit":"Submit",
+
+    "withdraw":"Withdraw",
+    "playagain":"Play again",
+    "cash":"Total Cash",
+    "withdrawable":"Withdrawable",
+    "withdrawablelimit":"Withdrawable limit",
+    "withdrawway":"Withdrawal options:",
+    "inputsum":"Enter the withdrawal amount",
+    "limitdrawable":"(The min is %s)",
+    "sercost":"Handling fee:",
+    "sertime":"Estimated arrival time:",
+
+    "withdrawtype":"Withdrawal options",
+
+    "balance":"Balance",
+
+    "defaultavatar":"Default Avatar",
+    "customized":"Customized Avatar",
+    "cancel":"Cancel",
+
+    "notice_match":"<color=#23E958>%s <color=#6490FF>won %s in</color> %s</color>",
+    "seasonpoint":"Season points",
+    "upgradereward":"Upgrade reward",
+    "task":"Task",
+    
+    "achievement":"Achievement",
+    "moregames":"More Games",
+    "morestakes":"More Stakes",
+    "records":"Records",
+    "receive":"Receive",
+    "received":"Received",
+
+    "tap":"Tap to view your profile",
+
+    "acmatchtitle":"Pyramid Win",
+
+    "contentSubTitle":"Total prize:",
+    "save":"Save",
+
+    "messagetips":"The valid time of the message is 30 days",
+   
+    "backGame":"Back to the game",
+
+    "offlineHistoryTitle":"The flollwing matches were completed",
+    "offlineHistoryBtn":"Confirm",
+
+    "contacUs":"Contact Us",
+    "faqBtnDesc":"Didn’tanswer your question?",
+    "faqDetailTitle":"Details",
+
+    "BonusCash":"Congratulations",
+
+    "regAccount_title":"Save Accounts",
+    "regAccout_subTitle":"Register your account",
+    "regAccout_desc":"You’re so close to a real cash prize! Please save your accounts to keep it safe.",
+    "regAccount_fb":"Continue with Facebook",
+    "regAccount_google":"Continue with Google",
+
+
+    "name":"Name",
+    "phoneno":"Phone No:",
+    "mailaddress":"Mail address:",
+    "fillinformation":"Plases fill in personal information",
+    "ifsccode":"IFSC code:",
+    "cardno":"Card No:",
+    "confirm":"Confirm",
+    "accounttype":"Account type:",
+    "cashaccountTitle":"Cash Account",
+
+    "cashaccount":"Cash account details",
+    "handlingfee":"Handling fee",
+    "totalamount":"Total withdrawal amount",
+    "upiid":"UPI ID:",
+
+    "activitytime":"Activity time",
+    "bigwin":"PURCHASE NOW TO\nCHALLENGE BIG WIN",
+    "unget":"Tap to collect the reward",
+    "alget":"Come back tomorrow for more reward",
+    "recharge":"Recharge and get a big surprise",
+
+    "completeInformation":"please complete information.",
+
+
+    "withDrawSuccess_progressBtn":"Check",
+    "withDrawSuccess_content":"Withdrawal is in progress, we will complete your order as soon as possible",
+
+    "endsin":"Ends in:",
+
+    "matchTip":"Play now,we're finding your opponent",
+    "enterGame":"Entering the game...",
+    "matchTip_record":"finding  opponent",
+
+    "loginAgreeTip":"I Have read thorugh and accepted the Terms of Serivce of SkillMaster",
+
+    "guidRoomList":"Play a game with tickets to <size=32><b><color=#FF7F1A>win cash</color></b></size> !<br/>It's your chance to win real money now!",
+
+    "defaultname":"Updating",
+    "entry":"ENTRY",
+
+    "current":"Current",
+    "history":"History",
+    "wingames":"Winning Games",
+    "winstreak":"Winning Streak",
+
+    "namenulltip":"Name can't be empty",
+    "phonenulltip":"Phone can't be empty",
+    "mailnulltip":"Mail can't be empty",
+    "ifscnulltip":"IFSC can't be empty",
+    "cardnonulltip":"Card No can't be empty",
+    "upinulltip":"UPI ID can't be empty",
+    "mailerrtip":"Incorrect Phone NO.format'/'<br/>Incorrect Mail address.format",
+    "infornulltip":"Information cannot be empty",
+
+    "currency":"₹",
+    "currencyGEM":"GEM",
+    "currencyTIC":"TIC",
+    "unlisted":"unlisted",
+
+    "signout":"Sign Out",
+
+    "seasontask":"Season Task",
+    "seasongoal":"Season Goal",
+    "depositerr":"Check your personal information！",
+
+    "tipstitle":"Tips",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>balance>>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "totalcash":"Total       Cash:",
+    "wincash":"Winning  Cash",
+    "bonuscash":"Bonus    Cash:",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>loginreward>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "loginrecharge":"<color=#952302>Add cash</c><color=#8322FE>%s</c><color=#952302>to get super rewards</color>",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>newrecharge>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "depositcash":"DEPOSIT CASH",
+    "bonucash":"BONUS CASH",
+    "comrewards":"COMPLETE TASKS GET REWARDS",
+    "buy":"BUY",
+    "free":"FREE",
+    "attention":"Exclusive offer - unlock your %s Bonus Cash\nwhen you complete tasks! *Offer expires in %s hours",
+    "tasktxt1":"<color=#0092E6>Participate in</c><color=#FF7800> %s </c><color=#0092E6>cash  games</color>",
+    "tasktxt2":"<color=#0092E6>Win</c><color=#FF7800> %s  </c><color=#0092E6>times in cash games</color>",
+    "tasktxt3":"<color=#0092E6>Get</c><color=#FF7800> %s </c><color=#0092E6>season points</color>",
+    "tasktxt4":"<color=#0092E6>Win</c><color=#FF7800> %s </c><color=#0092E6>cash in total</color>",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>luckyturn>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "noticket":"Not enough lottery tickets",
+    "seasonexpired":"The current interface data has expired, please refresh the interface",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>DepositPageView>>>>>>>>>>>>>>>>>>>界面":"",
+    "mysterybonues":"Mystery Bonus",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>hall>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "weakwithdraw":"Withdrawal winning cash",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>selectpay>>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "selepaytitle":"Please select method of payment",
+    "nextstep":"Next Step",
+    "selepaytip":"If there is a problem with one paymenmt method,please choose the other payment method.",
+    "upiwallet":"UPI/Wallet",
+    
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>recordDlg>>>>>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "depositTips":"Sorry, your balance is insufficient, please deposit before play the game.",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>seasonPromotion>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "seasonpercent":"<color=#FFFFFF>You have surpassed </c><color=#FFD810>%s</c><color=#FFFFFF>of players</color>",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>seasonplacewinner>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "lastseason":"Ranking last season",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>withdraw>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>界面":"",
+    "NeedRecharge":"This feature is available only \nfor premium players,Deposit\n <color=#FF0000>%s%s</color> now to become a\n premium player.",
+    "WithDrawTimes":"You can withdraw %s times a day.You have run out of counts today.",
+    "depoositCash":"Deposit Cash",
+    "oops":"Oops!",
+    "ok":"Ok",
+
+    ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>barrage>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>":"",
+    "congratulations":"Congratulations!",
+    "got":"got",
+
+    "btnCancel":"Cancel",
+    "btnOk":"Yes",
+    "watchReplay":"Do you want to watch the replay？",
+
+    "newDeposit_title":"Deposit",
+    "newDeposit_ltip":"By completing this transaction, I agree that I am 18+ Cash will arrive within 1 minute as normal, but some times it takes few more minutes.",
+    "newDeposit_paymentamount":"Payment amount:",
+    "newDeposit_listTitle":"Select amount",
+    "newDeposit_itemTotal":"Total get",
+    "newDeposit_itemCash":"Cash",
+    "newDeposit_itemBonus":"Bonus",
+
+    "endtime":"Ends in:",
+    "fillPlayerInfo_title":"Payer Information",
+    "matchhistory":"Only the best result among your multiple results will participate in the ranking",
+    "ranking":"Ranking",
+    "maxplayers":"MaxPlayers:",
+    "bestscore":"Best Score:",
+    "prizes":"Prizes",
+    "totalprize":"Total Prize",
+    "time":"Time:",
+
+    "alltaskcomplete":"After all tasks completed",
+    "getnow":"Get now",
+    "extra":"EXTRA",
+    "base":"BASE",
+
+    "matchtimeout":"The contest is over！Please look at the other games！",
+
+    "endhour":"Upcoming rewards",
+
+    "full":"Full",
+
+
+    "matchtips":{
+        "txt1":"1.This is a time-limited game, players on the list can receive rewards.",
+        "txt2":"2.You can participate in the competition as many times as you want, and an admission fee will be deducted for each participation. You will take the best result among your multiple results to participate in the ranking."
+    }
+    
+}

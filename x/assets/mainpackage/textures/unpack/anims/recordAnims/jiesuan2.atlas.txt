@@ -1,0 +1,90 @@
+
+jiesuan2.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2
+  rotate: false
+  xy: 354, 18
+  size: 86, 41
+  orig: 86, 41
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 354, 61
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 830, 146
+  size: 67, 107
+  orig: 67, 107
+  offset: 0, 0
+  index: -1
+4370-1
+  rotate: false
+  xy: 548, 103
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 899, 200
+  size: 60, 53
+  orig: 60, 53
+  offset: 0, 0
+  index: -1
+glow1
+  rotate: false
+  xy: 700, 125
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+guang0001
+  rotate: false
+  xy: 2, 15
+  size: 350, 238
+  orig: 350, 238
+  offset: 0, 0
+  index: -1
+xiaoshan1
+  rotate: true
+  xy: 2, 2
+  size: 11, 14
+  orig: 11, 14
+  offset: 0, 0
+  index: -1
+xiaoshan2
+  rotate: false
+  xy: 830, 126
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+xiaoshan3
+  rotate: false
+  xy: 442, 35
+  size: 25, 24
+  orig: 25, 24
+  offset: 0, 0
+  index: -1
+xiaoshan4
+  rotate: false
+  xy: 548, 71
+  size: 23, 30
+  orig: 23, 30
+  offset: 0, 0
+  index: -1
+xiaoshan5
+  rotate: false
+  xy: 700, 106
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1

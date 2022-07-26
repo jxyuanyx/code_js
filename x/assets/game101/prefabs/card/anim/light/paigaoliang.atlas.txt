@@ -1,0 +1,13 @@
+
+paigaoliang.png
+size: 128,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ic/红心10_00000
+  rotate: false
+  xy: 2, 2
+  size: 123, 159
+  orig: 170, 200
+  offset: 23, 22
+  index: -1

@@ -1,0 +1,123 @@
+{
+"skeleton": { "hash": "xSSlE30H6OTs6BiwIpC5VuGgtjM", "spine": "3.7.93", "width": 750, "height": 1334 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "zongguang", "parent": "root", "x": -362.08, "y": 121.82 },
+	{ "name": "ic/42", "parent": "zongguang", "length": 183.38, "rotation": 136.36, "x": 374.88, "y": -114.89 },
+	{ "name": "ic/43", "parent": "zongguang", "length": 183.38, "rotation": 89.31, "x": 374.88, "y": -114.89 },
+	{ "name": "ic/44", "parent": "zongguang", "length": 183.38, "rotation": 44.51, "x": 374.88, "y": -114.89 },
+	{ "name": "ic/45", "parent": "zongguang", "length": 183.38, "rotation": 179.45, "x": 374.88, "y": -114.89 }
+],
+"slots": [
+	{ "name": "ic/48", "bone": "ic/45", "attachment": "ic/42" },
+	{ "name": "ic/42", "bone": "ic/42", "attachment": "ic/42" },
+	{ "name": "ic/44", "bone": "ic/43", "attachment": "ic/42" },
+	{ "name": "ic/46", "bone": "ic/44", "attachment": "ic/42" },
+	{ "name": "ic/43", "bone": "ic/42", "attachment": "ic/42" },
+	{ "name": "ic/45", "bone": "ic/43", "attachment": "ic/42" },
+	{ "name": "ic/47", "bone": "ic/44", "attachment": "ic/42" },
+	{ "name": "ic/49", "bone": "ic/45", "attachment": "ic/42" }
+],
+"skins": {
+	"default": {
+		"ic/42": {
+			"ic/42": { "x": 162.55, "y": 4.12, "rotation": 179, "width": 316, "height": 242 }
+		},
+		"ic/43": {
+			"ic/42": { "x": -149.59, "y": 10.19, "rotation": -1.71, "width": 316, "height": 242 }
+		},
+		"ic/44": {
+			"ic/42": { "x": 155.38, "y": 12.51, "rotation": -179.45, "width": 316, "height": 242 }
+		},
+		"ic/45": {
+			"ic/42": { "x": -156.36, "y": 6.82, "rotation": 0.4, "width": 316, "height": 242 }
+		},
+		"ic/46": {
+			"ic/42": { "x": 149.22, "y": 7.48, "rotation": -179.69, "width": 316, "height": 242 }
+		},
+		"ic/47": {
+			"ic/42": { "x": -161.99, "y": 4.41, "rotation": 0.36, "width": 316, "height": 242 }
+		},
+		"ic/48": {
+			"ic/42": { "x": 164.29, "y": 3.12, "rotation": -179.45, "width": 316, "height": 242 }
+		},
+		"ic/49": {
+			"ic/42": { "x": -146.61, "y": -0.02, "rotation": 0.36, "width": 316, "height": 242 }
+		}
+	}
+},
+"animations": {
+	"guang1": {
+		"slots": {
+			"ic/42": {
+				"color": [
+					{ "time": 0, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.2667, "color": "ffffff95" },
+					{ "time": 0.3, "color": "ffffff00" }
+				]
+			},
+			"ic/43": {
+				"color": [
+					{ "time": 0, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.2667, "color": "ffffff95" },
+					{ "time": 0.3, "color": "ffffff00" }
+				]
+			},
+			"ic/44": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.2667, "color": "ffffff00" },
+					{ "time": 0.3, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.5667, "color": "ffffff95" },
+					{ "time": 0.6, "color": "ffffff00" }
+				]
+			},
+			"ic/45": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.2667, "color": "ffffff00" },
+					{ "time": 0.3, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.5667, "color": "ffffff95" },
+					{ "time": 0.6, "color": "ffffff00" }
+				]
+			},
+			"ic/46": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffff00" },
+					{ "time": 0.5667, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.8333, "color": "ffffff95" },
+					{ "time": 0.8667, "color": "ffffff00" }
+				]
+			},
+			"ic/47": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffff00" },
+					{ "time": 0.5667, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 0.8333, "color": "ffffff95" },
+					{ "time": 0.8667, "color": "ffffff00" }
+				]
+			},
+			"ic/48": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.8333, "color": "ffffff00" },
+					{ "time": 0.8667, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 1.1333, "color": "ffffff95" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"ic/49": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.8333, "color": "ffffff00" },
+					{ "time": 0.8667, "color": "ffffff95", "curve": "stepped" },
+					{ "time": 1.1333, "color": "ffffff95" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			}
+		}
+	}
+}
+}

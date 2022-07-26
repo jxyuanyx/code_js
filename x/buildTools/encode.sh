@@ -1,0 +1,1 @@
+python encode.py ../build/jsb-default/assets

@@ -1,0 +1,3 @@
+[submodule "client_unity_android"]
+	path = unityGames
+url=http://git.butonggame.com/zhangyang/py_skillmaster_unity.git

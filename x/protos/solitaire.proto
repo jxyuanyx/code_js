@@ -1,0 +1,252 @@
+syntax = "proto3";
+package pb;
+
+import "common.proto";
+
+option go_package = "../../pb";
+
+// 纸牌游戏协议
+
+enum UndoOpType {
+    OP_NONE = 0; // 无效的撤销操作
+    OP_R2P = 1; // 随机堆移到堆叠区
+    OP_R2F = 2; // 随机堆移到完成区
+    OP_P2F = 3; // 堆叠区移到完成区
+    OP_F2P = 4; // 完成区移到堆叠区
+    OP_P2P = 5; // 堆叠区移到另一个堆叠区
+    OP_RAND = 6; // 随机牌
+}
+
+message SolitaireRandomArea {
+    int32 LeftCards = 1;
+    bytes ShowCards = 2;
+}
+
+message SolitairePileArea {
+    int32 LeftCards = 1;
+    bytes ShowCards = 2;
+}
+
+
+message SolitaireCarddesk {
+    SolitaireRandomArea RandArea = 1;
+
+    repeated bytes FinishedArea = 2;
+
+   repeated SolitairePileArea PileArea = 3;
+}
+
+message SolitaireCompetitionDataReq {
+
+}
+
+
+message SolitaireCompetitionDataResp {
+    ErrNo err = 1;
+    SolitaireCarddesk CardDesk = 2; // 牌桌
+    GameStatus Status = 3; // 游戏状态，0游戏进行中，1暂停
+    int32 LeftTime = 4; // 游戏剩余时间
+    bool CanUndo = 5;   // 是否可撤销
+    int32 FreeRandCount = 6; // 剩余免费翻牌次数
+    int32 score = 7;
+}
+
+// 随机堆随机三张牌
+message SolitaireOpRandomReq {
+
+}
+
+message SolitaireOpRandomResp {
+    ErrNo err = 1;
+    bytes ShowCards = 2;
+    int32 LeftCards = 3;
+    int32 FreeCount = 4; // 剩余免费次数
+    int32 Score = 5; // 当前积分
+}
+
+// 从随机堆移动一张牌到堆叠区 #1
+message SolitaireOp_R2PReq {
+    int32 index = 1; // 要移动到的堆叠区的下标
+}
+
+// 从随机堆移动一张牌到堆叠区返回结果 #1
+message  SolitaireOp_R2PResp {
+    ErrNo err = 1;
+    int32 Score = 2; // 操作成功后的积分
+}
+
+// 从随机堆移动一张牌到完成堆 #2
+message SolitaireOp_R2FReq {
+    int32 index = 1; // 要移动到的完成堆的下标
+}
+
+// 从随机堆移动一张牌到完成堆返回结果 #2
+message SolitaireOp_R2FResp {
+    ErrNo err = 1;
+    int32 Score = 2; // 操作成功后的积分
+}
+
+// 从堆叠区移动一张牌到完成堆 #3
+message SolitaireOp_P2FReq {
+    int32 SrcIndex = 1; // 堆叠区下标
+    int32 DestIndex = 2; // 完成堆下标
+}
+
+// 从堆叠区移动一张牌到完成堆返回结果 #3
+message SolitaireOp_P2FResp {
+    ErrNo err = 1;
+    int32 NewCard = 2; // 如果移动成功，新亮出的牌
+    int32 Index = 3;   // 亮出的新牌的下标
+    int32 LeftCard = 4; // 如果亮出新牌， 此字段表示剩余的牌
+    int32 Score = 5; // 操作成功后的积分
+}
+
+// 从完成堆移动一张牌到堆叠区 #4
+message SolitaireOp_F2PReq {
+    int32 SrcIndex = 1; // 完成堆下标
+    int32 DestIndex = 2; // 完成堆下标
+}
+
+// 从完成堆移动一张牌到堆叠区返回结果 #4
+message SolitaireOp_F2PResp {
+    ErrNo err = 1;
+    int32 Score = 2; // 操作成功后的积分
+}
+
+// 总堆叠区移动若干张牌到另外一个堆叠区 #5
+message SolitaireOp_P2PReq {
+    int32 SrcIndex = 1; // 原堆下标
+    int32 Number = 2; // 要移动几张牌
+    int32 DestIndex = 3; // 要移动目标堆下标
+}
+
+// 总堆叠区移动若干张牌到另外一个堆叠区返回结果 #5
+message SolitaireOp_P2PResp {
+    ErrNo err = 1;
+    int32 NewCard = 2; // 如果移动成功，新亮出的牌
+    int32 Index = 3;   // 亮出的新牌的下标
+    int32 LeftCard = 4; // 如果亮出新牌， 此字段表示剩余的牌
+    int32 Score = 5; // 操作成功后的积分
+}
+
+// 完成游戏
+message SolitaireFinishReq {
+}
+
+// 结算奖励
+message SolitaireReward {
+    int32 Score = 1; // 积分
+    int32 TimeScore = 2; // 时间积分
+}
+
+// 完成游戏返回结果
+message SolitaireFinishResp {
+    ErrNo err = 1;
+    GameOverReason reason = 2; // 游戏结束原因
+    SolitaireReward reward = 3;
+    int32 LiftBestScore = 4; // 生涯最佳积分
+    int32 TodayBestScore = 5; // 今日最佳积分
+}
+
+// 暂停游戏
+message SolitairePauseGameReq {
+
+}
+
+// 暂停游戏返回
+message SolitairePauseGameResp {
+    ErrNo err = 1;
+}
+
+// 恢复游戏
+message SolitaireRecoverGameReq {
+
+}
+
+// 暂停游戏请求结果
+message SolitaireRecoverGameResp {
+    ErrNo err = 1;
+    int32 LeftTime = 2; // 剩余时间
+}
+
+// 请求撤销
+message SolitaireUndoReq {
+
+}
+
+// 撤销操作 OP_R2P， 从随机区移到堆叠区
+message SolitaireUndoOpR2P {
+    int32 index = 1; // 要撤销的堆叠区的列下标
+}
+
+// 撤销操作 OP_R2F 随机堆移到完成区
+message SolitaireUndoOpR2F {
+    int32 index = 2; // 要撤销的完成堆的列下标
+}
+
+// 撤销操作 OP_P2F 堆叠区移到完成区
+message SolitaireUndoOpP2F {
+    int32 SrcIndex = 1; // 完成区下标
+    int32 DestIndex = 2; // 堆叠区下标
+    bool  IsMuck    = 3; // 是否要埋牌
+}
+
+// 撤销操作 OP_F2P 完成区移到堆叠区
+message SolitaireUndoOpF2P {
+    int32 SrcIndex = 1; // 堆叠区下标
+    int32 DestIndex = 2; // 完成堆下标
+}
+
+// 撤销操作 OP_P2P 堆叠区移到另一个堆叠区
+message SolitaireUndoOpP2P {
+    int32 SrcIndex = 1; // 原堆下标
+    int32 Number = 2; // 要移动几张牌
+    int32 DestIndex = 3; // 要移动目标堆下标
+    bool  IsMuck    = 4; // 是否要埋牌
+}
+
+// 撤销操作 OP_RAND 随机牌
+message SolitaireUndoOpRand {
+    bytes cards = 1;        // 当前牌
+    int32 LeftCard = 2;     // 剩余牌
+    int32 FreeCount = 3;    // 剩余免费次数
+
+    // 下面两个字段服务器使用
+    int32 index = 4;
+    int32 tindex = 5;
+}
+
+// 撤销结果
+message SolitaireUndoResp {
+    ErrNo err = 1;
+    UndoOpType type = 2;
+
+    // 根据op字段， 下面只有一个会有值
+    SolitaireUndoOpR2P r2p = 3;
+    SolitaireUndoOpR2F r2f = 4;
+    SolitaireUndoOpP2F p2f = 5;
+    SolitaireUndoOpF2P f2p = 6;
+    SolitaireUndoOpP2P p2p = 7;
+    SolitaireUndoOpRand rand = 8;
+
+    int32 score = 9; // 当前积分
+}
+
+message SolitaireOpReq {
+    uint32 RoomID = 1;
+    oneof op {
+        SolitaireCompetitionDataReq op_data = 2;
+        SolitaireOpRandomReq op_rand = 3;
+        SolitaireOp_R2PReq op_r2p = 4;
+        SolitaireOp_R2FReq op_r2f = 5;
+        SolitaireOp_P2FReq op_p2f = 6;
+        SolitaireOp_F2PReq op_f2p = 7;
+        SolitaireOp_P2PReq op_p2p = 8;
+        SolitaireFinishReq op_fin = 9;
+        SolitairePauseGameReq op_pause = 10;
+        SolitaireRecoverGameReq op_recover = 11;
+        SolitaireUndoReq op_undo = 12;
+    }
+}
+
+

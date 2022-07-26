@@ -1,0 +1,13 @@
+
+paisaoguang.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jpai1_00000
+  rotate: false
+  xy: 2, 2
+  size: 153, 222
+  orig: 230, 260
+  offset: 39, 19
+  index: -1

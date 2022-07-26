@@ -1,0 +1,83 @@
+
+vs.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 186, 217
+  orig: 188, 217
+  offset: 2, 0
+  index: -1
+11
+  rotate: false
+  xy: 1342, 403
+  size: 245, 89
+  orig: 245, 89
+  offset: 0, 0
+  index: -1
+12
+  rotate: false
+  xy: 674, 222
+  size: 666, 270
+  orig: 666, 271
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 1342, 271
+  size: 188, 130
+  orig: 188, 130
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1787, 357
+  size: 142, 135
+  orig: 142, 135
+  offset: 0, 0
+  index: -1
+4
+  rotate: true
+  xy: 437, 88
+  size: 131, 138
+  orig: 131, 138
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 190, 130
+  size: 245, 89
+  orig: 245, 89
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 2, 221
+  size: 670, 271
+  orig: 670, 271
+  offset: 0, 0
+  index: -1
+glow_0001
+  rotate: false
+  xy: 577, 91
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+guangshu_63
+  rotate: false
+  xy: 1589, 396
+  size: 196, 96
+  orig: 196, 96
+  offset: 0, 0
+  index: -1
+guangshu_64
+  rotate: false
+  xy: 190, 28
+  size: 196, 100
+  orig: 196, 100
+  offset: 0, 0
+  index: -1

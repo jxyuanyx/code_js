@@ -1,0 +1,20 @@
+{
+  "ver": "1.1.2",
+<<<<<<< HEAD
+  "uuid": "2dfb8acf-4076-4088-9d53-af2a783d00eb",
+=======
+<<<<<<< HEAD:assets/mainpackage/textures/main/dialogs/matchCheck.meta
+  "uuid": "bbb9b652-6a47-4f74-99d6-90a6d325aea7",
+=======
+  "uuid": "ae998228-49a6-487f-a89f-6477c302a2a7",
+>>>>>>> master2:assets/mainpackage/textures/unpack/fonts.meta
+>>>>>>> master2
+  "isBundle": false,
+  "bundleName": "",
+  "priority": 1,
+  "compressionType": {},
+  "optimizeHotUpdate": {},
+  "inlineSpriteFrames": {},
+  "isRemoteBundle": {},
+  "subMetas": {}
+}

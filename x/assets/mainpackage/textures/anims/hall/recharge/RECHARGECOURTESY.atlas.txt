@@ -1,0 +1,104 @@
+
+RECHARGECOURTESY.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 483, 157
+  size: 81, 26
+  orig: 81, 26
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 369, 6
+  size: 49, 28
+  orig: 49, 28
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 314, 2
+  size: 53, 32
+  orig: 53, 32
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 273, 76
+  size: 172, 44
+  orig: 172, 44
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 2, 10
+  size: 166, 80
+  orig: 166, 80
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 170, 17
+  size: 142, 57
+  orig: 145, 57
+  offset: 3, 0
+  index: -1
+dia
+  rotate: false
+  xy: 2, 92
+  size: 269, 146
+  orig: 269, 146
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 483, 144
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 170, 80
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 170, 80
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: false
+  xy: 170, 80
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+dian5
+  rotate: false
+  xy: 170, 80
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+kuahng
+  rotate: false
+  xy: 273, 122
+  size: 208, 116
+  orig: 208, 116
+  offset: 0, 0
+  index: -1
+zi111
+  rotate: false
+  xy: 314, 36
+  size: 161, 38
+  orig: 161, 38
+  offset: 0, 0
+  index: -1

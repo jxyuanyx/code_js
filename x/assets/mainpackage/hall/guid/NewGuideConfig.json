@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "desc":"点击游戏图标",
+        "findStr":"Canvas/pageview/GamePageView/guideContent",
+        "delayTime":0,
+        "p_offset":[-230,290],
+        "pass_mode":0,
+        "auto_next":false
+    },
+    {
+        "id":2,
+        "desc":"点击More stakes按钮",
+        "findStr":"DlgLayer/recordView/bottomView/auto_btn_moreStakes",
+        "delayTime":1500,
+        "pass_mode":1,
+        "auto_next":false
+    },
+    {
+        "id":3,
+        "desc":"点击房间列表",
+        "findStr":"Canvas/pageview/MatchPageView/scrollview/view/content/guideNode",
+        "delayTime":0,
+        "p_offset":[230,10],
+        "pass_mode":1,
+        "auto_next":false
+    },
+    {
+        "id":4,
+        "desc":"点击win tip",
+        "findStr":"DlgLayer/recordView/guid_win_Tip",
+        "delayTime":1500,
+        "p_offset":[230,-270],
+        "pass_mode":1,
+        "auto_next":false
+    }
+]

@@ -1,0 +1,146 @@
+
+DAY1-6guang.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ba/ba_00000
+  rotate: false
+  xy: 170, 425
+  size: 132, 173
+  orig: 200, 200
+  offset: 32, 13
+  index: -1
+ba/ba_00001
+  rotate: false
+  xy: 678, 426
+  size: 142, 183
+  orig: 200, 200
+  offset: 27, 13
+  index: -1
+ba/ba_00002
+  rotate: false
+  xy: 532, 423
+  size: 144, 184
+  orig: 200, 200
+  offset: 25, 13
+  index: -1
+ba/ba_00003
+  rotate: false
+  xy: 862, 807
+  size: 158, 195
+  orig: 200, 200
+  offset: 16, 3
+  index: -1
+ba/ba_00004
+  rotate: false
+  xy: 517, 609
+  size: 158, 196
+  orig: 200, 200
+  offset: 16, 2
+  index: -1
+ba/ba_00005
+  rotate: false
+  xy: 2, 199
+  size: 166, 198
+  orig: 200, 200
+  offset: 14, 1
+  index: -1
+ba/ba_00006
+  rotate: false
+  xy: 2, 399
+  size: 166, 199
+  orig: 200, 200
+  offset: 14, 0
+  index: -1
+ba/ba_00007
+  rotate: false
+  xy: 2, 802
+  size: 168, 200
+  orig: 200, 200
+  offset: 13, 0
+  index: -1
+ba/ba_00008
+  rotate: false
+  xy: 2, 600
+  size: 168, 200
+  orig: 200, 200
+  offset: 13, 0
+  index: -1
+ba/ba_00009
+  rotate: false
+  xy: 172, 802
+  size: 168, 200
+  orig: 200, 200
+  offset: 13, 0
+  index: -1
+ba/ba_00010
+  rotate: false
+  xy: 172, 603
+  size: 169, 197
+  orig: 200, 200
+  offset: 12, 0
+  index: -1
+ba/ba_00011
+  rotate: false
+  xy: 342, 805
+  size: 170, 197
+  orig: 200, 200
+  offset: 12, 0
+  index: -1
+ba/ba_00012
+  rotate: false
+  xy: 343, 609
+  size: 172, 194
+  orig: 200, 200
+  offset: 11, 2
+  index: -1
+ba/ba_00013
+  rotate: false
+  xy: 514, 807
+  size: 172, 195
+  orig: 200, 200
+  offset: 11, 1
+  index: -1
+ba/ba_00014
+  rotate: false
+  xy: 688, 807
+  size: 172, 195
+  orig: 200, 200
+  offset: 12, 1
+  index: -1
+ba/ba_00015
+  rotate: false
+  xy: 2, 2
+  size: 166, 195
+  orig: 200, 200
+  offset: 18, 1
+  index: -1
+ba/ba_00016
+  rotate: false
+  xy: 677, 611
+  size: 149, 194
+  orig: 200, 200
+  offset: 25, 1
+  index: -1
+ba/ba_00017
+  rotate: false
+  xy: 828, 613
+  size: 145, 192
+  orig: 200, 200
+  offset: 26, 3
+  index: -1
+ba/ba_00018
+  rotate: true
+  xy: 343, 464
+  size: 143, 187
+  orig: 200, 200
+  offset: 26, 7
+  index: -1
+ba/ba_00019
+  rotate: false
+  xy: 822, 432
+  size: 142, 177
+  orig: 200, 200
+  offset: 27, 9
+  index: -1

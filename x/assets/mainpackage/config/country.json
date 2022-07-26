@@ -1,0 +1,916 @@
+[{
+	"country_id": 244,
+	"country_name": "Angola",
+	"area_code": "AO",
+	"chinese_name": "安哥拉"
+}, {
+	"country_id": 93,
+	"country_name": "Afghanistan",
+	"area_code": "AF",
+	"chinese_name": "阿富汗"
+}, {
+	"country_id": 355,
+	"country_name": "Albania",
+	"area_code": "AL",
+	"chinese_name": "阿尔巴尼亚"
+}, {
+	"country_id": 213,
+	"country_name": "Algeria",
+	"area_code": "DZ",
+	"chinese_name": "阿尔及利亚"
+}, {
+	"country_id": 376,
+	"country_name": "Andorra",
+	"area_code": "AD",
+	"chinese_name": "安道尔共和国"
+}, {
+	"country_id": 1264,
+	"country_name": "Anguilla",
+	"area_code": "AI",
+	"chinese_name": "安圭拉岛"
+}, {
+	"country_id": 1268,
+	"country_name": "Antigua and Barbuda",
+	"area_code": "AG",
+	"chinese_name": "安提瓜和巴布达"
+}, {
+	"country_id": 54,
+	"country_name": "Argentina",
+	"area_code": "AR",
+	"chinese_name": "阿根廷"
+}, {
+	"country_id": 374,
+	"country_name": "Armenia",
+	"area_code": "AM",
+	"chinese_name": "亚美尼亚"
+}, {
+	"country_id": 61,
+	"country_name": "Australia",
+	"area_code": "AU",
+	"chinese_name": "澳大利亚"
+}, {
+	"country_id": 43,
+	"country_name": "Austria",
+	"area_code": "AT",
+	"chinese_name": "奥地利"
+}, {
+	"country_id": 994,
+	"country_name": "Azerbaijan",
+	"area_code": "AZ",
+	"chinese_name": "阿塞拜疆"
+}, {
+	"country_id": 1242,
+	"country_name": "Bahamas",
+	"area_code": "BS",
+	"chinese_name": "巴哈马"
+}, {
+	"country_id": 973,
+	"country_name": "Bahrain",
+	"area_code": "BH",
+	"chinese_name": "巴林"
+}, {
+	"country_id": 880,
+	"country_name": "Bangladesh",
+	"area_code": "BD",
+	"chinese_name": "孟加拉国"
+}, {
+	"country_id": 1246,
+	"country_name": "Barbados",
+	"area_code": "BB",
+	"chinese_name": "巴巴多斯"
+}, {
+	"country_id": 375,
+	"country_name": "Belarus",
+	"area_code": "BY",
+	"chinese_name": "白俄罗斯"
+}, {
+	"country_id": 32,
+	"country_name": "Belgium",
+	"area_code": "BE",
+	"chinese_name": "比利时"
+}, {
+	"country_id": 501,
+	"country_name": "Belize",
+	"area_code": "BZ",
+	"chinese_name": "伯利兹"
+}, {
+	"country_id": 229,
+	"country_name": "Benin",
+	"area_code": "BJ",
+	"chinese_name": "贝宁"
+}, {
+	"country_id": 1441,
+	"country_name": "Bermuda Is.",
+	"area_code": "BM",
+	"chinese_name": "百慕大群岛"
+}, {
+	"country_id": 591,
+	"country_name": "Bolivia",
+	"area_code": "BO",
+	"chinese_name": "玻利维亚"
+}, {
+	"country_id": 267,
+	"country_name": "Botswana",
+	"area_code": "BW",
+	"chinese_name": "博茨瓦纳"
+}, {
+	"country_id": 55,
+	"country_name": "Brazil",
+	"area_code": "BR",
+	"chinese_name": "巴西"
+}, {
+	"country_id": 673,
+	"country_name": "Brunei",
+	"area_code": "BN",
+	"chinese_name": "文莱"
+}, {
+	"country_id": 359,
+	"country_name": "Bulgaria",
+	"area_code": "BG",
+	"chinese_name": "保加利亚"
+}, {
+	"country_id": 226,
+	"country_name": "Burkina-faso",
+	"area_code": "BF",
+	"chinese_name": "布基纳法索"
+}, {
+	"country_id": 95,
+	"country_name": "Burma",
+	"area_code": "MM",
+	"chinese_name": "缅甸"
+}, {
+	"country_id": 257,
+	"country_name": "Burundi",
+	"area_code": "BI",
+	"chinese_name": "布隆迪"
+}, {
+	"country_id": 237,
+	"country_name": "Cameroon",
+	"area_code": "CM",
+	"chinese_name": "喀麦隆"
+}, {
+	"country_id": 1,
+	"country_name": "Canada",
+	"area_code": "CA",
+	"chinese_name": "加拿大"
+}, {
+	"country_id": 236,
+	"country_name": "Central African Republic",
+	"area_code": "CF",
+	"chinese_name": "中非共和国"
+}, {
+	"country_id": 235,
+	"country_name": "Chad",
+	"area_code": "TD",
+	"chinese_name": "乍得"
+}, {
+	"country_id": 56,
+	"country_name": "Chile",
+	"area_code": "CL",
+	"chinese_name": "智利"
+}, {
+	"country_id": 86,
+	"country_name": "China",
+	"area_code": "CN",
+	"chinese_name": "中国"
+}, {
+	"country_id": 57,
+	"country_name": "Colombia",
+	"area_code": "CO",
+	"chinese_name": "哥伦比亚"
+}, {
+	"country_id": 242,
+	"country_name": "Congo",
+	"area_code": "CG",
+	"chinese_name": "刚果"
+}, {
+	"country_id": 682,
+	"country_name": "Cook Is.",
+	"area_code": "CK",
+	"chinese_name": "库克群岛"
+}, {
+	"country_id": 506,
+	"country_name": "Costa Rica",
+	"area_code": "CR",
+	"chinese_name": "哥斯达黎加"
+}, {
+	"country_id": 53,
+	"country_name": "Cuba",
+	"area_code": "CU",
+	"chinese_name": "古巴"
+}, {
+	"country_id": 357,
+	"country_name": "Cyprus",
+	"area_code": "CY",
+	"chinese_name": "塞浦路斯"
+}, {
+	"country_id": 420,
+	"country_name": "Czech Republic",
+	"area_code": "CZ",
+	"chinese_name": "捷克"
+}, {
+	"country_id": 45,
+	"country_name": "Denmark",
+	"area_code": "DK",
+	"chinese_name": "丹麦"
+}, {
+	"country_id": 253,
+	"country_name": "Djibouti",
+	"area_code": "DJ",
+	"chinese_name": "吉布提"
+}, {
+	"country_id": 1890,
+	"country_name": "Dominica Rep.",
+	"area_code": "DO",
+	"chinese_name": "多米尼加共和国"
+}, {
+	"country_id": 593,
+	"country_name": "Ecuador",
+	"area_code": "EC",
+	"chinese_name": "厄瓜多尔"
+}, {
+	"country_id": 20,
+	"country_name": "Egypt",
+	"area_code": "EG",
+	"chinese_name": "埃及"
+}, {
+	"country_id": 503,
+	"country_name": "EI Salvador",
+	"area_code": "SV",
+	"chinese_name": "萨尔瓦多"
+}, {
+	"country_id": 372,
+	"country_name": "Estonia",
+	"area_code": "EE",
+	"chinese_name": "爱沙尼亚"
+}, {
+	"country_id": 251,
+	"country_name": "Ethiopia",
+	"area_code": "ET",
+	"chinese_name": "埃塞俄比亚"
+}, {
+	"country_id": 679,
+	"country_name": "Fiji",
+	"area_code": "FJ",
+	"chinese_name": "斐济"
+}, {
+	"country_id": 358,
+	"country_name": "Finland",
+	"area_code": "FI",
+	"chinese_name": "芬兰"
+}, {
+	"country_id": 33,
+	"country_name": "France",
+	"area_code": "FR",
+	"chinese_name": "法国"
+}, {
+	"country_id": 594,
+	"country_name": "French Guiana",
+	"area_code": "GF",
+	"chinese_name": "法属圭亚那"
+}, {
+	"country_id": 241,
+	"country_name": "Gabon",
+	"area_code": "GA",
+	"chinese_name": "加蓬"
+}, {
+	"country_id": 220,
+	"country_name": "Gambia",
+	"area_code": "GM",
+	"chinese_name": "冈比亚"
+}, {
+	"country_id": 995,
+	"country_name": "Georgia",
+	"area_code": "GE",
+	"chinese_name": "格鲁吉亚"
+}, {
+	"country_id": 49,
+	"country_name": "Germany",
+	"area_code": "DE",
+	"chinese_name": "德国"
+}, {
+	"country_id": 233,
+	"country_name": "Ghana",
+	"area_code": "GH",
+	"chinese_name": "加纳"
+}, {
+	"country_id": 350,
+	"country_name": "Gibraltar",
+	"area_code": "GI",
+	"chinese_name": "直布罗陀"
+}, {
+	"country_id": 30,
+	"country_name": "Greece",
+	"area_code": "GR",
+	"chinese_name": "希腊"
+}, {
+	"country_id": 1809,
+	"country_name": "Grenada",
+	"area_code": "GD",
+	"chinese_name": "格林纳达"
+}, {
+	"country_id": 1671,
+	"country_name": "Guam",
+	"area_code": "GU",
+	"chinese_name": "关岛"
+}, {
+	"country_id": 502,
+	"country_name": "Guatemala",
+	"area_code": "GT",
+	"chinese_name": "危地马拉"
+}, {
+	"country_id": 224,
+	"country_name": "Guinea",
+	"area_code": "GN",
+	"chinese_name": "几内亚"
+}, {
+	"country_id": 592,
+	"country_name": "Guyana",
+	"area_code": "GY",
+	"chinese_name": "圭亚那"
+}, {
+	"country_id": 509,
+	"country_name": "Haiti",
+	"area_code": "HT",
+	"chinese_name": "海地"
+}, {
+	"country_id": 504,
+	"country_name": "Honduras",
+	"area_code": "HN",
+	"chinese_name": "洪都拉斯"
+}, {
+	"country_id": 852,
+	"country_name": "Hongkong",
+	"area_code": "HK",
+	"chinese_name": "香港"
+}, {
+	"country_id": 36,
+	"country_name": "Hungary",
+	"area_code": "HU",
+	"chinese_name": "匈牙利"
+}, {
+	"country_id": 354,
+	"country_name": "Iceland",
+	"area_code": "IS",
+	"chinese_name": "冰岛"
+}, {
+	"country_id": 91,
+	"country_name": "India",
+	"area_code": "IN",
+	"chinese_name": "印度"
+}, {
+	"country_id": 62,
+	"country_name": "Indonesia",
+	"area_code": "ID",
+	"chinese_name": "印度尼西亚"
+}, {
+	"country_id": 98,
+	"country_name": "Iran",
+	"area_code": "IR",
+	"chinese_name": "伊朗"
+}, {
+	"country_id": 964,
+	"country_name": "Iraq",
+	"area_code": "IQ",
+	"chinese_name": "伊拉克"
+}, {
+	"country_id": 353,
+	"country_name": "Ireland",
+	"area_code": "IE",
+	"chinese_name": "爱尔兰"
+}, {
+	"country_id": 972,
+	"country_name": "Israel",
+	"area_code": "IL",
+	"chinese_name": "以色列"
+}, {
+	"country_id": 39,
+	"country_name": "Italy",
+	"area_code": "IT",
+	"chinese_name": "意大利"
+}, {
+	"country_id": 1876,
+	"country_name": "Jamaica",
+	"area_code": "JM",
+	"chinese_name": "牙买加"
+}, {
+	"country_id": 81,
+	"country_name": "Japan",
+	"area_code": "JP",
+	"chinese_name": "日本"
+}, {
+	"country_id": 962,
+	"country_name": "Jordan",
+	"area_code": "JO",
+	"chinese_name": "约旦"
+}, {
+	"country_id": 855,
+	"country_name": "Kampuchea",
+	"area_code": "KH",
+	"chinese_name": "柬埔寨"
+}, {
+	"country_id": 327,
+	"country_name": "Kazakstan",
+	"area_code": "KZ",
+	"chinese_name": "哈萨克斯坦"
+}, {
+	"country_id": 254,
+	"country_name": "Kenya",
+	"area_code": "KE",
+	"chinese_name": "肯尼亚"
+}, {
+	"country_id": 82,
+	"country_name": "Korea",
+	"area_code": "KR",
+	"chinese_name": "韩国"
+}, {
+	"country_id": 965,
+	"country_name": "Kuwait",
+	"area_code": "KW",
+	"chinese_name": "科威特"
+}, {
+	"country_id": 331,
+	"country_name": "Kyrgyzstan",
+	"area_code": "KG",
+	"chinese_name": "吉尔吉斯坦"
+}, {
+	"country_id": 856,
+	"country_name": "Laos",
+	"area_code": "LA",
+	"chinese_name": "老挝"
+}, {
+	"country_id": 371,
+	"country_name": "Latvia",
+	"area_code": "LV",
+	"chinese_name": "拉脱维亚"
+}, {
+	"country_id": 961,
+	"country_name": "Lebanon",
+	"area_code": "LB",
+	"chinese_name": "黎巴嫩"
+}, {
+	"country_id": 266,
+	"country_name": "Lesotho",
+	"area_code": "LS",
+	"chinese_name": "莱索托"
+}, {
+	"country_id": 231,
+	"country_name": "Liberia",
+	"area_code": "LR",
+	"chinese_name": "利比里亚"
+}, {
+	"country_id": 218,
+	"country_name": "Libya",
+	"area_code": "LY",
+	"chinese_name": "利比亚"
+}, {
+	"country_id": 423,
+	"country_name": "Liechtenstein",
+	"area_code": "LI",
+	"chinese_name": "列支敦士登"
+}, {
+	"country_id": 370,
+	"country_name": "Lithuania",
+	"area_code": "LT",
+	"chinese_name": "立陶宛"
+}, {
+	"country_id": 352,
+	"country_name": "Luxembourg",
+	"area_code": "LU",
+	"chinese_name": "卢森堡"
+}, {
+	"country_id": 853,
+	"country_name": "Macao",
+	"area_code": "MO",
+	"chinese_name": "澳门"
+}, {
+	"country_id": 261,
+	"country_name": "Madagascar",
+	"area_code": "MG",
+	"chinese_name": "马达加斯加"
+}, {
+	"country_id": 265,
+	"country_name": "Malawi",
+	"area_code": "MW",
+	"chinese_name": "马拉维"
+}, {
+	"country_id": 60,
+	"country_name": "Malaysia",
+	"area_code": "MY",
+	"chinese_name": "马来西亚"
+}, {
+	"country_id": 960,
+	"country_name": "Maldives",
+	"area_code": "MV",
+	"chinese_name": "马尔代夫"
+}, {
+	"country_id": 223,
+	"country_name": "Mali",
+	"area_code": "ML",
+	"chinese_name": "马里"
+}, {
+	"country_id": 356,
+	"country_name": "Malta",
+	"area_code": "MT",
+	"chinese_name": "马耳他"
+}, {
+	"country_id": 230,
+	"country_name": "Mauritius",
+	"area_code": "MU",
+	"chinese_name": "毛里求斯"
+}, {
+	"country_id": 52,
+	"country_name": "Mexico",
+	"area_code": "MX",
+	"chinese_name": "墨西哥"
+}, {
+	"country_id": 373,
+	"country_name": "Moldova",
+	"area_code": "MD",
+	"chinese_name": "摩尔多瓦"
+}, {
+	"country_id": 377,
+	"country_name": "Monaco",
+	"area_code": "MC",
+	"chinese_name": "摩纳哥"
+}, {
+	"country_id": 976,
+	"country_name": "Mongolia",
+	"area_code": "MN",
+	"chinese_name": "蒙古"
+}, {
+	"country_id": 1664,
+	"country_name": "Montserrat Is",
+	"area_code": "MS",
+	"chinese_name": "蒙特塞拉特岛"
+}, {
+	"country_id": 212,
+	"country_name": "Morocco",
+	"area_code": "MA",
+	"chinese_name": "摩洛哥"
+}, {
+	"country_id": 258,
+	"country_name": "Mozambique",
+	"area_code": "MZ",
+	"chinese_name": "莫桑比克"
+}, {
+	"country_id": 264,
+	"country_name": "Namibia",
+	"area_code": "NA",
+	"chinese_name": "纳米比亚"
+}, {
+	"country_id": 674,
+	"country_name": "Nauru",
+	"area_code": "NR",
+	"chinese_name": "瑙鲁"
+}, {
+	"country_id": 977,
+	"country_name": "Nepal",
+	"area_code": "NP",
+	"chinese_name": "尼泊尔"
+}, {
+	"country_id": 31,
+	"country_name": "Netherlands",
+	"area_code": "NL",
+	"chinese_name": "荷兰"
+}, {
+	"country_id": 64,
+	"country_name": "New Zealand",
+	"area_code": "NZ",
+	"chinese_name": "新西兰"
+}, {
+	"country_id": 505,
+	"country_name": "Nicaragua",
+	"area_code": "NI",
+	"chinese_name": "尼加拉瓜"
+}, {
+	"country_id": 227,
+	"country_name": "Niger",
+	"area_code": "NE",
+	"chinese_name": "尼日尔"
+}, {
+	"country_id": 234,
+	"country_name": "Nigeria",
+	"area_code": "NG",
+	"chinese_name": "尼日利亚"
+}, {
+	"country_id": 850,
+	"country_name": "North Korea",
+	"area_code": "KP",
+	"chinese_name": "朝鲜"
+}, {
+	"country_id": 47,
+	"country_name": "Norway",
+	"area_code": "NO",
+	"chinese_name": "挪威"
+}, {
+	"country_id": 968,
+	"country_name": "Oman",
+	"area_code": "OM",
+	"chinese_name": "阿曼"
+}, {
+	"country_id": 92,
+	"country_name": "Pakistan",
+	"area_code": "PK",
+	"chinese_name": "巴基斯坦"
+}, {
+	"country_id": 507,
+	"country_name": "Panama",
+	"area_code": "PA",
+	"chinese_name": "巴拿马"
+}, {
+	"country_id": 675,
+	"country_name": "Papua New Cuinea",
+	"area_code": "PG",
+	"chinese_name": "巴布亚新几内亚"
+}, {
+	"country_id": 595,
+	"country_name": "Paraguay",
+	"area_code": "PY",
+	"chinese_name": "巴拉圭"
+}, {
+	"country_id": 51,
+	"country_name": "Peru",
+	"area_code": "PE",
+	"chinese_name": "秘鲁"
+}, {
+	"country_id": 63,
+	"country_name": "Philippines",
+	"area_code": "PH",
+	"chinese_name": "菲律宾"
+}, {
+	"country_id": 48,
+	"country_name": "Poland",
+	"area_code": "PL",
+	"chinese_name": "波兰"
+}, {
+	"country_id": 689,
+	"country_name": "French Polynesia",
+	"area_code": "PF",
+	"chinese_name": "法属玻利尼西亚"
+}, {
+	"country_id": 351,
+	"country_name": "Portugal",
+	"area_code": "PT",
+	"chinese_name": "葡萄牙"
+}, {
+	"country_id": 1787,
+	"country_name": "Puerto Rico",
+	"area_code": "PR",
+	"chinese_name": "波多黎各"
+}, {
+	"country_id": 974,
+	"country_name": "Qatar",
+	"area_code": "QA",
+	"chinese_name": "卡塔尔"
+}, {
+	"country_id": 40,
+	"country_name": "Romania",
+	"area_code": "RO",
+	"chinese_name": "罗马尼亚"
+}, {
+	"country_id": 7,
+	"country_name": "Russia",
+	"area_code": "RU",
+	"chinese_name": "俄罗斯"
+}, {
+	"country_id": 1758,
+	"country_name": "Saint Lueia",
+	"area_code": "LC",
+	"chinese_name": "圣卢西亚"
+}, {
+	"country_id": 1784,
+	"country_name": "Saint Vincent",
+	"area_code": "VC",
+	"chinese_name": "圣文森特岛"
+}, {
+	"country_id": 378,
+	"country_name": "San Marino",
+	"area_code": "SM",
+	"chinese_name": "圣马力诺"
+}, {
+	"country_id": 239,
+	"country_name": "Sao Tome and Principe",
+	"area_code": "ST",
+	"chinese_name": "圣多美和普林西比"
+}, {
+	"country_id": 966,
+	"country_name": "Saudi Arabia",
+	"area_code": "SA",
+	"chinese_name": "沙特阿拉伯"
+}, {
+	"country_id": 221,
+	"country_name": "Senegal",
+	"area_code": "SN",
+	"chinese_name": "塞内加尔"
+}, {
+	"country_id": 248,
+	"country_name": "Seychelles",
+	"area_code": "SC",
+	"chinese_name": "塞舌尔"
+}, {
+	"country_id": 232,
+	"country_name": "Sierra Leone",
+	"area_code": "SL",
+	"chinese_name": "塞拉利昂"
+}, {
+	"country_id": 65,
+	"country_name": "Singapore",
+	"area_code": "SG",
+	"chinese_name": "新加坡"
+}, {
+	"country_id": 421,
+	"country_name": "Slovakia",
+	"area_code": "SK",
+	"chinese_name": "斯洛伐克"
+}, {
+	"country_id": 386,
+	"country_name": "Slovenia",
+	"area_code": "SI",
+	"chinese_name": "斯洛文尼亚"
+}, {
+	"country_id": 677,
+	"country_name": "Solomon Is",
+	"area_code": "SB",
+	"chinese_name": "所罗门群岛"
+}, {
+	"country_id": 252,
+	"country_name": "Somali",
+	"area_code": "SO",
+	"chinese_name": "索马里"
+}, {
+	"country_id": 27,
+	"country_name": "South Africa",
+	"area_code": "ZA",
+	"chinese_name": "南非"
+}, {
+	"country_id": 34,
+	"country_name": "Spain",
+	"area_code": "ES",
+	"chinese_name": "西班牙"
+}, {
+	"country_id": 94,
+	"country_name": "Sri Lanka",
+	"area_code": "LK",
+	"chinese_name": "斯里兰卡"
+}, {
+	"country_id": 1758,
+	"country_name": "St.Lucia",
+	"area_code": "LC",
+	"chinese_name": "圣卢西亚"
+}, {
+	"country_id": 1784,
+	"country_name": "St.Vincent",
+	"area_code": "VC",
+	"chinese_name": "圣文森特"
+}, {
+	"country_id": 249,
+	"country_name": "Sudan",
+	"area_code": "SD",
+	"chinese_name": "苏丹"
+}, {
+	"country_id": 597,
+	"country_name": "Suriname",
+	"area_code": "SR",
+	"chinese_name": "苏里南"
+}, {
+	"country_id": 268,
+	"country_name": "Swaziland",
+	"area_code": "SZ",
+	"chinese_name": "斯威士兰"
+}, {
+	"country_id": 46,
+	"country_name": "Sweden",
+	"area_code": "SE",
+	"chinese_name": "瑞典"
+}, {
+	"country_id": 41,
+	"country_name": "Switzerland",
+	"area_code": "CH",
+	"chinese_name": "瑞士"
+}, {
+	"country_id": 963,
+	"country_name": "Syria",
+	"area_code": "SY",
+	"chinese_name": "叙利亚"
+}, {
+	"country_id": 886,
+	"country_name": "Taiwan",
+	"area_code": "TW",
+	"chinese_name": "台湾省"
+}, {
+	"country_id": 992,
+	"country_name": "Tajikstan",
+	"area_code": "TJ",
+	"chinese_name": "塔吉克斯坦"
+}, {
+	"country_id": 255,
+	"country_name": "Tanzania",
+	"area_code": "TZ",
+	"chinese_name": "坦桑尼亚"
+}, {
+	"country_id": 66,
+	"country_name": "Thailand",
+	"area_code": "TH",
+	"chinese_name": "泰国"
+}, {
+	"country_id": 228,
+	"country_name": "Togo",
+	"area_code": "TG",
+	"chinese_name": "多哥"
+}, {
+	"country_id": 676,
+	"country_name": "Tonga",
+	"area_code": "TO",
+	"chinese_name": "汤加"
+}, {
+	"country_id": 1809,
+	"country_name": "Trinidad and Tobago",
+	"area_code": "TT",
+	"chinese_name": "特立尼达和多巴哥"
+}, {
+	"country_id": 216,
+	"country_name": "Tunisia",
+	"area_code": "TN",
+	"chinese_name": "突尼斯"
+}, {
+	"country_id": 90,
+	"country_name": "Turkey",
+	"area_code": "TR",
+	"chinese_name": "土耳其"
+}, {
+	"country_id": 993,
+	"country_name": "Turkmenistan",
+	"area_code": "TM",
+	"chinese_name": "土库曼斯坦"
+}, {
+	"country_id": 256,
+	"country_name": "Uganda",
+	"area_code": "UG",
+	"chinese_name": "乌干达"
+}, {
+	"country_id": 380,
+	"country_name": "Ukraine",
+	"area_code": "UA",
+	"chinese_name": "乌克兰"
+}, {
+	"country_id": 971,
+	"country_name": "United Arab Emirates",
+	"area_code": "AE",
+	"chinese_name": "阿拉伯联合酋长国"
+}, {
+	"country_id": 44,
+	"country_name": "United Kiongdom",
+	"area_code": "GB",
+	"chinese_name": "英国"
+}, {
+	"country_id": 1,
+	"country_name": "United States of America",
+	"area_code": "US",
+	"chinese_name": "美国"
+}, {
+	"country_id": 598,
+	"country_name": "Uruguay",
+	"area_code": "UY",
+	"chinese_name": "乌拉圭"
+}, {
+	"country_id": 233,
+	"country_name": "Uzbekistan",
+	"area_code": "UZ",
+	"chinese_name": "乌兹别克斯坦"
+}, {
+	"country_id": 58,
+	"country_name": "Venezuela",
+	"area_code": "VE",
+	"chinese_name": "委内瑞拉"
+}, {
+	"country_id": 84,
+	"country_name": "Vietnam",
+	"area_code": "VN",
+	"chinese_name": "越南"
+}, {
+	"country_id": 967,
+	"country_name": "Yemen",
+	"area_code": "YE",
+	"chinese_name": "也门"
+}, {
+	"country_id": 381,
+	"country_name": "Yugoslavia",
+	"area_code": "YU",
+	"chinese_name": "南斯拉夫"
+}, {
+	"country_id": 263,
+	"country_name": "Zimbabwe",
+	"area_code": "ZW",
+	"chinese_name": "津巴布韦"
+}, {
+	"country_id": 243,
+	"country_name": "Zaire",
+	"area_code": "ZR",
+	"chinese_name": "扎伊尔"
+}, {
+	"country_id": 260,
+	"country_name": "Zambia",
+	"area_code": "ZM",
+	"chinese_name": "赞比亚"
+}]
