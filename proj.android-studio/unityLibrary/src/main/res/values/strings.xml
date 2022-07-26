@@ -1,0 +1,4 @@
+<resources>
+    <string name="receiver_c2u">com.mn.skillmaster.c2u</string>
+    <string name="receiver_u2c">com.mn.skillmaster.u2c</string>
+</resources>

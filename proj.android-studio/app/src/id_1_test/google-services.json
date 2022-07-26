@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "199864029585",
+    "project_id": "solitaire-master-4554f",
+    "storage_bucket": "solitaire-master-4554f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199864029585:android:91494295bb42a403f7ca30",
+        "android_client_info": {
+          "package_name": "com.classic.solitairemaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199864029585-25kbhr1t6jjak1q687f445ku9crj15p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhan_hBwiqpjHF1wZLmU1wle9nXlGKf90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199864029585-25kbhr1t6jjak1q687f445ku9crj15p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

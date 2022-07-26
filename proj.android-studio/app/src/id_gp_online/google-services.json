@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740157533398",
+    "project_id": "duel-614e7",
+    "storage_bucket": "duel-614e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740157533398:android:87fd4004e8af09e41e2d77",
+        "android_client_info": {
+          "package_name": "com.classic.solitairemaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740157533398-uadp3f1g944724nruap7slu6v60oqh2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfUtGyTu6y1go3gAEbZnwrzTCGo5-zkys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740157533398-uadp3f1g944724nruap7slu6v60oqh2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

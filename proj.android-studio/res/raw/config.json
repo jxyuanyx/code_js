@@ -1,0 +1,14 @@
+{
+  "AdConfig": {
+    "key": "wlz5d3zt9h4w",
+    "Events": {
+      "login": "vdd5dy",
+      "recharge_ok": "5zz2gy",
+      "withdraw_ok": "2nzg8t",
+      "login_fb": "nvu4qd",
+      "login_gp": "cnm8wy",
+      "login_guest": "6quhdc",
+      "recharge_click": "xohlxw"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+include ':libcocos2dx', ':game', ':instantapp', ':pictureselector', ':unityLibrary', ':platformlib'
+project(':libcocos2dx').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/libcocos2dx')
+include ':mqttTest'
+project(':mqttTest').projectDir = new File(settingsDir, 'app')
